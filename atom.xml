@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>黄高芳</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://huanggaofang.com/"/>
+  <updated>2020-03-07T15:33:49.081Z</updated>
+  <id>https://huanggaofang.com/</id>
+  
+  <author>
+    <name>Gaofang Huang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Blog Init</title>
+    <link href="https://huanggaofang.com/2020/init/"/>
+    <id>https://huanggaofang.com/2020/init/</id>
+    <published>2020-03-07T13:05:12.000Z</published>
+    <updated>2020-03-07T15:33:49.081Z</updated>
+    
+    <content type="html"><![CDATA[<p>前段时间体验了两个月阿里云服务器，自己用Node搭后端服务、做CMS后台管理系统，运维部署，还是学到蛮多东西的。</p><p>不过还是不想花太多时间在建站维护上了，后端涉及的东西太多了感觉头大，网络安全、数据库管理啊什么的，所以还是回归hexo吧。</p><p>多出的时间想学点感兴趣的新东西，着重研究图形和视觉方面的技术：canvas、webGl、three、vr、ar等等。</p><p>这周把 MDN 的 canvas 教程又过了一遍，然后每个知识点自己撸了遍 demo, 对 api 的理解又加深了一丢丢😄</p><p>接下来准备用 canvas 做一些更复杂的案例啦，加油吧~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;前段时间体验了两个月阿里云服务器，自己用Node搭后端服务、做CMS后台管理系统，运维部署，还是学到蛮多东西的。&lt;/p&gt;
+&lt;p&gt;不过还是不想花太多时间在建站维护上了，后端涉及的东西太多了感觉头大，网络安全、数据库管理啊什么的，所以还是回归hexo吧。&lt;/p&gt;
+&lt;p&gt;多出的时
+      
+    
+    </summary>
+    
+    
+      <category term="碎碎念" scheme="https://huanggaofang.com/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+      <category term="流水账" scheme="https://huanggaofang.com/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+</feed>
