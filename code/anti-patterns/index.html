@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+      设计模式、设计原则和反模式 |  Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="post-wrap">
+  <div class="page-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <article
+  id="post-code/anti-patterns"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title flex flex-y" style="border-left: 0;" itemprop="name">
+  <span>设计模式、设计原则和反模式</span>
+  
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E7%9B%B8%E5%85%B3/">编程相关</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.7k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">5分钟</span>
+        </span>
+    </span>
+</div>
+  <a href="/code/anti-patterns/" class="article-date">
+  <time datetime="2020-03-10T07:03:09.000Z" itemprop="datePublished">2020-03-10</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <h2 id="1-设计模式"><a href="#1-设计模式" class="headerlink" title="1. 设计模式"></a>1. 设计模式</h2><h3 id="1-1-什么是设计模式？"><a href="#1-1-什么是设计模式？" class="headerlink" title="1.1 什么是设计模式？"></a>1.1 什么是设计模式？</h3><p>模式是在某种情境下，针对某种问题的某种解决方案。<br>设计模式算是一种经验复用。</p>
+<h3 id="1-2-为什么要使用设计模式？"><a href="#1-2-为什么要使用设计模式？" class="headerlink" title="1.2 为什么要使用设计模式？"></a>1.2 为什么要使用设计模式？</h3><ol>
+<li><p>开发小组不需要重新设计解决方案来解决已经被前人解决过的问题。如此可以节省很多设计开发时间。</p>
+</li>
+<li><p>当开发小组讨论设计的时候，使用设计模式可以使大家更好了理解问题所在和解决方案，而且对解决方案有一个比较统一的认知。</p>
+</li>
+<li><p>设计模式本身已经通过了大量的实际运用和验证，其设计质量和实用价值有很好的保证。</p>
+</li>
+<li><p>设计模式本身有健全的文档，可以一定程度上简化撰写开发文档。</p>
+</li>
+</ol>
+<a id="more"></a>
+
+<h2 id="2-设计模式的分类"><a href="#2-设计模式的分类" class="headerlink" title="2. 设计模式的分类"></a>2. 设计模式的分类</h2><h3 id="2-1-创建型"><a href="#2-1-创建型" class="headerlink" title="2.1. 创建型"></a>2.1. 创建型</h3><p>涉及到将对象实例化。</p>
+<p>如：单例模式，工厂模式 </p>
+<h3 id="2-2-结构型"><a href="#2-2-结构型" class="headerlink" title="2.2. 结构型"></a>2.2. 结构型</h3><p>把类或对象组合到更大的结构中。 </p>
+<p>如：装饰器，代理模式，适配器模式 </p>
+<h3 id="2-3-行为型"><a href="#2-3-行为型" class="headerlink" title="2.3. 行为型"></a>2.3. 行为型</h3><p>涉及到类和对象如何交互及分配职责。 </p>
+<p>模板方法，观察者模式，策略模式</p>
+<h2 id="3-什么是设计原则"><a href="#3-什么是设计原则" class="headerlink" title="3. 什么是设计原则"></a>3. 什么是设计原则</h2><h3 id="3-1-封装变化"><a href="#3-1-封装变化" class="headerlink" title="3.1. 封装变化"></a>3.1. 封装变化</h3><p>找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混在一起 </p>
+<h3 id="3-2-针对接口编程"><a href="#3-2-针对接口编程" class="headerlink" title="3.2. 针对接口编程"></a>3.2. 针对接口编程</h3><p>针对接口编程，而不是针对实现编程。此处的接口是指超类型，针对接口编程的意思是利用多态的能力，使得实际的类型可以动态绑定到真正需要的实现上。 </p>
+<h3 id="3-3-多用组合"><a href="#3-3-多用组合" class="headerlink" title="3.3. 多用组合"></a>3.3. 多用组合</h3><p>多用组合，少用继承。组合比继承更灵活。 </p>
+<h3 id="3-4-松耦合设计"><a href="#3-4-松耦合设计" class="headerlink" title="3.4. 松耦合设计"></a>3.4. 松耦合设计</h3><p>为了交互对象之间的松耦合设计而努力。这样会使我们的系统更有弹性，在应对新的需求时，由于对象之间的相互依赖降低到最低，从而需要修改的量最小。 </p>
+<h3 id="3-5-开闭原则"><a href="#3-5-开闭原则" class="headerlink" title="3.5. 开闭原则"></a>3.5. 开闭原则</h3><p>开闭原则：类应该对扩展开放，对修改关闭。意思是在不修改现有类的代码情况下，扩展类可以满足新的需求。因为已有代码是精心设计的，修改容易产生BUG，而且精心设计的代码，是易于扩展的。 </p>
+<h3 id="3-6-依赖导致原则"><a href="#3-6-依赖导致原则" class="headerlink" title="3.6. 依赖导致原则"></a>3.6. 依赖导致原则</h3><p>依赖导致原则：要依赖抽象，不要依赖具体类。 </p>
+<h3 id="3-7-最少知识原则"><a href="#3-7-最少知识原则" class="headerlink" title="3.7. 最少知识原则"></a>3.7. 最少知识原则</h3><p>最少知识原则：只和你的密友谈话。减少对象之间的交互。从而将受到影响而导致修改的可能性降到最低。 </p>
+<h3 id="3-8-高层级调用"><a href="#3-8-高层级调用" class="headerlink" title="3.8. 高层级调用"></a>3.8. 高层级调用</h3><p>别调用我，我会调用你。这是组合高层组件和低层组件的一种原则。高层组件决定什么时候以及如何调用低层组件。低层组件只是挂在高层组件之下。 </p>
+<h3 id="3-9-单一责任原则"><a href="#3-9-单一责任原则" class="headerlink" title="3.9. 单一责任原则"></a>3.9. 单一责任原则</h3><p>对于一个模块，或者一个类来说，这个模块或者这个类应该只对系统/软件的一个功能负责，而且该责任应该被该类完全封装起来。</p>
+<h2 id="4-常用的模式类型"><a href="#4-常用的模式类型" class="headerlink" title="4. 常用的模式类型"></a>4. 常用的模式类型</h2><h3 id="4-1-策略模式"><a href="#4-1-策略模式" class="headerlink" title="4.1. 策略模式"></a>4.1. 策略模式</h3><p>定义了算法族，分别封装起来，让它们之间可以相互替换，此模式让算法的变化独立于使用算法的客户。</p>
+<h3 id="4-2-观察者模式"><a href="#4-2-观察者模式" class="headerlink" title="4.2. 观察者模式"></a>4.2. 观察者模式</h3><p>定义了对象之间的一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖者都会收到通知并自动更新。 </p>
+<h3 id="4-3-装饰器模式"><a href="#4-3-装饰器模式" class="headerlink" title="4.3. 装饰器模式"></a>4.3. 装饰器模式</h3><p>动态的将责任附加到对象上，若要扩展功能，装饰器提供了比继承更有弹性的替代方案。 </p>
+<h3 id="4-4-工厂模式"><a href="#4-4-工厂模式" class="headerlink" title="4.4. 工厂模式"></a>4.4. 工厂模式</h3><p>简单的工厂模式，就是把对象的创建提出来单独处理。而标准的工厂模式，定义了一个创建对象的接口，但由子类决定要实例化的类是哪一个。</p>
+<p>工厂方法让类把实例化推迟到子类。 </p>
+<h3 id="4-5-抽象工厂模式"><a href="#4-5-抽象工厂模式" class="headerlink" title="4.5. 抽象工厂模式"></a>4.5. 抽象工厂模式</h3><p>提供一个接口，用于创建相关或依赖对象的家族，而不需要明确确定具体类。 </p>
+<h3 id="4-6-单例模式"><a href="#4-6-单例模式" class="headerlink" title="4.6. 单例模式"></a>4.6. 单例模式</h3><p>确保一个类只有一个实例，并提供一个全局访问点。 </p>
+<h3 id="4-7-命令模式"><a href="#4-7-命令模式" class="headerlink" title="4.7. 命令模式"></a>4.7. 命令模式</h3><p>将请求封装成对象，以便使用不同的请求、队列或者日志来参数化其它对象。</p>
+<p>命令模式也支持可撤销的操作。 </p>
+<h3 id="4-8-适配器模式"><a href="#4-8-适配器模式" class="headerlink" title="4.8. 适配器模式"></a>4.8. 适配器模式</h3><p>将一个类的接口，转换成客户期望的另一个接口。</p>
+<p>适配器让原本接口不兼容的类可以合作无间。 </p>
+<h3 id="4-9-外观模式"><a href="#4-9-外观模式" class="headerlink" title="4.9. 外观模式"></a>4.9. 外观模式</h3><p>提供了一个统一的接口，用来访问子系统中的一群接口。外观定义了一个高层接口，让子系统更容易使用。 </p>
+<h3 id="4-10-模板方法模式"><a href="#4-10-模板方法模式" class="headerlink" title="4.10. 模板方法模式"></a>4.10. 模板方法模式</h3><p>在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。</p>
+<p>模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。 </p>
+<h3 id="4-11-迭代器模式"><a href="#4-11-迭代器模式" class="headerlink" title="4.11. 迭代器模式"></a>4.11. 迭代器模式</h3><p>提供一种方法顺序访问一个聚合对象中的各个元素，而不暴露其内部的表示。 </p>
+<h3 id="4-12-组合模式"><a href="#4-12-组合模式" class="headerlink" title="4.12. 组合模式"></a>4.12. 组合模式</h3><p>允许你将对象组合成树形结构来表现『整体/部分』层次结构。</p>
+<p>组合能让客户以一致的方式处理个别对象以及对象组合。 </p>
+<h3 id="4-13-状态模式"><a href="#4-13-状态模式" class="headerlink" title="4.13. 状态模式"></a>4.13. 状态模式</h3><p>允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。 </p>
+<h3 id="4-14-代理模式"><a href="#4-14-代理模式" class="headerlink" title="4.14. 代理模式"></a>4.14. 代理模式</h3><p>为另一个对象提供一个替身或占位符以访问这个对象。</p>
+<h2 id="5-反模式"><a href="#5-反模式" class="headerlink" title="5. 反模式"></a>5. 反模式</h2><h3 id="5-1-什么是反模式"><a href="#5-1-什么是反模式" class="headerlink" title="5.1 什么是反模式"></a>5.1 什么是反模式</h3><p>反模式是指在对经常面对的问题经常使用的低效、不良、或者有待优化的设计模式/方法。甚至，反模式也可以是一种错误的开发思想/理念。</p>
+<h3 id="5-2-常见的反模式案例"><a href="#5-2-常见的反模式案例" class="headerlink" title="5.2. 常见的反模式案例"></a>5.2. 常见的反模式案例</h3><p><strong>软件膨胀</strong>：随着版本的升级，软件越来越消耗系统资源。</p>
+<p><strong>反抽象</strong>：需要的功能并不暴露给用户，导致用户要在较高层次重新实现一些功能。</p>
+<p><strong>万能类</strong>︰在一个类的设计中，聚集了太多的函数。</p>
+<p><strong>硬编码(Hard Code)</strong>：或称写死。在实现某系统用途上设死该系统的运作环境。</p>
+<p><strong>超布尔逻辑</strong>︰不必要的比较，或是过于抽象的布尔计算。</p>
+<p><strong>剪贴编程(Copy-n-paste programming)</strong>：宁愿拷贝(并修改)现存代码而非创造通用的解决方案。</p>
+<h2 id="扩展知识"><a href="#扩展知识" class="headerlink" title="扩展知识"></a>扩展知识</h2><ol>
+<li><a href="http://zh.wikipedia.org/wiki/%E5%8F%8D%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">反模式wiki</a></li>
+</ol>
+
+      </div>
+      
+      <!-- updated -->
+      
+      
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      <div id="rewardMask" class="mask-wrap"></div>
+
+<!-- #reward -->
+<div id="reward" class="modal-wrap">
+  <div class="reward-title flex flex-y flex-x">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-smile"></use>
+    </svg>
+    <span>请我喝杯咖啡吧~</span>
+  </div>
+  <div class="reward-box flex flex-y">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+  <div class="modal-close">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div> 
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <div class="post-copyright">
+        <i class="ri-copyright-line"></i>
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用
+        <a
+          href="https://www.apache.org/licenses/LICENSE-2.0.html"
+          rel="external nofollow"
+          target="_blank"
+          >Apache License 2.0</a
+        >
+        许可协议。转载请注明出处！
+      </div>
+    </div>
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8F%8D%E6%A8%A1%E5%BC%8F/" rel="tag">反模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
+</div>
+
+  
+<div class="share-wrap flex flex-y" id="shareBar">
+  <span class="share-btn flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-fenxiang"></use>
+    </svg>
+    分享到
+  </span>
+  <div class="share-list flex flex-y">
+    <a class="weibo share-sns-btn" href="javascript:;" data-type="weibo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weibo"></use>
+      </svg>
+    </a>
+    <a class="douban share-sns-btn" href="javascript:;" data-type="douban">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-douban"></use>
+      </svg>
+    </a>
+    <a class="qq share-sns-btn" href="javascript:;" data-type="qq">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qq"></use>
+      </svg>
+    </a>
+    <a
+      class="weixin share-sns-btn wxFab"
+      href="javascript:;"
+      data-type="weixin"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weixin"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="shareMask" class="mask-wrap"></div>
+<div class="modal-wrap wx-share-modal">
+  <div class="share-weixin-title">扫一扫，分享到微信</div>
+  <div class="wx-qrcode">
+    <img
+      src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://huanggaofang.com/code/anti-patterns/"
+      alt="微信分享二维码"
+    />
+  </div>
+  <div class="modal-close" id="wxClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div>
+ 
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <div class="article-nav-link article-nav-prev">
+        <strong class="article-nav-caption">上一篇</strong>
+        <a href="/code/keycode/" class="article-nav-title">
+          
+            键盘 KeyCode 对照表
+          
+        </a>
+      </div>
+    
+    
+      <div class="article-nav-link article-nav-next">
+        <strong class="article-nav-caption">下一篇</strong>
+        <a href="/fe/canvas/" class="article-nav-title">Canvas 基础</a>
+      </div>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'XRQh2zhUCEHXwiKhGSKRsgG1-gzGzoHsz',
+        app_key: '7lenjWI8UhDxmR67gJm8s8EQ',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+ 
+</article>
+
+  <div class="toc-bot-btn" id="tocBotBtn">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</div>
+<div class="toc-bot-wrap" id="tocBotWrap">
+  <div class="toc-bot-close" id="tocBotClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div id="tocBot"></div>
+</div>
+  
+
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '#tocBot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h2, h3, h4',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      scrollContainer: 'document',
+      onClick: (e) => {
+        $('#tocBot .toc-link').removeClass('is-active-link');
+        $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+        return false;
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

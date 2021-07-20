@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+      浏览器数据存储方案 |  Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="post-wrap">
+  <div class="page-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <article
+  id="post-fe/web-store"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title flex flex-y" style="border-left: 0;" itemprop="name">
+  <span>浏览器数据存储方案</span>
+  
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/">前端笔记</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">816字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3分钟</span>
+        </span>
+    </span>
+</div>
+  <a href="/fe/web-store/" class="article-date">
+  <time datetime="2020-04-07T07:18:52.000Z" itemprop="datePublished">2020-04-07</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <p>常见的浏览器数据存储方法：Cookie、WEB 存储 (localStorage 和 sessionStorage)、IndexedDB。</p>
+<p>需要注意的是，以上方法都不适合存储敏感数据。</p>
+<a id="more"></a>
+
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>优点：Cookie 的兼容性最好，可以兼容现在市面上所有的主流浏览器。</p>
+<p>缺点：存储量小、性能差、只能储存字符串、安全问题。</p>
+<p>Cookie 是没有过期时间的，可以设置永不过期，也可以默认不设置的话，是关闭浏览器自动过期。</p>
+<p>cookie 过期时间设置方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cookie.setMaxAge(<span class="number">0</span>) <span class="comment">//不记录cookie</span></span><br><span class="line"></span><br><span class="line">cookie.setMaxAge(<span class="number">-1</span>) <span class="comment">//会话级cookie，关闭浏览器失效</span></span><br><span class="line"></span><br><span class="line">cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span>) <span class="comment">//过期时间为1小时</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CookieUtil = &#123;</span><br><span class="line">    <span class="comment">// get可根据cookie的名字获取相应的值</span></span><br><span class="line">    <span class="keyword">get</span>: function() &#123;</span><br><span class="line">        <span class="keyword">const</span> cookieName = encodeURIcOMPONET(name) + <span class="string">"="</span>,</span><br><span class="line">               cookieStart = <span class="built_in">document</span>.cookie.indexOf(cookieName),</span><br><span class="line">               cookieValue = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">if</span>(cookieStart &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> cookieEnd = <span class="built_in">document</span>.cookie.indexOf(<span class="string">";"</span>, cookieStart)</span><br><span class="line">            <span class="keyword">if</span>(cookieEnd == <span class="number">-1</span>) &#123;</span><br><span class="line">                cookieEnd = <span class="built_in">document</span>.cookie.length</span><br><span class="line">            &#125;</span><br><span class="line">            cookieValue = decodeURICompoent(<span class="built_in">document</span>.cookie.substring(cookieStart + cookieName.length, cookieEnd))</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cookieValue</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// set设置一个cookie</span></span><br><span class="line">    <span class="keyword">set</span>: function(name, value, expires, path, domain, secure) &#123;</span><br><span class="line">        <span class="keyword">var</span> cookieText = encodeURIComponet(name)+<span class="string">"="</span>+encodeURIComponet(value)</span><br><span class="line">        <span class="keyword">if</span>(expires <span class="keyword">instanceof</span> <span class="built_in">Date</span>) &#123;</span><br><span class="line">            cookieText += <span class="string">"; expires="</span> + expires.toGMTString()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(path) &#123;</span><br><span class="line">            cookieText += <span class="string">";path="</span> + path</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(domain) &#123;</span><br><span class="line">            cookieText += <span class="string">"; domain"</span> + domain</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(secure) &#123;</span><br><span class="line">            cookieText += <span class="string">"; secure"</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.cookie = cookieText</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 删除已有的cookie</span></span><br><span class="line">    unset: <span class="function"><span class="keyword">function</span>(<span class="params">name, path, domain, secure</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.set(name, <span class="string">""</span>, <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>), path, domain, secure)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="WEB-存储"><a href="#WEB-存储" class="headerlink" title="WEB 存储"></a>WEB 存储</h2><p>WEB 存储，即 localStorage 和 sessionStorage。</p>
+<p>与 Cookie 的区别：</p>
+<ol>
+<li><p>属于 HTML5 标准的新 API，上古浏览器不支持。</p>
+</li>
+<li><p>存储量大，可以跨会话存在。</p>
+</li>
+<li><p>更安全。</p>
+</li>
+</ol>
+<h3 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用方法存储数据</span></span><br><span class="line">localStorage.setItem(<span class="string">'name'</span>, <span class="string">'Srtian'</span>)</span><br><span class="line"><span class="keyword">const</span> user = &#123; <span class="attr">name</span>: <span class="string">'Srtian'</span>, <span class="attr">age</span>: <span class="number">22</span> &#125;</span><br><span class="line">localStorage.setItem(<span class="string">'user'</span>, <span class="built_in">JSON</span>.stringify(user))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用属性存储数据</span></span><br><span class="line">localStorage.say = <span class="string">'Hello world'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用方法读取数据</span></span><br><span class="line"><span class="keyword">const</span> name = localStorage.getItem(<span class="string">'name'</span>)</span><br><span class="line"><span class="keyword">const</span> user = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'user'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用属性读取数据</span></span><br><span class="line"><span class="keyword">const</span> say = localStorage.say</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除数据</span></span><br><span class="line">localStorage.removeItem(<span class="string">'name'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 保存数据到sessionStorage</span></span><br><span class="line">sessionStorage.setItem(<span class="string">'name'</span>, <span class="string">'Srtian'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从sessionStorage获取数据</span></span><br><span class="line"><span class="keyword">var</span> data = sessionStorage.getItem(<span class="string">'name'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从sessionStorage删除保存的数据</span></span><br><span class="line">sessionStorage.removeItem(<span class="string">'name'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从sessionStorage删除所有保存的数据</span></span><br><span class="line">sessionStorage.clear()</span><br></pre></td></tr></table></figure>
+
+<h3 id="时效"><a href="#时效" class="headerlink" title="时效"></a>时效</h3><p><strong>永久的</strong>：</p>
+<p>localStorage 存储的数据时永久性的，除非我们使用 removeItem 来删除或者用户通过设置浏览器配置来删除，负责数据会一直保留在用户的电脑上，永不过期。</p>
+<p><strong>暂时的</strong>：</p>
+<p>Session Storage 只存储当前会话页的数据，且只有当用户关闭当前会话页或浏览器时，数据才会被清除。</p>
+<h2 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h2><p>IndexedDB 的优点：</p>
+<ol>
+<li><p>数据格式是 JSON</p>
+</li>
+<li><p>存储量较 localStorage/sessionStorage 更大，取决于设备（分配到浏览器）的内存大小。</p>
+</li>
+</ol>
+<p>缺点是浏览器兼容问题，IE10 以下无法使用。</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意数据库的版本号只能是整数</span></span><br><span class="line"><span class="keyword">const</span> request = IndexedDB.open(databasename, version)</span><br><span class="line"></span><br><span class="line">request.onerror = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 创建数据库失败时的回调函数</span></span><br><span class="line">&#125;</span><br><span class="line">request.onsuccess = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 创建数据库成功时的回调函数</span></span><br><span class="line">&#125;</span><br><span class="line">request.onupgradeneededd = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 当数据库改变时的回调函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">request.onupgradeneeded = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> db = event.target.result</span><br><span class="line">  <span class="keyword">const</span> objectStore = db.createObjectStore(<span class="string">'name'</span>, &#123; <span class="attr">keyPath</span>: <span class="string">'id'</span> &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><table>
+<thead>
+<tr>
+<th align="center">区别</th>
+<th align="center">Cookie</th>
+<th align="center">localStorage</th>
+<th align="center">sessionStorage</th>
+<th align="center">IndexedDB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">兼容</td>
+<td align="center">良好</td>
+<td align="center">一般</td>
+<td align="center">一般</td>
+<td align="center">差</td>
+</tr>
+<tr>
+<td align="center">安全</td>
+<td align="center">差</td>
+<td align="center">一般</td>
+<td align="center">一般</td>
+<td align="center">良好</td>
+</tr>
+<tr>
+<td align="center">性能</td>
+<td align="center">差</td>
+<td align="center">一般</td>
+<td align="center">一般</td>
+<td align="center">良好</td>
+</tr>
+<tr>
+<td align="center">容量</td>
+<td align="center">4k 以内</td>
+<td align="center">5M 左右</td>
+<td align="center">5M 左右</td>
+<td align="center">50M 以上（或不限）</td>
+</tr>
+<tr>
+<td align="center">时效</td>
+<td align="center">无过期</td>
+<td align="center">永久</td>
+<td align="center">当前会话</td>
+<td align="center">永久</td>
+</tr>
+<tr>
+<td align="center">格式</td>
+<td align="center">字符串</td>
+<td align="center">key/value(字符串)</td>
+<td align="center">key/value(字符串)</td>
+<td align="center">key/value(Json)</td>
+</tr>
+<tr>
+<td align="center">同域限制</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">是</td>
+</tr>
+</tbody></table>
+
+      </div>
+      
+      <!-- updated -->
+      
+      
+<div class="post-update">
+  <span>更新于：</span>
+  <time>2020-05-15</time>
+</div>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      <div id="rewardMask" class="mask-wrap"></div>
+
+<!-- #reward -->
+<div id="reward" class="modal-wrap">
+  <div class="reward-title flex flex-y flex-x">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-smile"></use>
+    </svg>
+    <span>请我喝杯咖啡吧~</span>
+  </div>
+  <div class="reward-box flex flex-y">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+  <div class="modal-close">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div> 
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <div class="post-copyright">
+        <i class="ri-copyright-line"></i>
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用
+        <a
+          href="https://www.apache.org/licenses/LICENSE-2.0.html"
+          rel="external nofollow"
+          target="_blank"
+          >Apache License 2.0</a
+        >
+        许可协议。转载请注明出处！
+      </div>
+    </div>
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/" rel="tag">数据存储</a></li></ul>
+</div>
+
+  
+<div class="share-wrap flex flex-y" id="shareBar">
+  <span class="share-btn flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-fenxiang"></use>
+    </svg>
+    分享到
+  </span>
+  <div class="share-list flex flex-y">
+    <a class="weibo share-sns-btn" href="javascript:;" data-type="weibo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weibo"></use>
+      </svg>
+    </a>
+    <a class="douban share-sns-btn" href="javascript:;" data-type="douban">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-douban"></use>
+      </svg>
+    </a>
+    <a class="qq share-sns-btn" href="javascript:;" data-type="qq">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qq"></use>
+      </svg>
+    </a>
+    <a
+      class="weixin share-sns-btn wxFab"
+      href="javascript:;"
+      data-type="weixin"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weixin"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="shareMask" class="mask-wrap"></div>
+<div class="modal-wrap wx-share-modal">
+  <div class="share-weixin-title">扫一扫，分享到微信</div>
+  <div class="wx-qrcode">
+    <img
+      src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://huanggaofang.com/fe/web-store/"
+      alt="微信分享二维码"
+    />
+  </div>
+  <div class="modal-close" id="wxClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div>
+ 
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <div class="article-nav-link article-nav-prev">
+        <strong class="article-nav-caption">上一篇</strong>
+        <a href="/fe/h5-adaptive/" class="article-nav-title">
+          
+            H5自适应小结
+          
+        </a>
+      </div>
+    
+    
+      <div class="article-nav-link article-nav-next">
+        <strong class="article-nav-caption">下一篇</strong>
+        <a href="/code/git/" class="article-nav-title">Git</a>
+      </div>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'XRQh2zhUCEHXwiKhGSKRsgG1-gzGzoHsz',
+        app_key: '7lenjWI8UhDxmR67gJm8s8EQ',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+ 
+</article>
+
+  <div class="toc-bot-btn" id="tocBotBtn">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</div>
+<div class="toc-bot-wrap" id="tocBotWrap">
+  <div class="toc-bot-close" id="tocBotClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div id="tocBot"></div>
+</div>
+  
+
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '#tocBot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h2, h3, h4',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      scrollContainer: 'document',
+      onClick: (e) => {
+        $('#tocBot .toc-link').removeClass('is-active-link');
+        $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+        return false;
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

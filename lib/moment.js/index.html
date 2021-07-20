@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+      Moment.js 应用总结 |  Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="post-wrap">
+  <div class="page-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <article
+  id="post-lib/moment.js"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title flex flex-y" style="border-left: 0;" itemprop="name">
+  <span>Moment.js 应用总结</span>
+  
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7%E5%BA%93%E7%AC%94%E8%AE%B0/">工具库笔记</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.5k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">6分钟</span>
+        </span>
+    </span>
+</div>
+  <a href="/lib/moment.js/" class="article-date">
+  <time datetime="2020-06-04T02:30:00.000Z" itemprop="datePublished">2020-06-04</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install moment</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> moment = <span class="built_in">require</span>(<span class="string">'moment'</span>)</span><br><span class="line">moment().format()</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"moment.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  moment().format()</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install moment</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> moment <span class="keyword">from</span> <span class="string">'moment'</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><h3 id="格式化参数"><a href="#格式化参数" class="headerlink" title="格式化参数"></a>格式化参数</h3><p><strong>注意</strong>: 如星期等数据需要先设置本地化格式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置为中文格式</span></span><br><span class="line">moment.locale(<span class="string">'zh-cn'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>: 格式化参数区分大小写。</p>
+<p>例：2020-06-04 16:05:32:120 星期四 第二季度</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">示例</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">YYYY</td>
+<td align="center">2020</td>
+<td align="center">4 或 2 位数字的年份</td>
+</tr>
+<tr>
+<td align="center">YY</td>
+<td align="center">20</td>
+<td align="center">2 位数字的年份</td>
+</tr>
+<tr>
+<td align="center">Y</td>
+<td align="center">2020</td>
+<td align="center">带有任意数字和符号的年份</td>
+</tr>
+<tr>
+<td align="center">Q</td>
+<td align="center">2</td>
+<td align="center">年份的季度。将月份设置为季度的第一个月</td>
+</tr>
+<tr>
+<td align="center">M</td>
+<td align="center">6</td>
+<td align="center">月份数字，不包含0</td>
+</tr>
+<tr>
+<td align="center">MM</td>
+<td align="center">06</td>
+<td align="center">月份数字，包含0</td>
+</tr>
+<tr>
+<td align="center">MMM</td>
+<td align="center">Jun</td>
+<td align="center">语言环境中的月份名称，由 <code>moment.locale()</code> 设置</td>
+</tr>
+<tr>
+<td align="center">MMMM</td>
+<td align="center">June</td>
+<td align="center">语言环境中的月份名称，由 <code>moment.locale()</code> 设置</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center">4</td>
+<td align="center">月的某天，不包含0</td>
+</tr>
+<tr>
+<td align="center">DD</td>
+<td align="center">04</td>
+<td align="center">月的某天，包含0</td>
+</tr>
+<tr>
+<td align="center">Do</td>
+<td align="center">4th</td>
+<td align="center">月的某天，带序号</td>
+</tr>
+<tr>
+<td align="center">DDD</td>
+<td align="center">156</td>
+<td align="center">年的某天，不包含0</td>
+</tr>
+<tr>
+<td align="center">DDDD</td>
+<td align="center">156</td>
+<td align="center">年的某天，包含0</td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center">1591257932</td>
+<td align="center">Unix 时间戳</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center">1591257932000</td>
+<td align="center">Unix 毫秒时间戳</td>
+</tr>
+<tr>
+<td align="center">GGGG</td>
+<td align="center">2020</td>
+<td align="center">ISO 的 4 位数字的周年</td>
+</tr>
+<tr>
+<td align="center">GG</td>
+<td align="center">2020</td>
+<td align="center">ISO 的 2 位数字的周年</td>
+</tr>
+<tr>
+<td align="center">gggg</td>
+<td align="center">2020</td>
+<td align="center">语言环境的 4 位数字的周年</td>
+</tr>
+<tr>
+<td align="center">gg</td>
+<td align="center">20</td>
+<td align="center">语言环境的 2 位数字的周年</td>
+</tr>
+<tr>
+<td align="center">WW</td>
+<td align="center">23</td>
+<td align="center">ISO 的年的第几周</td>
+</tr>
+<tr>
+<td align="center">W</td>
+<td align="center">23</td>
+<td align="center">ISO 的年的第几周</td>
+</tr>
+<tr>
+<td align="center">w</td>
+<td align="center">23</td>
+<td align="center">语言环境的年的第几周，不包含0</td>
+</tr>
+<tr>
+<td align="center">ww</td>
+<td align="center">23</td>
+<td align="center">语言环境的年的第几周，包含0</td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="center">4</td>
+<td align="center">ISO 的星期几</td>
+</tr>
+<tr>
+<td align="center">e</td>
+<td align="center">3</td>
+<td align="center">语言环境的星期几</td>
+</tr>
+<tr>
+<td align="center">ddd</td>
+<td align="center">周四</td>
+<td align="center">语言环境的星期几的名称，由 <code>moment.locale()</code> 设置</td>
+</tr>
+<tr>
+<td align="center">dddd</td>
+<td align="center">星期四</td>
+<td align="center">语言环境的星期几的名称，由 <code>moment.locale()</code> 设置</td>
+</tr>
+<tr>
+<td align="center">l</td>
+<td align="center">2020/6/4</td>
+<td align="center">语言环境的日期（以本地格式）</td>
+</tr>
+<tr>
+<td align="center">ll</td>
+<td align="center">2020年6月4日</td>
+<td align="center">语言环境的月份名称、月份日期、年份</td>
+</tr>
+<tr>
+<td align="center">lll</td>
+<td align="center">2020年6月4日 16:05</td>
+<td align="center">语言环境的月份名称、月份日期、年份、时间</td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td align="center">2020/06/04</td>
+<td align="center">语言环境的日期（以本地格式）</td>
+</tr>
+<tr>
+<td align="center">LL</td>
+<td align="center">2020年6月4日</td>
+<td align="center">语言环境的月份名称、月份日期、年份</td>
+</tr>
+<tr>
+<td align="center">LLL</td>
+<td align="center">2020年6月4日下午4点05分</td>
+<td align="center">语言环境的月份名称、月份日期、年份、时间</td>
+</tr>
+<tr>
+<td align="center">LLLL</td>
+<td align="center">2020年6月4日星期四下午4点05分</td>
+<td align="center">语言环境的星期几、月份名称、月份日期、年份、时间</td>
+</tr>
+<tr>
+<td align="center">LT</td>
+<td align="center">16:05</td>
+<td align="center">语言环境的时间（不含秒钟）</td>
+</tr>
+<tr>
+<td align="center">LTS</td>
+<td align="center">16:05:32</td>
+<td align="center">语言环境的时间（含秒钟）</td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="center">16</td>
+<td align="center">小时（24 小时制），不包含0</td>
+</tr>
+<tr>
+<td align="center">HH</td>
+<td align="center">16</td>
+<td align="center">小时（24 小时制），包含0</td>
+</tr>
+<tr>
+<td align="center">h</td>
+<td align="center">4</td>
+<td align="center">小时（12 小时制, 0 ~ 23），不包含0</td>
+</tr>
+<tr>
+<td align="center">hh</td>
+<td align="center">04</td>
+<td align="center">小时（12 小时制, 0 ~ 23），包含0</td>
+</tr>
+<tr>
+<td align="center">k</td>
+<td align="center">16</td>
+<td align="center">小时（24 小时制, 1 ~ 24），不包含0</td>
+</tr>
+<tr>
+<td align="center">kk</td>
+<td align="center">16</td>
+<td align="center">小时（24 小时制, 1 ~ 24），包含0</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">下午</td>
+<td align="center">上午或下午</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">下午</td>
+<td align="center">上午或下午</td>
+</tr>
+<tr>
+<td align="center">m</td>
+<td align="center">5</td>
+<td align="center">分钟，不包含0</td>
+</tr>
+<tr>
+<td align="center">mm</td>
+<td align="center">05</td>
+<td align="center">分钟，包含0</td>
+</tr>
+<tr>
+<td align="center">s</td>
+<td align="center">32</td>
+<td align="center">秒钟，不包含0</td>
+</tr>
+<tr>
+<td align="center">ss</td>
+<td align="center">32</td>
+<td align="center">秒钟，包含0</td>
+</tr>
+<tr>
+<td align="center">S</td>
+<td align="center">1</td>
+<td align="center">带分数的秒钟(0~999), 即 100 毫秒 = 0.1 秒</td>
+</tr>
+<tr>
+<td align="center">SS</td>
+<td align="center">12</td>
+<td align="center">带分数的秒钟(0~999), 即 120 毫秒 = 0.12 秒</td>
+</tr>
+<tr>
+<td align="center">SSS</td>
+<td align="center">120</td>
+<td align="center">带分数的秒钟(0~999), 即 120 毫秒 = 0.12 秒</td>
+</tr>
+<tr>
+<td align="center">Z</td>
+<td align="center">+08:00</td>
+<td align="center">从 UTC 偏移为 +-HH:mm、+-HHmm 或 Z</td>
+</tr>
+<tr>
+<td align="center">ZZ</td>
+<td align="center">+0800</td>
+<td align="center">从 UTC 偏移为 +-HH:mm、+-HHmm 或 Z</td>
+</tr>
+</tbody></table>
+<h3 id="格式化案例"><a href="#格式化案例" class="headerlink" title="格式化案例"></a>格式化案例</h3><ol>
+<li><p>当前时间格式化为年月日，YYYY-MM-DD， 如 2020-06-04</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">moment().format(<span class="string">'YYYY-MM-DD'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>年月日时分秒，YYYY-MM-DD HH:mm:ss</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">moment().format(<span class="string">'YYYY-MM-DD HH:mm:ss'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>年月日星期，YYYY-MM-DD dddd</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">moment.locale(<span class="string">'zh-cn'</span>)</span><br><span class="line">moment().format(<span class="string">'YYYY-MM-DD dddd'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回一个包含年月日时分秒毫秒的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timeObj = moment().toObject()</span><br><span class="line"><span class="built_in">console</span>.log(timeObj)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h2><h3 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a>获取当前时间</h3><p>这里默认调取的是本地时间，不传参数即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// moment() = moment(new Date())</span></span><br><span class="line">moment()</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取指定的某天"><a href="#获取指定的某天" class="headerlink" title="获取指定的某天"></a>获取指定的某天</h3><ol>
+<li><p>本周的第一天</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> weekFirstDay = moment().startOf(<span class="string">'week'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'本周的第一天'</span>, weekFirstDay.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本周的最后一天</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> weekLastDay = moment().endOf(<span class="string">'week'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'本周的最后一天'</span>, weekLastDay.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本月的第一天</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> monthFirstDay = moment().startOf(<span class="string">'week'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'本周的第一天'</span>, weekFirstDay.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本月的最后一天</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> monthLastDay = moment().endOf(<span class="string">'month'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'本月的最后一天'</span>, monthLastDay.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上个月的第一天</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> prevMonthFirstDay = moment().subtract(<span class="number">1</span>, <span class="string">'months'</span>).startOf(<span class="string">'month'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'上个月的第一天'</span>, prevMonthFirstDay.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下个月的最后一天</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nextMonthLastDay = moment().add(<span class="number">1</span>, <span class="string">'months'</span>).endOf(<span class="string">'month'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'下个月的最后一天'</span>, nextMonthLastDay.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>某年某月的第一天</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> someDayFirstDay = moment(<span class="string">'2016-09-12'</span>).startOf(<span class="string">'month'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'某年某月月的第一天'</span>, someDayFirstDay.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>某年某月的最后一天</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> someDayLastDay = moment(<span class="string">'2016-09-12'</span>).endOf(<span class="string">'month'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'某年某月月的最后一天'</span>, someDayLastDay.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>7天前的日期</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> DaysBefore7 = moment().subtract(<span class="number">7</span>, <span class="string">'days'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'7天前'</span>, DaysBefore7.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>30天后的日期</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> DaysAfter30 = moment().add(<span class="number">30</span>, <span class="string">'days'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'30天后'</span>, DaysAfter30.format(<span class="string">'YYYY-MM-DD'</span>))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="获取时间间距"><a href="#获取时间间距" class="headerlink" title="获取时间间距"></a>获取时间间距</h3><ol>
+<li><p>某天距离当前相隔时间</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="string">'2020-06-04 16:05:32'</span></span><br><span class="line"><span class="comment">// 当前时间为 2020-06-05 09:42</span></span><br><span class="line"><span class="built_in">console</span>.log(moment(date).fromNow()) <span class="comment">// 18 小时前</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="string">'2019-06-06 06:05:32'</span></span><br><span class="line"><span class="comment">// 当前时间为 2020-06-05 09:42</span></span><br><span class="line"><span class="built_in">console</span>.log(moment(date).fromNow()) <span class="comment">// 1 年前</span></span><br><span class="line"><span class="built_in">console</span>.log(moment(date).fromNow(<span class="literal">true</span>)) <span class="comment">// 1 年</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>日期A与日期B相隔天数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateA = <span class="string">'2020-06-04 16:05:32'</span></span><br><span class="line"><span class="keyword">var</span> dateB = <span class="string">'2019-06-06 06:05:32'</span></span><br><span class="line"><span class="keyword">var</span> a = moment(dateA)</span><br><span class="line"><span class="keyword">var</span> b = moment(dateB)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'时间A距离时间B的间隔'</span>, a.from(b)) <span class="comment">// 1 年后</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'时间A距离时间B的间隔'</span>, a.from(b, <span class="literal">true</span>)) <span class="comment">// 1 年</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><ol>
+<li><p>时间A是否在时间B之前</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1 = <span class="string">'2019-06-05'</span></span><br><span class="line"><span class="keyword">var</span> b1 = <span class="string">'2020/02/09'</span></span><br><span class="line"><span class="built_in">console</span>.log(moment(a1).isBefore(b1))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>时间A是和时间B是同一年</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a2 = <span class="string">'2020-06-05'</span></span><br><span class="line"><span class="keyword">var</span> b2 = <span class="string">'2020/02/09'</span></span><br><span class="line"><span class="built_in">console</span>.log(moment(a1).isSame(b1, <span class="string">'year'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询变量是否为moment对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a3 = moment(<span class="string">'2015-05-15'</span>)</span><br><span class="line"><span class="keyword">var</span> b3 = <span class="string">'2015-05-15'</span></span><br><span class="line"><span class="built_in">console</span>.log(moment.isMoment(a3), moment.isMoment(b3))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询变量是否为原生 js Date 对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a4 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2015-05-15'</span>)</span><br><span class="line"><span class="keyword">var</span> b4 = <span class="string">'2015-05-15'</span></span><br><span class="line"><span class="built_in">console</span>.log(moment.isDate(a4), moment.isDate(b4))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+</blockquote>
+<ol>
+<li><p>Github: <a href="https://github.com/moment/moment" target="_blank" rel="noopener">Moment</a></p>
+</li>
+<li><p><a href="http://momentjs.cn/" target="_blank" rel="noopener">Moment中文网</a></p>
+</li>
+</ol>
+
+      </div>
+      
+      <!-- updated -->
+      
+      
+<div class="post-update">
+  <span>更新于：</span>
+  <time>2020-06-04</time>
+</div>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      <div id="rewardMask" class="mask-wrap"></div>
+
+<!-- #reward -->
+<div id="reward" class="modal-wrap">
+  <div class="reward-title flex flex-y flex-x">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-smile"></use>
+    </svg>
+    <span>请我喝杯咖啡吧~</span>
+  </div>
+  <div class="reward-box flex flex-y">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+  <div class="modal-close">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div> 
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <div class="post-copyright">
+        <i class="ri-copyright-line"></i>
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用
+        <a
+          href="https://www.apache.org/licenses/LICENSE-2.0.html"
+          rel="external nofollow"
+          target="_blank"
+          >Apache License 2.0</a
+        >
+        许可协议。转载请注明出处！
+      </div>
+    </div>
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript-Lib/" rel="tag">Javascript Lib</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Moment-js/" rel="tag">Moment.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/" rel="tag">时间处理</a></li></ul>
+</div>
+
+  
+<div class="share-wrap flex flex-y" id="shareBar">
+  <span class="share-btn flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-fenxiang"></use>
+    </svg>
+    分享到
+  </span>
+  <div class="share-list flex flex-y">
+    <a class="weibo share-sns-btn" href="javascript:;" data-type="weibo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weibo"></use>
+      </svg>
+    </a>
+    <a class="douban share-sns-btn" href="javascript:;" data-type="douban">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-douban"></use>
+      </svg>
+    </a>
+    <a class="qq share-sns-btn" href="javascript:;" data-type="qq">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qq"></use>
+      </svg>
+    </a>
+    <a
+      class="weixin share-sns-btn wxFab"
+      href="javascript:;"
+      data-type="weixin"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weixin"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="shareMask" class="mask-wrap"></div>
+<div class="modal-wrap wx-share-modal">
+  <div class="share-weixin-title">扫一扫，分享到微信</div>
+  <div class="wx-qrcode">
+    <img
+      src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://huanggaofang.com/lib/moment.js/"
+      alt="微信分享二维码"
+    />
+  </div>
+  <div class="modal-close" id="wxClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div>
+ 
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <div class="article-nav-link article-nav-prev">
+        <strong class="article-nav-caption">上一篇</strong>
+        <a href="/lib/layer/" class="article-nav-title">
+          
+            LayUI -- Layer &amp; LayDate 应用总结
+          
+        </a>
+      </div>
+    
+    
+      <div class="article-nav-link article-nav-next">
+        <strong class="article-nav-caption">下一篇</strong>
+        <a href="/js/base/" class="article-nav-title">Javascript 基础</a>
+      </div>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'XRQh2zhUCEHXwiKhGSKRsgG1-gzGzoHsz',
+        app_key: '7lenjWI8UhDxmR67gJm8s8EQ',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+ 
+</article>
+
+  <div class="toc-bot-btn" id="tocBotBtn">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</div>
+<div class="toc-bot-wrap" id="tocBotWrap">
+  <div class="toc-bot-close" id="tocBotClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div id="tocBot"></div>
+</div>
+  
+
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '#tocBot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h2, h3, h4',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      scrollContainer: 'document',
+      onClick: (e) => {
+        $('#tocBot .toc-link').removeClass('is-active-link');
+        $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+        return false;
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

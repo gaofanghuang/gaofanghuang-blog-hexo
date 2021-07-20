@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+      正则表达式 |  Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="post-wrap">
+  <div class="page-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <article
+  id="post-code/regular"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title flex flex-y" style="border-left: 0;" itemprop="name">
+  <span>正则表达式</span>
+  
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E7%9B%B8%E5%85%B3/">编程相关</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">9分钟</span>
+        </span>
+    </span>
+</div>
+  <a href="/code/regular/" class="article-date">
+  <time datetime="2020-05-13T06:15:00.000Z" itemprop="datePublished">2020-05-13</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <p>正则表达式的基本组成元素可以分为：<strong>字符</strong>和<strong>元字符</strong>。</p>
+<a id="more"></a>
+
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/a/</span></span><br><span class="line"><span class="built_in">console</span>.log(rule.test(<span class="string">'apple'</span>))</span><br></pre></td></tr></table></figure>
+
+<p>正则表达式格式：<code>/rule/type</code></p>
+<p><strong>rule</strong>: 正则表达式规则，写在两个<code>/</code>之间。</p>
+<p><strong>type</strong>: 修饰符，接受值为：<code>m</code>、<code>i</code>、<code>g</code>，type 可忽略</p>
+<ul>
+<li><p>m: 多行模式</p>
+</li>
+<li><p>i: 忽略大小写</p>
+</li>
+<li><p>g: 全局模式</p>
+</li>
+</ul>
+<h3 id="在-js-中使用正则表达式"><a href="#在-js-中使用正则表达式" class="headerlink" title="在 js 中使用正则表达式"></a>在 js 中使用正则表达式</h3><p><strong>exec()</strong>: 返回值为一个数组，第一项是符合正则的内容，后续每项都对应正则表达式内捕获括号里匹配成功的文本。</p>
+<p>如果匹配失败，<code>exec()</code> 方法返回 null，并将 lastIndex 重置为 0 。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/quick\s(brown).+?(jumps)/gi</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'The Quick Brown Fox Jumps Over The Lazy Dog'</span></span><br><span class="line"><span class="built_in">console</span>.log(rule.exec(str))</span><br></pre></td></tr></table></figure>
+
+<p><strong>test()</strong>: 检查是否符合正则表达式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/a/</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'apple'</span></span><br><span class="line"><span class="built_in">console</span>.log(rule.test(str))</span><br></pre></td></tr></table></figure>
+
+<p><strong>match()</strong>: 返回匹配正则的内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/The/g</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'The Quick Brown Fox Jumps Over The Lazy Dog'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(rule))</span><br></pre></td></tr></table></figure>
+
+<p><strong>matchAll()</strong>: 返回匹配正则的所有内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/The/g</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'The Quick Brown Fox Jumps Over The Lazy Dog'</span></span><br><span class="line"><span class="keyword">const</span> result = [...str.matchAll(rule)]</span><br><span class="line"><span class="built_in">console</span>.log(result[<span class="number">0</span>], result[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<p><strong>replace()</strong>: 替换指定内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/a/g</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'apple'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(rule, <span class="string">'e'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>search()</strong>: 找到匹配正则的内容并返回下标</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'hey JudE'</span></span><br><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/[A-Z]/g</span></span><br><span class="line"><span class="built_in">console</span>.log(str.search(rule))</span><br></pre></td></tr></table></figure>
+
+<p><strong>split</strong>: 根据正则分割字符串，并返回数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand '</span></span><br><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/\s*(?:;|$)\s*/</span></span><br><span class="line"><span class="built_in">console</span>.log(str.split(rule))</span><br></pre></td></tr></table></figure>
+
+<h3 id="语义字符"><a href="#语义字符" class="headerlink" title="语义字符"></a>语义字符</h3><p><code>\</code>: 转义符</p>
+<p><code>|</code>: 管道符</p>
+<h3 id="单个字符"><a href="#单个字符" class="headerlink" title="单个字符"></a>单个字符</h3><table>
+<thead>
+<tr>
+<th align="center">特殊字符</th>
+<th align="center">正则表达式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">换行符</td>
+<td align="center">\n</td>
+</tr>
+<tr>
+<td align="center">换页符</td>
+<td align="center">\f</td>
+</tr>
+<tr>
+<td align="center">回车符</td>
+<td align="center">\r</td>
+</tr>
+<tr>
+<td align="center">空白符</td>
+<td align="center">\s</td>
+</tr>
+<tr>
+<td align="center">制表符</td>
+<td align="center">\t</td>
+</tr>
+<tr>
+<td align="center">垂直制表符</td>
+<td align="center">\v</td>
+</tr>
+<tr>
+<td align="center">回退符</td>
+<td align="center">[\b]</td>
+</tr>
+</tbody></table>
+<h3 id="多个字符"><a href="#多个字符" class="headerlink" title="多个字符"></a>多个字符</h3><table>
+<thead>
+<tr>
+<th align="center">特殊字符</th>
+<th align="center">正则表达式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">除了换行符之外的任何字符</td>
+<td align="center">.</td>
+</tr>
+<tr>
+<td align="center">单个数字，[0-9]</td>
+<td align="center">\d</td>
+</tr>
+<tr>
+<td align="center">除了[0-9]</td>
+<td align="center">\D</td>
+</tr>
+<tr>
+<td align="center">包括下划线在内的单个字符，[A-Za-z0-9_]</td>
+<td align="center">\w</td>
+</tr>
+<tr>
+<td align="center">非单字字符</td>
+<td align="center">\W</td>
+</tr>
+<tr>
+<td align="center">匹配空白字符，包括空格、制表符、换页符和换行符</td>
+<td align="center">\s</td>
+</tr>
+<tr>
+<td align="center">匹配非空白字符</td>
+<td align="center">\S</td>
+</tr>
+<tr>
+<td align="center">单词边界</td>
+<td align="center">\b</td>
+</tr>
+<tr>
+<td align="center">非单词边界</td>
+<td align="center">\B</td>
+</tr>
+</tbody></table>
+<h3 id="字符组"><a href="#字符组" class="headerlink" title="字符组"></a>字符组</h3><p><code>[abc]</code> 表示匹配 a、b、c 其中的一个</p>
+<h4 id="范围表示法"><a href="#范围表示法" class="headerlink" title="范围表示法"></a>范围表示法</h4><p>用连字符<code>-</code>来省略和简写</p>
+<p>例：</p>
+<p><code>[1-9]</code>: 表示 1 到 9 的数字，即 <code>[123456789]</code></p>
+<p><code>[b-g]</code>: 表示 b 到 g 的字母，即 <code>[bcdefg]</code></p>
+<p><code>[a-d3-7]</code>: 表示 a 到 d 的字母，以及 3 到 7 的数字，即 <code>[abcd34567]</code></p>
+<p>注意，当我们要匹配 a、-、z 这三者中任意一个字符时，不能写成 <code>[a-z]</code>，可写成以下方式：</p>
+<p><code>[-az]</code> 或 <code>[az-]</code> 或 <code>[a\-z]</code></p>
+<h4 id="排除字符组"><a href="#排除字符组" class="headerlink" title="排除字符组"></a>排除字符组</h4><p><code>[^abc]</code>: 表示除 a、b、c 之外的任意一个字符。</p>
+<h4 id="任意字符"><a href="#任意字符" class="headerlink" title="任意字符"></a>任意字符</h4><p><code>[\d\D]</code>、<code>[\w\W]</code>、<code>[\s\S]</code> 和 <code>[^]</code></p>
+<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><p><code>?</code>：匹配 1 个字符或 0 个字符，即 <code>1 || 0</code></p>
+<p><code>*</code>：匹配 0 个字符或 无数 个字符，即 <code>&gt;= 0</code></p>
+<p><code>+</code>：匹配 1 个以上的字符，即 <code>&gt;= 1</code></p>
+<p><code>{x}</code>：x 次</p>
+<p><code>{min, max}</code>：介于 min 次到 max 次之间</p>
+<p><code>{min, }</code>：至少 min 次</p>
+<p><code>{0, max}</code>：至多 max 次</p>
+<h3 id="位置边界"><a href="#位置边界" class="headerlink" title="位置边界"></a>位置边界</h3><p>在ES5中，共有6个锚字符：<code>^ $ \b \B (?=p) (?!p)</code></p>
+<ol>
+<li><p><code>^</code>: 匹配开头，在多行匹配中匹配行开头。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/^|$/g</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(rule, <span class="string">'#'</span>)); <span class="comment">// #hello#</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>$</code>: 匹配结尾，在多行匹配中匹配行结尾。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/^|$/gm</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"I\nlove\njavascript"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(rule, <span class="string">'#'</span>));</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  #I#</span></span><br><span class="line"><span class="comment">  #love#</span></span><br><span class="line"><span class="comment">  #javascript#</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>\b</code>: 单词边界</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/\bcat\b/</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">`sdcatd cat catsfad`</span></span><br><span class="line"><span class="built_in">console</span>.log(str.search(rule)) <span class="comment">// 7</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>\B</code>: 非单词边界</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/\Bcat\B/</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">`sdcatd cat catsfad`</span></span><br><span class="line"><span class="built_in">console</span>.log(str.search(rule)) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>(?=p)</code>: 其中 p 是一个子模式，表示 p 前面的位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/(?=f)/g</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">`sdcatd cat catsfad`</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(rule, <span class="string">'#'</span>)); <span class="comment">// sdcatd cat cats#fad</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>(?!p)</code>: 其中 p 是一个子模式，表示 p 反面的位置。即除了 p 前面的所有位置。 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/(?!f)/g</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">`sdcatd cat catsfad`</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(rule, <span class="string">'#'</span>)); <span class="comment">// #s#d#c#a#t#d# #c#a#t# #c#a#t#sf#a#d#</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h2><h3 id="横向模糊匹配"><a href="#横向模糊匹配" class="headerlink" title="横向模糊匹配"></a>横向模糊匹配</h3><p>横向模糊指的是，一个正则可匹配的字符串的长度不是固定的，可以是多种情况的。</p>
+<p>其实现的方式是使用量词。譬如<code>{m,n}</code>，表示连续出现最少 m 次，最多 n 次。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/ab&#123;2,5&#125;c/g</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'abc abbc abbbc abbbbc abbbbbc abbbbbbc'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(rule)) <span class="comment">// ["abbc", "abbbc", "abbbbc", "abbbbbc"]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="纵向模糊匹配"><a href="#纵向模糊匹配" class="headerlink" title="纵向模糊匹配"></a>纵向模糊匹配</h3><p>纵向模糊指的是，一个正则匹配的字符串，具体到某一位字符时，它可以不是某个确定的字符，可以有多种可能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/a[123]b/g</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'a0b a1b a2b a3b a4b'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(rule)) <span class="comment">// ["a1b", "a2b", "a3b"]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h3><p>即匹配所有的符合项。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/\d&#123;2,5&#125;/g</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"123 1234 12345 123456 1234567 12345678"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(rule)); <span class="comment">// ["123", "1234", "12345", "12345", "12345", "67", "12345", "678"]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="惰性匹配"><a href="#惰性匹配" class="headerlink" title="惰性匹配"></a>惰性匹配</h3><p>当匹配项达到最小次数时，不再往下匹配。</p>
+<p>在量词后面加个<code>?</code>就能实现惰性匹配。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;m,n&#125;?</span><br><span class="line">&#123;m,&#125;?</span><br><span class="line">??</span><br><span class="line">+?</span><br><span class="line">*?</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/\d&#123;2,5&#125;?/g</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"123 1234 12345 123456 1234567 12345678"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(rule)); <span class="comment">// ["12", "12", "34", "12", "34", "12", "34", "56", "12", "34", "56", "12", "34", "56", "78"]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="多选分支"><a href="#多选分支" class="headerlink" title="多选分支"></a>多选分支</h3><p>用 <code>|</code>（管道符）分隔，表示其中任何之一。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/good|nice/g</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"good idea, nice try."</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(rule)); <span class="comment">// ["good", "nice"]</span></span><br></pre></td></tr></table></figure>
+
+<p>用 <code>|</code> 和 <code>[]</code> 的区别，<code>|</code> 可以表示多个单词的其中之一，<code>[]</code> 只能表示多个字符的其中之一。</p>
+<p>注意，多选分子也是有惰性的，当满足 <code>|</code> 的匹配时，就不再往下匹配了。</p>
+<h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><p>深度优先搜索算法：其中退到之前的某一步这一过程，我们称为“回溯”。</p>
+<p>尝试匹配失败时，接下来的一步通常就是回溯。</p>
+<h3 id="没有回溯的匹配"><a href="#没有回溯的匹配" class="headerlink" title="没有回溯的匹配"></a>没有回溯的匹配</h3><h3 id="有回溯的匹配"><a href="#有回溯的匹配" class="headerlink" title="有回溯的匹配"></a>有回溯的匹配</h3><h3 id="常见的回溯形式"><a href="#常见的回溯形式" class="headerlink" title="常见的回溯形式"></a>常见的回溯形式</h3><h2 id="常用正则"><a href="#常用正则" class="headerlink" title="常用正则"></a>常用正则</h2><h3 id="1-匹配16进制颜色值"><a href="#1-匹配16进制颜色值" class="headerlink" title="1. 匹配16进制颜色值"></a>1. 匹配16进制颜色值</h3><p>表示一个16进制字符，可以用字符组 <code>[0-9a-fA-F]</code>。</p>
+<p>其中字符可以出现3或6次，需要是用量词和分支结构。</p>
+<p>使用分支结构时，需要注意顺序。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/#([0-9a-fA-F]&#123;6&#125;|[0-9a-fA-F]&#123;3&#125;)/g</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"#ffbbad #Fc01DF #FFF #ffE #99"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(rule)); <span class="comment">// ["#ffbbad", "#Fc01DF", "#FFF", "#ffE"]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-匹配24小时制时间"><a href="#2-匹配24小时制时间" class="headerlink" title="2. 匹配24小时制时间"></a>2. 匹配24小时制时间</h3><p>如：“23:05, 09:30”</p>
+<p>共4位数字，第一位数字可以为<code>[0-2]</code>。</p>
+<p>当第1位为2时，第2位可以为<code>[0-3]</code>，其他情况时，第2位为<code>[0-9]</code>。</p>
+<p>第3位数字为<code>[0-5]</code>，第4位为<code>[0-9]</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/^(0?[01][0-9]|[2][0-3]):(0?[0-9]|[0-5][0-9])$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(rule.test(<span class="string">"22:50"</span>), rule.test(<span class="string">"25:70"</span>), rule.test(<span class="string">"5:7"</span>)); <span class="comment">// true, false, true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-年月日"><a href="#3-年月日" class="headerlink" title="3. 年月日"></a>3. 年月日</h3><h4 id="3-1-检测日期格式"><a href="#3-1-检测日期格式" class="headerlink" title="3.1 检测日期格式"></a>3.1 检测日期格式</h4><p>如：“2020-05-14”</p>
+<p>年，四位数字即可，可用[0-9]{4}。</p>
+<p>月，共12个月，分两种情况01、02、……、09和10、11、12，可用(0[1-9]|1[0-2])。</p>
+<p>日，最大31天，可用(0[1-9]|[12][0-9]|3[01])。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/^[0-9]&#123;4&#125;-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(rule.test(<span class="string">"2020-05-14"</span>), rule.test(<span class="string">"2020-13-44"</span>)); <span class="comment">// true, false</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-提取日期数值"><a href="#3-2-提取日期数值" class="headerlink" title="3.2 提取日期数值"></a>3.2 提取日期数值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"2020-05-14"</span></span><br><span class="line"><span class="keyword">const</span> result = &#123;</span><br><span class="line">  yyyy: str.match(rule)[<span class="number">1</span>],</span><br><span class="line">  mm: str.match(rule)[<span class="number">2</span>],</span><br><span class="line">  dd: str.match(rule)[<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// &#123;yyyy: "2020", mm: "05", dd: "14"&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-转换格式"><a href="#3-3-转换格式" class="headerlink" title="3.3 转换格式"></a>3.3 转换格式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"2020-05-14"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(rule, <span class="string">"$1年$2月$3日"</span>)); <span class="comment">// 2020年05月14日</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="4-数字的千分位分隔符表示法"><a href="#4-数字的千分位分隔符表示法" class="headerlink" title="4. 数字的千分位分隔符表示法"></a>4. 数字的千分位分隔符表示法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/(?!\b)(?=(\d&#123;3&#125;)+\b)/g</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"489798266114"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.replace(rule, <span class="string">','</span>)); <span class="comment">// 489,798,266,114</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-验证密码"><a href="#5-验证密码" class="headerlink" title="5. 验证密码"></a>5. 验证密码</h3><p>要求：密码长度6-12位，由数字、小写字母和大写字母组成，必须至少包括2种字符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在实际应用中，需要避免正则过于复杂，可以拆分成几个小的正则，以便阅读</span></span><br><span class="line"><span class="comment">// const regex1 = /^[0-9A-Za-z]&#123;6,12&#125;$/;</span></span><br><span class="line"><span class="comment">// const regex2 = /^[0-9]&#123;6,12&#125;$/;</span></span><br><span class="line"><span class="comment">// const regex3 = /^[A-Z]&#123;6,12&#125;$/;</span></span><br><span class="line"><span class="comment">// const regex4 = /^[a-z]&#123;6,12&#125;$/;</span></span><br><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/(?=.*[0-9])(?=.*[a-z])^[0-9A-Za-z]&#123;6,12&#125;$/</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"66114aaw"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(rule.test(str)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-网址"><a href="#6-网址" class="headerlink" title="6. 网址"></a>6. 网址</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/^([hH][tT]&#123;2&#125;[pP]:\/\/|[hH][tT]&#123;2&#125;[pP][sS]:\/\/)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~\/])+$/</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"http://huanggaofang.com"</span></span><br><span class="line"><span class="built_in">console</span>.log(rule.test(str)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+      </div>
+      
+      <!-- updated -->
+      
+      
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      <div id="rewardMask" class="mask-wrap"></div>
+
+<!-- #reward -->
+<div id="reward" class="modal-wrap">
+  <div class="reward-title flex flex-y flex-x">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-smile"></use>
+    </svg>
+    <span>请我喝杯咖啡吧~</span>
+  </div>
+  <div class="reward-box flex flex-y">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+  <div class="modal-close">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div> 
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <div class="post-copyright">
+        <i class="ri-copyright-line"></i>
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用
+        <a
+          href="https://www.apache.org/licenses/LICENSE-2.0.html"
+          rel="external nofollow"
+          target="_blank"
+          >Apache License 2.0</a
+        >
+        许可协议。转载请注明出处！
+      </div>
+    </div>
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%85%E5%A1%AB%E5%9D%91/" rel="tag">待填坑</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li></ul>
+</div>
+
+  
+<div class="share-wrap flex flex-y" id="shareBar">
+  <span class="share-btn flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-fenxiang"></use>
+    </svg>
+    分享到
+  </span>
+  <div class="share-list flex flex-y">
+    <a class="weibo share-sns-btn" href="javascript:;" data-type="weibo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weibo"></use>
+      </svg>
+    </a>
+    <a class="douban share-sns-btn" href="javascript:;" data-type="douban">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-douban"></use>
+      </svg>
+    </a>
+    <a class="qq share-sns-btn" href="javascript:;" data-type="qq">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qq"></use>
+      </svg>
+    </a>
+    <a
+      class="weixin share-sns-btn wxFab"
+      href="javascript:;"
+      data-type="weixin"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weixin"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="shareMask" class="mask-wrap"></div>
+<div class="modal-wrap wx-share-modal">
+  <div class="share-weixin-title">扫一扫，分享到微信</div>
+  <div class="wx-qrcode">
+    <img
+      src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://huanggaofang.com/code/regular/"
+      alt="微信分享二维码"
+    />
+  </div>
+  <div class="modal-close" id="wxClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div>
+ 
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <div class="article-nav-link article-nav-prev">
+        <strong class="article-nav-caption">上一篇</strong>
+        <a href="/app/ios/" class="article-nav-title">
+          
+            IOS 基础
+          
+        </a>
+      </div>
+    
+    
+      <div class="article-nav-link article-nav-next">
+        <strong class="article-nav-caption">下一篇</strong>
+        <a href="/app/android/" class="article-nav-title">Android 基础</a>
+      </div>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'XRQh2zhUCEHXwiKhGSKRsgG1-gzGzoHsz',
+        app_key: '7lenjWI8UhDxmR67gJm8s8EQ',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+ 
+</article>
+
+  <div class="toc-bot-btn" id="tocBotBtn">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</div>
+<div class="toc-bot-wrap" id="tocBotWrap">
+  <div class="toc-bot-close" id="tocBotClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div id="tocBot"></div>
+</div>
+  
+
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '#tocBot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h2, h3, h4',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      scrollContainer: 'document',
+      onClick: (e) => {
+        $('#tocBot .toc-link').removeClass('is-active-link');
+        $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+        return false;
+      }
+    });
+  </script>
+  
+</body>
+
+</html>
