@@ -50,12 +50,12 @@ $(function () {
   $(document).scroll(function () {
     let scrollTop = $(document).scrollTop()
     if (scrollTop > upperLimit) {
-      if (os.isPc) {
+      if (os.isPc && !os.isTablet) {
         $('#header').fadeOut()
       }
       $(scrollElem).fadeIn()
     } else {
-      if (os.isPc) {
+      if (os.isPc && !os.isTablet) {
         $('#header').fadeIn()
       }
       $(scrollElem).fadeOut()
@@ -138,11 +138,13 @@ let showMenu = false
 function toggleMenu() {
   showMenu = !showMenu
   if (showMenu) {
+    $('#app').addClass('no-scroll')
     $('#header').addClass('mobile-header')
     $('.layout').addClass('transform-layout')
     $('.header-menu .icon-close').removeClass('hidden').addClass('show')
     $('.header-menu .icon-menu').removeClass('show').addClass('hidden')
   } else {
+    $('#app').removeClass('no-scroll')
     $('#header').removeClass('mobile-header')
     $('.layout').removeClass('transform-layout')
     $('.header-menu .icon-menu').removeClass('hidden').addClass('show')

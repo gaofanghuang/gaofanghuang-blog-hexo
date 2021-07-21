@@ -1,28 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS 样式</title>
+    <url>//frontend/base/css-style/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>前端开发笔记</category>
+      </categories>
+      <tags>
+        <tag>待填坑</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器</title>
+    <url>//frontend/base/browser/</url>
+    <content><![CDATA[<p>11</p>
+]]></content>
+      <categories>
+        <category>前端开发笔记</category>
+      </categories>
+      <tags>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Blender 入门</title>
+    <url>//design/Blender/</url>
+    <content><![CDATA[<p>to be continue…</p>
+]]></content>
+      <categories>
+        <category>视觉设计笔记</category>
+      </categories>
+      <tags>
+        <tag>Blender</tag>
+        <tag>建模</tag>
+        <tag>3D</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ionic 从 0 到打包</title>
-    <url>//angular/ionic/</url>
+    <url>//frontend/ui/ionic/</url>
     <content><![CDATA[<h3 id="常用官方组件"><a href="#常用官方组件" class="headerlink" title="常用官方组件"></a>常用官方组件</h3><a id="more"></a>
 
 <h3 id="自定义-TabBar"><a href="#自定义-TabBar" class="headerlink" title="自定义 TabBar"></a>自定义 TabBar</h3><h3 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h3><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><h3 id="数据请求"><a href="#数据请求" class="headerlink" title="数据请求"></a>数据请求</h3><h3 id="平台联动"><a href="#平台联动" class="headerlink" title="平台联动"></a>平台联动</h3><h4 id="微信支付"><a href="#微信支付" class="headerlink" title="微信支付"></a>微信支付</h4><h4 id="支付宝"><a href="#支付宝" class="headerlink" title="支付宝"></a>支付宝</h4><h4 id="微信登录与分享"><a href="#微信登录与分享" class="headerlink" title="微信登录与分享"></a>微信登录与分享</h4><h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><h4 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h4><h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4>]]></content>
       <categories>
-        <category>Angular开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
+        <tag>待填坑</tag>
         <tag>Javascript</tag>
         <tag>Angular</tag>
-        <tag>待填坑</tag>
         <tag>Ionic</tag>
       </tags>
   </entry>
   <entry>
     <title>React 基础</title>
-    <url>//react/base/</url>
+    <url>//frontend/frame/react/</url>
     <content><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h2 id="HOOK"><a href="#HOOK" class="headerlink" title="HOOK"></a>HOOK</h2><h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><h2 id="EXPO"><a href="#EXPO" class="headerlink" title="EXPO"></a>EXPO</h2><h3 id="把-iconfont-导入到-react-native-expo-中"><a href="#把-iconfont-导入到-react-native-expo-中" class="headerlink" title="把 iconfont 导入到 react-native expo 中"></a>把 iconfont 导入到 react-native expo 中</h3><p>查看 <a href="https://www.cnblogs.com/unclefang/p/13857824.html" target="_blank" rel="noopener">在 react native expo 中使用 iconfont 自定义图标</a></p>
 ]]></content>
       <categories>
-        <category>React开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>React</tag>
@@ -30,7 +68,7 @@
   </entry>
   <entry>
     <title>Web安全解决方案</title>
-    <url>//fe/web-safety/</url>
+    <url>//frontend/flow/web-safety/</url>
     <content><![CDATA[<p><strong>常见的攻击类型</strong>：XSS 攻击、CSRF 攻击、SQL 注入、点击劫持、URL 跳转漏洞、OS 命令注入攻击。</p>
 <p>浏览器安全其实是受<em>同源策略</em>（同域名、同端口、同协议名）保护的，但是<code>&lt;script&gt;</code>、<code>&lt;img&gt;</code>、<code>&lt;iframe&gt;</code>、<code>&lt;link&gt;</code>等标签都可以跨域加载资源，而不受同源策略的限制。</p>
 <ol>
@@ -155,7 +193,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Web安全</tag>
@@ -166,7 +204,7 @@
   </entry>
   <entry>
     <title>JavaScript生成随机数</title>
-    <url>//js/random/</url>
+    <url>//frontend/js/random/</url>
     <content><![CDATA[<h2 id="主要方法：Math"><a href="#主要方法：Math" class="headerlink" title="主要方法：Math"></a>主要方法：Math</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 向上取整</span></span><br><span class="line"><span class="built_in">Math</span>.ceil();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向下取整</span></span><br><span class="line"><span class="built_in">Math</span>.floor();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 四舍五入</span></span><br><span class="line"><span class="built_in">Math</span>.round();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0.0 ~ 1.0 之间的一个伪随机数， 即：&gt;= 0 &amp;&amp; &lt; 1， 如：0.31415926</span></span><br><span class="line"><span class="built_in">Math</span>.random();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串转为数字，并向下取整</span></span><br><span class="line"><span class="built_in">parseInt</span>(string, radix);</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
@@ -195,7 +233,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>JS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
@@ -204,23 +242,23 @@
   </entry>
   <entry>
     <title>Lodash.js 应用总结</title>
-    <url>//lib/lodash.js/</url>
+    <url>//frontend/lib/lodash.js/</url>
     <content><![CDATA[<p>to be continue…</p>
 ]]></content>
       <categories>
-        <category>工具库笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>待填坑</tag>
-        <tag>Lodash.js</tag>
+        <tag>Javascript</tag>
         <tag>Javascript Lib</tag>
+        <tag>Lodash.js</tag>
         <tag>数据处理</tag>
       </tags>
   </entry>
   <entry>
     <title>Day.js 应用总结</title>
-    <url>//lib/day.js/</url>
+    <url>//frontend/lib/day.js/</url>
     <content><![CDATA[<h2 id="Day-js-和-Moment-js-的区别与选择"><a href="#Day-js-和-Moment-js-的区别与选择" class="headerlink" title="Day.js 和 Moment.js 的区别与选择"></a>Day.js 和 Moment.js 的区别与选择</h2><p>Day.js 和 Moment.js 一样是处理时间和日期的 JavaScript 库。接口几乎完全一致，Day.js 体积比 Moment.js 小好几倍。</p>
 <p>查看<a href="/lib/moment.js/">Moment.js 应用总结</a></p>
 <h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install dayjs --save</span><br></pre></td></tr></table></figure>
@@ -246,12 +284,12 @@
 </ol>
 ]]></content>
       <categories>
-        <category>工具库笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
-        <tag>Javascript Lib</tag>
         <tag>Day.js</tag>
+        <tag>Javascript Lib</tag>
         <tag>时间处理</tag>
       </tags>
   </entry>
@@ -286,12 +324,12 @@
   </entry>
   <entry>
     <title>Cocos Creator + Typescript 开发入门</title>
-    <url>//engine/cocos/</url>
+    <url>//code/cocos/</url>
     <content><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="属性类型的声明"><a href="#属性类型的声明" class="headerlink" title="属性类型的声明"></a>属性类型的声明</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; ccclass, property &#125; = cc._decorator</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> BlockType = cc.Enum(&#123;dog:<span class="number">1</span>, cat: <span class="number">2</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="meta">@ccclass</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> Player <span class="keyword">extends</span> cc.Component &#123;</span><br><span class="line">  <span class="comment">// 整型</span></span><br><span class="line">  <span class="meta">@property</span>(cc.Integer)</span><br><span class="line">  blockCount: <span class="built_in">number</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 浮点型</span></span><br><span class="line">  <span class="meta">@property</span>(cc.Float)</span><br><span class="line">  blockWidth: <span class="built_in">number</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 布尔型</span></span><br><span class="line">  <span class="meta">@property</span>(cc.Boolean)</span><br><span class="line">  blockIsDead: <span class="built_in">boolean</span> = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 节点</span></span><br><span class="line">  <span class="meta">@property</span>(cc.Node)</span><br><span class="line">  blockItem: cc.Node = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 节点数组</span></span><br><span class="line">  <span class="meta">@property</span>([cc.Node])</span><br><span class="line">  blockList: <span class="built_in">Array</span>&lt;cc.Node&gt; = []</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 文本</span></span><br><span class="line">  <span class="meta">@property</span>(cc.Label)</span><br><span class="line">  blockName: cc.Label = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 预制体</span></span><br><span class="line">  <span class="meta">@property</span>(cc.Prefab)</span><br><span class="line">  blockPrefab: cc.Prefab = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 坐标</span></span><br><span class="line">  <span class="meta">@property</span>(cc.Vec2)</span><br><span class="line">  blockVec: cc.Vec2 = cc.v2()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 枚举类型</span></span><br><span class="line">  <span class="meta">@property</span>(&#123;</span><br><span class="line">      <span class="keyword">type</span>: BlockType</span><br><span class="line">  &#125;)</span><br><span class="line">  blockType = BlockType.dog</span><br><span class="line"></span><br><span class="line">  start() &#123;</span><br><span class="line">    <span class="comment">// init logic</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>游戏开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -302,7 +340,7 @@
   </entry>
   <entry>
     <title>Lua 入门</title>
-    <url>//be/lua/</url>
+    <url>//code/lua/</url>
     <content><![CDATA[<h2 id="1-Lua-是什么"><a href="#1-Lua-是什么" class="headerlink" title="1. Lua 是什么"></a>1. Lua 是什么</h2><p>一种嵌入式脚本语言，为应用程序提供灵活的扩展和定制功能。通常用于制作游戏 Mod。</p>
 <a id="more"></a>
 
@@ -467,7 +505,7 @@
 <p>例：</p>
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">#### <span class="number">2.6</span><span class="number">.2</span> 循环控制语句</span><br><span class="line"></span><br><span class="line">| 控制语句 | 描述 |</span><br><span class="line">| :<span class="comment">--: | :--: | 	</span></span><br><span class="line">| <span class="keyword">break</span> 语句 | 退出当前循环或语句，并开始脚本执行紧接着的语句。 | </span><br><span class="line">| <span class="keyword">goto</span> 语句 | 将程序的控制点转移到一个标签处。 | </span><br><span class="line"></span><br><span class="line">#### <span class="number">2.6</span><span class="number">.3</span> 无限循环</span><br><span class="line"></span><br><span class="line">在循环体中如果条件永远为 `<span class="literal">true</span>` 循环语句就会永远执行下去。</span><br><span class="line"></span><br><span class="line">### <span class="number">2.7</span> 条件</span><br><span class="line"></span><br><span class="line">| 语句 | 描述 |</span><br><span class="line">| :<span class="comment">--: | :--: | </span></span><br><span class="line">| <span class="keyword">if</span> 语句 | <span class="keyword">if</span> 语句 由一个布尔表达式作为条件判断，其后紧跟其他语句组成。 |</span><br><span class="line">| <span class="keyword">if</span>...<span class="keyword">else</span> 语句 | <span class="keyword">if</span> 语句 可以与 <span class="keyword">else</span> 语句搭配使用, 在 <span class="keyword">if</span> 条件表达式为 <span class="literal">false</span> 时执行 <span class="keyword">else</span> 语句代码。 |</span><br><span class="line">| <span class="keyword">if</span> 嵌套语句 | 可以在<span class="keyword">if</span> 或 <span class="keyword">else</span> <span class="keyword">if</span>中使用一个或多个 <span class="keyword">if</span> 或 <span class="keyword">else</span> <span class="keyword">if</span> 语句 。 |</span><br><span class="line"></span><br><span class="line">例：</span><br><span class="line"></span><br><span class="line">```lua</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>后端笔记</category>
+        <category>游戏开发笔记</category>
       </categories>
       <tags>
         <tag>lau</tag>
@@ -475,7 +513,7 @@
   </entry>
   <entry>
     <title>Flex 和 grid 布局详解</title>
-    <url>//css/flex/</url>
+    <url>//frontend/base/css-flex/</url>
     <content><![CDATA[<p>Flex 布局，即弹性布局，任何一个容器都可以设置为 Flex 布局。</p>
 <p>Grid 布局，即网格布局，任何一个容器都可以设置为 Grid 布局。</p>
 <blockquote>
@@ -1771,7 +1809,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>CSS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>CSS</tag>
@@ -1871,7 +1909,7 @@
   </entry>
   <entry>
     <title>Javascript 数据类型及结构</title>
-    <url>//js/data-type/</url>
+    <url>//frontend/js/data-type/</url>
     <content><![CDATA[<h2 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h2><h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><p>基本类型（基本数值、基本数据类型）是一种<em>既非对象也无方法</em>的数据。</p>
 <p>在 JavaScript 中，共有<em>7</em>种基本类型：string，number，bigint，boolean，null，undefined，symbol (ECMAScript 2016新增)。</p>
 <a id="more"></a>
@@ -1910,29 +1948,29 @@
 <h2 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h2><h3 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h3><h3 id="十进制"><a href="#十进制" class="headerlink" title="十进制"></a>十进制</h3><h2 id="隐式-显式-名义和鸭子类型"><a href="#隐式-显式-名义和鸭子类型" class="headerlink" title="隐式, 显式, 名义和鸭子类型"></a>隐式, 显式, 名义和鸭子类型</h2><h2 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h2><h2 id="与-typeof-与-instanceof"><a href="#与-typeof-与-instanceof" class="headerlink" title="== 与 ===, typeof 与 instanceof"></a>== 与 ===, typeof 与 instanceof</h2><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>查看<a href="/js/data-handle">数据处理</a></p>
 ]]></content>
       <categories>
-        <category>JS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>待填坑</tag>
+        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
-    <title>Python 开发总结</title>
-    <url>//be/python/</url>
+    <title>Python 开发入门</title>
+    <url>//code/python/</url>
     <content><![CDATA[<p>to be continue …</p>
 ]]></content>
       <categories>
-        <category>后端笔记</category>
+        <category>游戏开发笔记</category>
       </categories>
       <tags>
-        <tag>待填坑</tag>
         <tag>Python</tag>
+        <tag>待填坑</tag>
       </tags>
   </entry>
   <entry>
     <title>LayUI -- Layer &amp; LayDate 应用总结</title>
-    <url>//lib/layer/</url>
+    <url>//frontend/lib/layer/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Layer.js 是基于 JQuery 的一款 UI 插件，是专用于 Web 的弹出层组件。</p>
 <p>官网地址：<a href="https://layer.layui.com/" target="_blank" rel="noopener">https://layer.layui.com/</a></p>
 <p>LayDate.js 是基于 JQuery 的一款 UI 插件，是专用于 Web 的日期与时间组件。</p>
@@ -2043,7 +2081,7 @@
 <!-- extra__end -->
 ]]></content>
       <categories>
-        <category>工具库笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -2054,7 +2092,7 @@
   </entry>
   <entry>
     <title>Moment.js 应用总结</title>
-    <url>//lib/moment.js/</url>
+    <url>//frontend/lib/moment.js/</url>
     <content><![CDATA[<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install moment</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> moment = <span class="built_in">require</span>(<span class="string">'moment'</span>)</span><br><span class="line">moment().format()</span><br></pre></td></tr></table></figure>
@@ -2434,7 +2472,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>工具库笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
@@ -2445,7 +2483,7 @@
   </entry>
   <entry>
     <title>Javascript 基础</title>
-    <url>//js/base/</url>
+    <url>//frontend/js/javascript/</url>
     <content><![CDATA[<h2 id="运算处理"><a href="#运算处理" class="headerlink" title="运算处理"></a>运算处理</h2><h3 id="数学计算"><a href="#数学计算" class="headerlink" title="数学计算"></a>数学计算</h3><h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h3 id="时间处理"><a href="#时间处理" class="headerlink" title="时间处理"></a>时间处理</h3><h2 id="操作Dom"><a href="#操作Dom" class="headerlink" title="操作Dom"></a>操作Dom</h2><h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><a id="more"></a>
 
 <h2 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h2><h3 id="使用-void-0-代替-undefined"><a href="#使用-void-0-代替-undefined" class="headerlink" title="使用 void 0 代替 undefined"></a>使用 <code>void 0</code> 代替 <code>undefined</code></h3><p>这样做的优点：</p>
@@ -2481,16 +2519,16 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">31</span> &amp; <span class="number">2</span>) <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'31的二进制为'</span>, (<span class="number">31</span>).toString(<span class="number">2</span>)) <span class="comment">// 11111</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'2的二进制为'</span>, (<span class="number">2</span>).toString(<span class="number">2</span>)) <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>JS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>待填坑</tag>
+        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
     <title>移动 Web 开发问题和优化小结</title>
-    <url>//fe/h5-wap/</url>
+    <url>//frontend/flow/h5-wap/</url>
     <content><![CDATA[<h2 id="Meta-标签"><a href="#Meta-标签" class="headerlink" title="Meta 标签"></a>Meta 标签</h2><a id="more"></a>
 
 <h3 id="禁止缩放页面"><a href="#禁止缩放页面" class="headerlink" title="禁止缩放页面"></a>禁止缩放页面</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag">  <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">name</span>=<span class="string">"viewport"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
@@ -2552,17 +2590,17 @@
 <h3 id="旋转屏幕时，字体大小调整的问题"><a href="#旋转屏幕时，字体大小调整的问题" class="headerlink" title="旋转屏幕时，字体大小调整的问题"></a>旋转屏幕时，字体大小调整的问题</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,</span><br><span class="line"><span class="selector-tag">body</span>,</span><br><span class="line"><span class="selector-tag">form</span>,</span><br><span class="line"><span class="selector-tag">fieldset</span>,</span><br><span class="line"><span class="selector-tag">p</span>,</span><br><span class="line"><span class="selector-tag">div</span>,</span><br><span class="line"><span class="selector-tag">h1</span>,</span><br><span class="line"><span class="selector-tag">h2</span>,</span><br><span class="line"><span class="selector-tag">h3</span>,</span><br><span class="line"><span class="selector-tag">h4</span>,</span><br><span class="line"><span class="selector-tag">h5</span>,</span><br><span class="line"><span class="selector-tag">h6</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-text-size-adjust</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>待填坑</tag>
+        <tag>Javascript</tag>
         <tag>HTML5</tag>
       </tags>
   </entry>
   <entry>
     <title>Angular 基础</title>
-    <url>//angular/base/</url>
+    <url>//frontend/frame/angular/</url>
     <content><![CDATA[<p>Angular，简称 ng 。</p>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ol>
 <li><p>基础循环</p>
@@ -2649,7 +2687,7 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(itemArr)) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Angular开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
@@ -2658,7 +2696,7 @@
   </entry>
   <entry>
     <title>Javascript 富文本编辑器</title>
-    <url>//fe/editor/</url>
+    <url>//frontend/function/editor/</url>
     <content><![CDATA[<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><a href="https://gaofanghuang.github.io/demo/nodus/editor" target="_blank" rel="noopener">查看Demo 富文本编辑器</a></p>
 <h3 id="contenteditable"><a href="#contenteditable" class="headerlink" title="contenteditable"></a>contenteditable</h3><p><code>contenteditable</code> 属性规定是否可编辑元素的内容。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"editor-box"</span> <span class="attr">contenteditable</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -2678,33 +2716,75 @@
 <h3 id="wangEditor"><a href="#wangEditor" class="headerlink" title="wangEditor"></a>wangEditor</h3><p><a href="http://www.wangeditor.com/" target="_blank" rel="noopener">http://www.wangeditor.com/</a></p>
 ]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>待填坑</tag>
+        <tag>Javascript</tag>
         <tag>富文本编辑器</tag>
       </tags>
   </entry>
   <entry>
     <title>Javascript AR</title>
-    <url>//fe/ar/</url>
+    <url>//frontend/function/ar/</url>
     <content><![CDATA[<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>three.js</p>
 <p>AR.js</p>
 <p>WebRTC</p>
 ]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>待填坑</tag>
+        <tag>Javascript</tag>
         <tag>AR</tag>
       </tags>
   </entry>
   <entry>
+    <title>Javascript 算法</title>
+    <url>//frontend/js/algorithm/</url>
+    <content><![CDATA[<h2 id="全排列算法"><a href="#全排列算法" class="headerlink" title="全排列算法"></a>全排列算法</h2><h3 id="1-循环"><a href="#1-循环" class="headerlink" title="1. 循环"></a>1. 循环</h3><h3 id="2-交换算法（递归）"><a href="#2-交换算法（递归）" class="headerlink" title="2. 交换算法（递归）"></a>2. 交换算法（递归）</h3><h3 id="3-链接算法（递归）"><a href="#3-链接算法（递归）" class="headerlink" title="3. 链接算法（递归）"></a>3. 链接算法（递归）</h3><h3 id="4-回溯算法（递归）"><a href="#4-回溯算法（递归）" class="headerlink" title="4. 回溯算法（递归）"></a>4. 回溯算法（递归）</h3><h3 id="5-回溯算法（非递归）"><a href="#5-回溯算法（非递归）" class="headerlink" title="5. 回溯算法（非递归）"></a>5. 回溯算法（非递归）</h3><h3 id="6-排序算法（非递归）"><a href="#6-排序算法（非递归）" class="headerlink" title="6. 排序算法（非递归）"></a>6. 排序算法（非递归）</h3><h3 id="7-求模算法（非递归）"><a href="#7-求模算法（非递归）" class="headerlink" title="7. 求模算法（非递归）"></a>7. 求模算法（非递归）</h3><a id="more"></a>
+
+<h2 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h2><h3 id="1-对称加密"><a href="#1-对称加密" class="headerlink" title="1. 对称加密"></a>1. 对称加密</h3><p>文件加密和解密使用相同的密钥，即加密密钥也可以用作解密密钥，这种方法在密码学中叫做对称加密算法。</p>
+<p>对称加密算法使用起来简单快捷，密钥较短，且破译困难，除了数据加密标准（DES），另一个对称密钥加密系统是国际数据加密算法（IDEA），它比 DES 的加密性好，而且对计算机功能要求也没有那么高。IDEA 加密标准由 PGP（Pretty Good Privacy）系统使用。</p>
+<p><em>优点</em>：对称加密算法的优点是算法公开、计算量小、加密速度快、加密效率高。</p>
+<p><em>缺点</em>：在数据传送前，发送方和接收方必须商定好秘钥，然后双方保存好秘钥。如果一方的秘钥被泄露，那么加密信息也就不安全了。</p>
+<p><em>使用场景</em>：本地数据加密、https 通信、网络传输等</p>
+<p><em>常见算法</em>：AES、DES、3DES、DESX、Blowfish、IDEA、RC4、RC5、RC6</p>
+<h3 id="2-非对称加密"><a href="#2-非对称加密" class="headerlink" title="2. 非对称加密"></a>2. 非对称加密</h3><p>加密和解密可以使用不同的规则，只要这两种规则之间存在某种对应关系即可，这样就避免了直接传递密钥。这种新的加密模式被称为“非对称加密算法”。</p>
+<p><em>优点</em>：非对称加密与对称加密相比其安全性更好。</p>
+<p><em>缺点</em>：加密和解密花费时间长、速度慢，只适合对少量数据进行加密。</p>
+<p><em>使用场景</em>：https 会话前期、CA 数字证书、信息加密、登录认证等。</p>
+<p><em>常见算法</em>：RSA、ECC（移动设备用）、Diffie-Hellman、ElGamal、DSA（数字签名用）。</p>
+<h3 id="3-Hash-算法"><a href="#3-Hash-算法" class="headerlink" title="3. Hash 算法"></a>3. Hash 算法</h3><p>Hash 算法特别的地方在于它是一种单向算法，用户可以通过 Hash 算法对目标信息生成一段特定长度的唯一的 Hash 值，却不能通过这个 Hash 值重新获得目标信息。因此 Hash 算法常用在不可还原的密码存储、信息完整性校验等。</p>
+<p><em>优点</em>：不可逆、易计算、特征化。</p>
+<p><em>缺点</em>：可能存在散列冲突。</p>
+<p><em>使用场景</em>：文件或字符串一致性校验、数字签名、鉴权协议。</p>
+<p><em>常见算法</em>：MD2、MD4、MD5、HAVAL、SHA、SHA-1、HMAC、HMAC-MD5、HMAC-SHA1。</p>
+<p><strong>总结</strong>：</p>
+<ol>
+<li><p>对称加密算法不能实现签名，因此签名只能非对称算法。</p>
+</li>
+<li><p>验证文件或字符一致性用 hash 算法</p>
+</li>
+<li><p>数据量大用对称加密算法、小则可以用非对称加密，还可以非对称与对称集成，参考 https 请求原理</p>
+</li>
+<li><p>RSA 建议采用 1024 位的数字，ECC 建议采用 160 位，AES 采用 128 为即可</p>
+</li>
+</ol>
+<h2 id="推荐算法"><a href="#推荐算法" class="headerlink" title="推荐算法"></a>推荐算法</h2><h2 id="其他算法"><a href="#其他算法" class="headerlink" title="其他算法"></a>其他算法</h2><h3 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h3><h3 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h3><h3 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h3><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3>]]></content>
+      <categories>
+        <category>前端开发笔记</category>
+      </categories>
+      <tags>
+        <tag>待填坑</tag>
+        <tag>Javascript</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Javascript 数据处理</title>
-    <url>//js/data-handle/</url>
+    <url>//frontend/js/data-handle/</url>
     <content><![CDATA[<h2 id="1-对象处理"><a href="#1-对象处理" class="headerlink" title="1. 对象处理"></a>1. 对象处理</h2><h3 id="1-1-深浅拷贝"><a href="#1-1-深浅拷贝" class="headerlink" title="1.1 深浅拷贝"></a>1.1 深浅拷贝</h3><table>
 <thead>
 <tr>
@@ -2791,16 +2871,16 @@
 </ol>
 <h2 id="4-数字运算"><a href="#4-数字运算" class="headerlink" title="4. 数字运算"></a>4. 数字运算</h2><h3 id="4-1-加减乘除"><a href="#4-1-加减乘除" class="headerlink" title="4.1 加减乘除"></a>4.1 加减乘除</h3>]]></content>
       <categories>
-        <category>JS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>待填坑</tag>
+        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
     <title>Javascript 数据</title>
-    <url>//js/data/</url>
+    <url>//frontend/js/data/</url>
     <content><![CDATA[<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数组、字符串的存储原理"><a href="#数组、字符串的存储原理" class="headerlink" title="数组、字符串的存储原理"></a>数组、字符串的存储原理</h3><h2 id="二叉树、栈、队列、哈希表"><a href="#二叉树、栈、队列、哈希表" class="headerlink" title="二叉树、栈、队列、哈希表"></a>二叉树、栈、队列、哈希表</h2><h2 id="图、堆"><a href="#图、堆" class="headerlink" title="图、堆"></a>图、堆</h2><a id="more"></a>
 
 <h2 id="对象处理"><a href="#对象处理" class="headerlink" title="对象处理"></a>对象处理</h2><h3 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h3><table>
@@ -2867,78 +2947,36 @@
 
 <h2 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h2><h2 id="数字处理"><a href="#数字处理" class="headerlink" title="数字处理"></a>数字处理</h2>]]></content>
       <categories>
-        <category>JS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>待填坑</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript 算法</title>
-    <url>//js/algorithm/</url>
-    <content><![CDATA[<h2 id="全排列算法"><a href="#全排列算法" class="headerlink" title="全排列算法"></a>全排列算法</h2><h3 id="1-循环"><a href="#1-循环" class="headerlink" title="1. 循环"></a>1. 循环</h3><h3 id="2-交换算法（递归）"><a href="#2-交换算法（递归）" class="headerlink" title="2. 交换算法（递归）"></a>2. 交换算法（递归）</h3><h3 id="3-链接算法（递归）"><a href="#3-链接算法（递归）" class="headerlink" title="3. 链接算法（递归）"></a>3. 链接算法（递归）</h3><h3 id="4-回溯算法（递归）"><a href="#4-回溯算法（递归）" class="headerlink" title="4. 回溯算法（递归）"></a>4. 回溯算法（递归）</h3><h3 id="5-回溯算法（非递归）"><a href="#5-回溯算法（非递归）" class="headerlink" title="5. 回溯算法（非递归）"></a>5. 回溯算法（非递归）</h3><h3 id="6-排序算法（非递归）"><a href="#6-排序算法（非递归）" class="headerlink" title="6. 排序算法（非递归）"></a>6. 排序算法（非递归）</h3><h3 id="7-求模算法（非递归）"><a href="#7-求模算法（非递归）" class="headerlink" title="7. 求模算法（非递归）"></a>7. 求模算法（非递归）</h3><a id="more"></a>
-
-<h2 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h2><h3 id="1-对称加密"><a href="#1-对称加密" class="headerlink" title="1. 对称加密"></a>1. 对称加密</h3><p>文件加密和解密使用相同的密钥，即加密密钥也可以用作解密密钥，这种方法在密码学中叫做对称加密算法。</p>
-<p>对称加密算法使用起来简单快捷，密钥较短，且破译困难，除了数据加密标准（DES），另一个对称密钥加密系统是国际数据加密算法（IDEA），它比 DES 的加密性好，而且对计算机功能要求也没有那么高。IDEA 加密标准由 PGP（Pretty Good Privacy）系统使用。</p>
-<p><em>优点</em>：对称加密算法的优点是算法公开、计算量小、加密速度快、加密效率高。</p>
-<p><em>缺点</em>：在数据传送前，发送方和接收方必须商定好秘钥，然后双方保存好秘钥。如果一方的秘钥被泄露，那么加密信息也就不安全了。</p>
-<p><em>使用场景</em>：本地数据加密、https 通信、网络传输等</p>
-<p><em>常见算法</em>：AES、DES、3DES、DESX、Blowfish、IDEA、RC4、RC5、RC6</p>
-<h3 id="2-非对称加密"><a href="#2-非对称加密" class="headerlink" title="2. 非对称加密"></a>2. 非对称加密</h3><p>加密和解密可以使用不同的规则，只要这两种规则之间存在某种对应关系即可，这样就避免了直接传递密钥。这种新的加密模式被称为“非对称加密算法”。</p>
-<p><em>优点</em>：非对称加密与对称加密相比其安全性更好。</p>
-<p><em>缺点</em>：加密和解密花费时间长、速度慢，只适合对少量数据进行加密。</p>
-<p><em>使用场景</em>：https 会话前期、CA 数字证书、信息加密、登录认证等。</p>
-<p><em>常见算法</em>：RSA、ECC（移动设备用）、Diffie-Hellman、ElGamal、DSA（数字签名用）。</p>
-<h3 id="3-Hash-算法"><a href="#3-Hash-算法" class="headerlink" title="3. Hash 算法"></a>3. Hash 算法</h3><p>Hash 算法特别的地方在于它是一种单向算法，用户可以通过 Hash 算法对目标信息生成一段特定长度的唯一的 Hash 值，却不能通过这个 Hash 值重新获得目标信息。因此 Hash 算法常用在不可还原的密码存储、信息完整性校验等。</p>
-<p><em>优点</em>：不可逆、易计算、特征化。</p>
-<p><em>缺点</em>：可能存在散列冲突。</p>
-<p><em>使用场景</em>：文件或字符串一致性校验、数字签名、鉴权协议。</p>
-<p><em>常见算法</em>：MD2、MD4、MD5、HAVAL、SHA、SHA-1、HMAC、HMAC-MD5、HMAC-SHA1。</p>
-<p><strong>总结</strong>：</p>
-<ol>
-<li><p>对称加密算法不能实现签名，因此签名只能非对称算法。</p>
-</li>
-<li><p>验证文件或字符一致性用 hash 算法</p>
-</li>
-<li><p>数据量大用对称加密算法、小则可以用非对称加密，还可以非对称与对称集成，参考 https 请求原理</p>
-</li>
-<li><p>RSA 建议采用 1024 位的数字，ECC 建议采用 160 位，AES 采用 128 为即可</p>
-</li>
-</ol>
-<h2 id="推荐算法"><a href="#推荐算法" class="headerlink" title="推荐算法"></a>推荐算法</h2><h2 id="其他算法"><a href="#其他算法" class="headerlink" title="其他算法"></a>其他算法</h2><h3 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h3><h3 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h3><h3 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h3><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3>]]></content>
-      <categories>
-        <category>JS笔记</category>
-      </categories>
-      <tags>
         <tag>Javascript</tag>
-        <tag>待填坑</tag>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
     <title>Electron 基础</title>
-    <url>//app/electron/</url>
+    <url>//frontend/app/electron/</url>
     <content><![CDATA[<p>to be continue…</p>
 ]]></content>
       <categories>
-        <category>App开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
-        <tag>桌面端</tag>
-        <tag>Electron</tag>
-        <tag>Windows</tag>
-        <tag>Mac</tag>
         <tag>待填坑</tag>
+        <tag>Mac</tag>
+        <tag>Windows</tag>
+        <tag>Electron</tag>
+        <tag>桌面端</tag>
       </tags>
   </entry>
   <entry>
     <title>IOS 基础</title>
-    <url>//app/ios/</url>
+    <url>//frontend/app/ios/</url>
     <content><![CDATA[<p>to be continue…</p>
 ]]></content>
       <categories>
-        <category>App开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -2949,7 +2987,7 @@
   </entry>
   <entry>
     <title>正则表达式</title>
-    <url>//code/regular/</url>
+    <url>//frontend/flow/regular/</url>
     <content><![CDATA[<p>正则表达式的基本组成元素可以分为：<strong>字符</strong>和<strong>元字符</strong>。</p>
 <a id="more"></a>
 
@@ -3161,7 +3199,7 @@
 
 <h3 id="6-网址"><a href="#6-网址" class="headerlink" title="6. 网址"></a>6. 网址</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> rule = <span class="regexp">/^([hH][tT]&#123;2&#125;[pP]:\/\/|[hH][tT]&#123;2&#125;[pP][sS]:\/\/)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~\/])+$/</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"http://huanggaofang.com"</span></span><br><span class="line"><span class="built_in">console</span>.log(rule.test(str)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>编程相关</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -3170,10 +3208,10 @@
   </entry>
   <entry>
     <title>Android 基础</title>
-    <url>//app/android/</url>
+    <url>//frontend/app/android/</url>
     <content><![CDATA[<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><h2 id="Android-Intent-Action"><a href="#Android-Intent-Action" class="headerlink" title="Android Intent Action"></a>Android Intent Action</h2>]]></content>
       <categories>
-        <category>App开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -3183,25 +3221,12 @@
       </tags>
   </entry>
   <entry>
-    <title>dart 基础</title>
-    <url>//flutter/dart/</url>
-    <content><![CDATA[<p>to be continue …</p>
-]]></content>
-      <categories>
-        <category>Flutter开发</category>
-      </categories>
-      <tags>
-        <tag>待填坑</tag>
-        <tag>Dart</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Node 爬虫</title>
-    <url>//node/reptile/</url>
+    <url>//frontend/node/reptile/</url>
     <content><![CDATA[<p>to be continue……</p>
 ]]></content>
       <categories>
-        <category>Node开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -3211,7 +3236,7 @@
   </entry>
   <entry>
     <title>Node.js 基础</title>
-    <url>//node/base/</url>
+    <url>//frontend/node/base/</url>
     <content><![CDATA[<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ol>
 <li>查看npm当前镜像源</li>
 </ol>
@@ -3254,7 +3279,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Node开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -3265,7 +3290,7 @@
   </entry>
   <entry>
     <title>关于后台管理系统小结</title>
-    <url>//product/admin/</url>
+    <url>//frontend/summary/admin/</url>
     <content><![CDATA[<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><h3 id="前端渲染-Ajax"><a href="#前端渲染-Ajax" class="headerlink" title="前端渲染+Ajax"></a>前端渲染+Ajax</h3><p>前后端分离的方式构建的后台管理系统。</p>
 <h3 id="后端渲染"><a href="#后端渲染" class="headerlink" title="后端渲染"></a>后端渲染</h3><p>前后端不分离，后端直出html的后台管理系统。</p>
 <h2 id="常用库和插件"><a href="#常用库和插件" class="headerlink" title="常用库和插件"></a>常用库和插件</h2><h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><h3 id="时间日期选择器"><a href="#时间日期选择器" class="headerlink" title="时间日期选择器"></a>时间日期选择器</h3><h3 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h3><h3 id="弹框"><a href="#弹框" class="headerlink" title="弹框"></a>弹框</h3><h3 id="富文本编辑器"><a href="#富文本编辑器" class="headerlink" title="富文本编辑器"></a>富文本编辑器</h3><h2 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h2><h3 id="权限控制处理"><a href="#权限控制处理" class="headerlink" title="权限控制处理"></a>权限控制处理</h3><h3 id="xss过滤"><a href="#xss过滤" class="headerlink" title="xss过滤"></a>xss过滤</h3><h3 id="登录加密"><a href="#登录加密" class="headerlink" title="登录加密"></a>登录加密</h3><h4 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h4><h4 id="md5"><a href="#md5" class="headerlink" title="md5"></a>md5</h4><h4 id="加盐"><a href="#加盐" class="headerlink" title="加盐"></a>加盐</h4><h4 id="HMAC算法"><a href="#HMAC算法" class="headerlink" title="HMAC算法"></a>HMAC算法</h4><h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><ol>
@@ -3277,7 +3302,7 @@
 <h3 id="交互提示"><a href="#交互提示" class="headerlink" title="交互提示"></a>交互提示</h3><p>loading、提交成功、提交失败的提示</p>
 ]]></content>
       <categories>
-        <category>产品架构</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -3285,28 +3310,28 @@
   </entry>
   <entry>
     <title>关于微信生态开发的总结</title>
-    <url>//wx/ecology/</url>
+    <url>//frontend/wechat/ecology/</url>
     <content><![CDATA[<h2 id="帐号注册"><a href="#帐号注册" class="headerlink" title="帐号注册"></a>帐号注册</h2><h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2>]]></content>
       <categories>
-        <category>微信开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
       </tags>
   </entry>
   <entry>
-    <title>CSS 基础</title>
-    <url>//css/base/</url>
-    <content><![CDATA[<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><a id="more"></a>
+    <title>CSS 布局</title>
+    <url>//frontend/base/css/</url>
+    <content><![CDATA[<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><h3 id="1-单列布局"><a href="#1-单列布局" class="headerlink" title="1. 单列布局"></a>1. 单列布局</h3><h3 id="2-两列自适应布局"><a href="#2-两列自适应布局" class="headerlink" title="2. 两列自适应布局"></a>2. 两列自适应布局</h3><h3 id="3-三栏布局"><a href="#3-三栏布局" class="headerlink" title="3. 三栏布局"></a>3. 三栏布局</h3><h3 id="4-粘连布局"><a href="#4-粘连布局" class="headerlink" title="4. 粘连布局"></a>4. 粘连布局</h3><h3 id="5-等高布局"><a href="#5-等高布局" class="headerlink" title="5. 等高布局"></a>5. 等高布局</h3><a id="more"></a>
 
 <h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><!-- 垂直居中 -->
 <!-- 水平居中 -->
 
 <h3 id="浮动-Float"><a href="#浮动-Float" class="headerlink" title="浮动 Float"></a>浮动 Float</h3><h3 id="表格-Table"><a href="#表格-Table" class="headerlink" title="表格 Table"></a>表格 Table</h3><h3 id="display-table"><a href="#display-table" class="headerlink" title="display: table"></a>display: table</h3><h3 id="display-flex"><a href="#display-flex" class="headerlink" title="display: flex"></a>display: flex</h3><p>查看<a href="/css/flex.md">Flex 和 grid 布局详解</a></p>
 <h3 id="display-gird"><a href="#display-gird" class="headerlink" title="display: gird"></a>display: gird</h3><p>查看<a href="/css/flex.md">Flex 和 grid 布局详解</a></p>
-<h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><h3 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h3><h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3>]]></content>
+<h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3>]]></content>
       <categories>
-        <category>CSS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -3315,7 +3340,7 @@
   </entry>
   <entry>
     <title>CSS 进阶 - 纯 CSS 绘图</title>
-    <url>//css/draw/</url>
+    <url>//frontend/base/css-draw/</url>
     <content><![CDATA[<p><a href="https://gaofanghuang.github.io/demo/api/css/demo1" target="_blank" rel="noopener">查看DEMO 纯css绘制图形</a></p>
 <p>当我们需要三角形、圆形、半圆等简单图形时，用 css 直接绘制会比加载图片更好，通常可以使用 border 属性方法来绘制，目前主流的浏览器还可以使用 clip-path 属性来绘制图形。</p>
 <p>如果不需要过多考虑浏览器兼容问题的话，使用 clip-path 更好。</p>
@@ -3355,7 +3380,7 @@
 <p>例：</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> animation3 &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">polygon</span>(<span class="number">0</span> <span class="number">0%</span>, <span class="number">50%</span> <span class="number">0</span>, <span class="number">100%</span> <span class="number">0</span>, <span class="number">100%</span> <span class="number">50%</span>, <span class="number">100%</span> <span class="number">80%</span>, <span class="number">100%</span> <span class="number">100%</span>, <span class="number">50%</span> <span class="number">100%</span>, <span class="number">0</span> <span class="number">100%</span>, <span class="number">0</span> <span class="number">50%</span>, <span class="number">0</span> <span class="number">38%</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">polygon</span>(<span class="number">50%</span> <span class="number">0%</span>, <span class="number">63%</span> <span class="number">38%</span>, <span class="number">100%</span> <span class="number">38%</span>, <span class="number">69%</span> <span class="number">59%</span>, <span class="number">82%</span> <span class="number">100%</span>, <span class="number">50%</span> <span class="number">75%</span>, <span class="number">18%</span> <span class="number">100%</span>, <span class="number">31%</span> <span class="number">59%</span>, <span class="number">0</span> <span class="number">38%</span>, <span class="number">37%</span> <span class="number">38%</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>CSS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>CSS</tag>
@@ -3364,7 +3389,7 @@
   </entry>
   <entry>
     <title>CSS 基础 - 函数</title>
-    <url>//css/function/</url>
+    <url>//frontend/base/css-function/</url>
     <content><![CDATA[<p>简单来说，在 CSS 中只要是带有 () 的属性值，我们就可以把它称为 CSS 函数。</p>
 <a id="more"></a>
 
@@ -4432,7 +4457,7 @@ td .filter-box2 {
 </ul>
 ]]></content>
       <categories>
-        <category>CSS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>CSS</tag>
@@ -4441,7 +4466,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>H5与原生APP的交互事件</title>
-    <url>//fe/h5-callapp/</url>
+    <url>//frontend/flow/h5-callapp/</url>
     <content><![CDATA[<h2 id="H5-与原生-APP-的传值"><a href="#H5-与原生-APP-的传值" class="headerlink" title="H5 与原生 APP 的传值"></a>H5 与原生 APP 的传值</h2><p>传值需要和原生开发者先沟通好，比如以下的 activity 事件需要原生先做这个监听事件的处理。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (isApp) &#123;</span><br><span class="line">  <span class="keyword">let</span> u = navigator.userAgent</span><br><span class="line">  <span class="keyword">let</span> isAndroid = u.indexOf(<span class="string">'Android'</span>) &gt; <span class="number">-1</span> || u.indexOf(<span class="string">'Adr'</span>) &gt; <span class="number">-1</span> <span class="comment">//android终端</span></span><br><span class="line">  <span class="keyword">let</span> isIos = !!u.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>) <span class="comment">//ios终端</span></span><br><span class="line">  <span class="keyword">if</span> (isIos) &#123;</span><br><span class="line">    webkit.messageHandlers.activity.postMessage(<span class="string">`这里传字符串`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    activity.startNewActivity(<span class="string">`这里传字符串`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -4495,7 +4520,7 @@ td .filter-box2 {
 <p>一般的做法是添加一张引导图片，引导用户点击右上角的更多按钮，然后点击【在浏览器中打开】这个按钮，跳转到系统浏览器之后，在执行响应的 唤端 或 下载 事件。</p>
 ]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>移动端</tag>
@@ -4505,7 +4530,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>Vue 3.x 基础</title>
-    <url>//vue/base/</url>
+    <url>//frontend/frame/vue/</url>
     <content><![CDATA[<h2 id="Vue-语法"><a href="#Vue-语法" class="headerlink" title="Vue 语法"></a>Vue 语法</h2><p><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">查看官网文档</a></p>
 <a id="more"></a>
 
@@ -4537,7 +4562,7 @@ td .filter-box2 {
 
 <h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><h2 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue-Router"></a>Vue-Router</h2><h2 id="UI-框架"><a href="#UI-框架" class="headerlink" title="UI 框架"></a>UI 框架</h2>]]></content>
       <categories>
-        <category>Vue开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -4549,7 +4574,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>Axios 的配置与封装</title>
-    <url>//fe/axios/</url>
+    <url>//frontend/function/axios/</url>
     <content><![CDATA[<p>Axios 是一个基于 promise 的 HTTP 库,可以用在浏览器和 Node.js 中。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>node.js</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install axios --save</span><br></pre></td></tr></table></figure>
@@ -4588,7 +4613,7 @@ td .filter-box2 {
 <h2 id="常用封装"><a href="#常用封装" class="headerlink" title="常用封装"></a>常用封装</h2><p>我在 vue 中的常用 axios 封装</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'@/services/router'</span>;</span><br><span class="line"><span class="keyword">import</span> Message <span class="keyword">from</span> <span class="string">'@/plugins/message'</span>;</span><br><span class="line"><span class="keyword">import</span> $db <span class="keyword">from</span> <span class="string">'@/services/Storage'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> cancel;</span><br><span class="line"><span class="keyword">let</span> pending = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> CancelToken = axios.CancelToken;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> baseURL =</span><br><span class="line">  process.env.NODE_ENV === <span class="string">'production'</span></span><br><span class="line">    ? process.env.VUE_APP_API_HOST_PROD</span><br><span class="line">    : process.env.VUE_APP_API_HOST_DEV;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> instance = axios.create(&#123;</span><br><span class="line">  baseURL,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">'X-Requested-With'</span>: <span class="string">'XMLHttpRequest'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//请求拦截器</span></span><br><span class="line">instance.interceptors.request.use(</span><br><span class="line">  config =&gt; &#123;</span><br><span class="line">    <span class="comment">//发起请求时，取消掉当前正在进行的相同请求</span></span><br><span class="line">    <span class="keyword">if</span> (pending[config.url]) &#123;</span><br><span class="line">      pending[config.url](<span class="string">'操作取消'</span>);</span><br><span class="line">      pending[config.url] = cancel;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      pending[config.url] = cancel;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> TOKEN = $db.getData(<span class="string">'token'</span>);</span><br><span class="line">    <span class="keyword">if</span> (TOKEN) &#123;</span><br><span class="line">      config.headers.Authorization = TOKEN;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> config;</span><br><span class="line">  &#125;,</span><br><span class="line">  error =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 响应拦截器即异常处理</span></span><br><span class="line">instance.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (!axios.isCancel(err)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (err &amp;&amp; err.response) &#123;</span><br><span class="line">        <span class="keyword">switch</span> (err.response.status) &#123;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">400</span>:</span><br><span class="line">            err.tips = <span class="string">'错误请求'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">401</span>:</span><br><span class="line">            err.tips = $db.hasData(<span class="string">'token'</span>) ? <span class="string">'登录超时，请重新登录'</span> : <span class="string">'请登录后再操作'</span>;</span><br><span class="line">            <span class="built_in">window</span>.localStorage.clear();</span><br><span class="line">            router.push(&#123;</span><br><span class="line">              path: <span class="string">'/login'</span>,</span><br><span class="line">              query: &#123; <span class="attr">redirect</span>: router.currentRoute.fullPath &#125;,</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">403</span>:</span><br><span class="line">            err.tips = <span class="string">'拒绝访问'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">404</span>:</span><br><span class="line">            err.tips = <span class="string">'请求错误,未找到该资源'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">405</span>:</span><br><span class="line">            err.tips = <span class="string">'请求方法未允许'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">408</span>:</span><br><span class="line">            err.tips = <span class="string">'请求超时'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">422</span>: &#123;</span><br><span class="line">            <span class="keyword">const</span> &#123; <span class="attr">data</span>: &#123; message = <span class="string">'错误请求'</span> &#125; = &#123;&#125; &#125; = err.response;</span><br><span class="line">            err.tips = message;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">500</span>:</span><br><span class="line">            err.tips = <span class="string">'服务器端出错'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">501</span>:</span><br><span class="line">            err.tips = <span class="string">'网络未实现'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">502</span>:</span><br><span class="line">            err.tips = <span class="string">'网络错误'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">503</span>:</span><br><span class="line">            err.tips = <span class="string">'服务不可用'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">504</span>:</span><br><span class="line">            err.tips = <span class="string">'网络超时'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">505</span>:</span><br><span class="line">            err.tips = <span class="string">'http版本不支持该请求'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">default</span>:</span><br><span class="line">            err.tips = <span class="string">`连接错误<span class="subst">$&#123;err.response.status&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        err.tips = <span class="string">'网络不可用，请检查！'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'err'</span>, err.tips);</span><br><span class="line">    &#125;</span><br><span class="line">    Message.error(err.tips || err);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="keyword">get</span> = (url, param) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    instance(&#123;</span><br><span class="line">      method: <span class="string">'get'</span>,</span><br><span class="line">      url,</span><br><span class="line">      params: param,</span><br><span class="line">      cancelToken: <span class="keyword">new</span> CancelToken(<span class="function"><span class="params">c</span> =&gt;</span> &#123;</span><br><span class="line">        cancel = c;</span><br><span class="line">      &#125;),</span><br><span class="line">    &#125;).then(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        resolve(res);</span><br><span class="line">      &#125;,</span><br><span class="line">      err =&gt; &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> post = <span class="function">(<span class="params">url, param</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    instance(&#123;</span><br><span class="line">      method: <span class="string">'post'</span>,</span><br><span class="line">      url,</span><br><span class="line">      data: param,</span><br><span class="line">      cancelToken: <span class="keyword">new</span> CancelToken(<span class="function"><span class="params">c</span> =&gt;</span> &#123;</span><br><span class="line">        cancel = c;</span><br><span class="line">      &#125;),</span><br><span class="line">    &#125;).then(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        resolve(res);</span><br><span class="line">      &#125;,</span><br><span class="line">      err =&gt; &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> updated = <span class="function">(<span class="params">url, param</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    instance(&#123;</span><br><span class="line">      method: <span class="string">'patch'</span>,</span><br><span class="line">      url,</span><br><span class="line">      data: param,</span><br><span class="line">      cancelToken: <span class="keyword">new</span> CancelToken(<span class="function"><span class="params">c</span> =&gt;</span> &#123;</span><br><span class="line">        cancel = c;</span><br><span class="line">      &#125;),</span><br><span class="line">    &#125;).then(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        resolve(res);</span><br><span class="line">      &#125;,</span><br><span class="line">      err =&gt; &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> remove = <span class="function">(<span class="params">url, param</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    instance(&#123;</span><br><span class="line">      method: <span class="string">'delete'</span>,</span><br><span class="line">      url,</span><br><span class="line">      params: param,</span><br><span class="line">      cancelToken: <span class="keyword">new</span> CancelToken(<span class="function"><span class="params">c</span> =&gt;</span> &#123;</span><br><span class="line">        cancel = c;</span><br><span class="line">      &#125;),</span><br><span class="line">    &#125;).then(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        resolve(res);</span><br><span class="line">      &#125;,</span><br><span class="line">      err =&gt; &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>HTTP</tag>
@@ -4598,7 +4623,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>Shell 和 Vim 常用命令</title>
-    <url>//code/shell/</url>
+    <url>//frontend/flow/shell/</url>
     <content><![CDATA[<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><p>Shell 既是一种命令语言，又是一种程序设计语言。</p>
 <p>熟练的使用 Shell 命令可以提高我们的工作效率。以下命令以 Mac / Linux 为主，部分命令 Windows 下无法使用。</p>
 <p><strong>注意</strong>：在访问系统级目录或进行敏感操作时，Mac / Linux 下需要先输入 <code>sudo</code> 以及用户密码，才能进行下一步操作。</p>
@@ -4633,7 +4658,7 @@ td .filter-box2 {
 <p>或 在设置中自定义快捷键。</p>
 ]]></content>
       <categories>
-        <category>编程相关</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Shell</tag>
@@ -4642,7 +4667,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>移动端图片/文件上传</title>
-    <url>//fe/mobile-file-upload/</url>
+    <url>//frontend/function/mobile-file-upload/</url>
     <content><![CDATA[<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>html 中使用 <code>input</code> 标签获得访问本地文件的能力，选择本地图片后，把 input 中的 <code>File</code> 对象转换成后端需要的数据格式。</p>
 <p><a href="https://gaofanghuang.github.io/demo/api/file-upload/demo1" target="_blank" rel="noopener">查看DEMO</a></p>
 <h2 id="input-type-”file”"><a href="#input-type-”file”" class="headerlink" title="input type=”file”"></a>input type=”file”</h2><p>选择本地图片需要使用 <code>&lt;input type=&quot;file&quot;&gt;</code>。附加属性 <code>accept</code>, <code>capture</code>, <code>files</code>, <code>multiple</code>。</p>
@@ -5041,7 +5066,7 @@ td .filter-box2 {
 <p><strong>解决方法</strong>：对图片的宽高进行适当压缩。具体实现以上限四百万像素为基准，如果图片大于四百万像素就压缩到小于四百万像素。</p>
 ]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
@@ -5053,11 +5078,11 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>微信小游戏开发总结</title>
-    <url>//wx/game/</url>
+    <url>//frontend/wechat/game/</url>
     <content><![CDATA[<p>to be continue</p>
 ]]></content>
       <categories>
-        <category>微信开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -5066,7 +5091,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>微信小程序开发总结</title>
-    <url>//wx/app/</url>
+    <url>//frontend/wechat/app/</url>
     <content><![CDATA[<h2 id="原生语法"><a href="#原生语法" class="headerlink" title="原生语法"></a>原生语法</h2><p>to be continue</p>
 <a id="more"></a>
 
@@ -5082,7 +5107,7 @@ td .filter-box2 {
 <h3 id="上拉加载下拉刷新"><a href="#上拉加载下拉刷新" class="headerlink" title="上拉加载下拉刷新"></a>上拉加载下拉刷新</h3><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><h2 id="mpvue"><a href="#mpvue" class="headerlink" title="mpvue"></a>mpvue</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="在-mpvue-中使用iView"><a href="#在-mpvue-中使用iView" class="headerlink" title="在 mpvue 中使用iView"></a>在 mpvue 中使用iView</h4><p><a href="https://weapp.iviewui.com/docs/guide/start" target="_blank" rel="noopener">查看文档</a></p>
 <h3 id="常见问题-1"><a href="#常见问题-1" class="headerlink" title="常见问题"></a>常见问题</h3><h2 id="wepy"><a href="#wepy" class="headerlink" title="wepy"></a>wepy</h2><h2 id="其他平台小程序"><a href="#其他平台小程序" class="headerlink" title="其他平台小程序"></a>其他平台小程序</h2><h3 id="支付宝小程序"><a href="#支付宝小程序" class="headerlink" title="支付宝小程序"></a>支付宝小程序</h3><h3 id="快应用"><a href="#快应用" class="headerlink" title="快应用"></a>快应用</h3>]]></content>
       <categories>
-        <category>微信开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -5091,11 +5116,11 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>微信H5海报开发总结</title>
-    <url>//wx/poster/</url>
+    <url>//frontend/wechat/poster/</url>
     <content><![CDATA[<p>to be continue…</p>
 ]]></content>
       <categories>
-        <category>微信开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -5105,7 +5130,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>微信H5网站开发总结</title>
-    <url>//wx/wap/</url>
+    <url>//frontend/wechat/wap/</url>
     <content><![CDATA[<p><a href="https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html" target="_blank" rel="noopener">微信公众号JS-SDK开放文档</a></p>
 <a id="more"></a>
 
@@ -5114,7 +5139,7 @@ td .filter-box2 {
 
 <h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="用户消息推送"><a href="#用户消息推送" class="headerlink" title="用户消息推送"></a>用户消息推送</h3><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2>]]></content>
       <categories>
-        <category>微信开发</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>待填坑</tag>
@@ -5124,7 +5149,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>H5自适应小结</title>
-    <url>//fe/h5-adaptive/</url>
+    <url>//frontend/flow/h5-adaptive/</url>
     <content><![CDATA[<h2 id="H5-头标签"><a href="#H5-头标签" class="headerlink" title="H5 头标签"></a>H5 头标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 优先使用 IE 最新版本和 Chrome / 使用极速模式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=Edge,chrome=1"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 360 使用Google Chrome Frame --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 使用响应式渲染 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag">  <span class="attr">name</span>=<span class="string">"viewport"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">content</span>=<span class="string">"initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
@@ -5154,7 +5179,7 @@ td .filter-box2 {
 <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="comment">/* 平滑渐变 */</span></span><br><span class="line">  -webkit-<span class="attribute">transition</span>: font-size <span class="number">0.2s</span> ease-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 自适应 */</span></span><br><span class="line"><span class="comment">/** 桌面端 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (min-width: <span class="number">1025px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span> <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (min-width: <span class="number">1367px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/** 移动端 */</span></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (max-width: <span class="number">1024px</span>) &#123;</span><br><span class="line">  <span class="comment">// 个别模块兼容性处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>移动端</tag>
@@ -5164,7 +5189,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>浏览器数据存储方案</title>
-    <url>//fe/web-store/</url>
+    <url>//frontend/flow/web-store/</url>
     <content><![CDATA[<p>常见的浏览器数据存储方法：Cookie、WEB 存储 (localStorage 和 sessionStorage)、IndexedDB。</p>
 <p>需要注意的是，以上方法都不适合存储敏感数据。</p>
 <a id="more"></a>
@@ -5267,7 +5292,7 @@ td .filter-box2 {
 </tbody></table>
 ]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
@@ -5276,7 +5301,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>Git</title>
-    <url>//code/git/</url>
+    <url>//frontend/flow/git/</url>
     <content><![CDATA[<h2 id="Git-是什么"><a href="#Git-是什么" class="headerlink" title="Git 是什么"></a>Git 是什么</h2><p>Git，分布式版本控制系统。GitHub 网站，为开源项目免费提供 Git 存储。</p>
 <a id="more"></a>
 
@@ -5307,7 +5332,7 @@ td .filter-box2 {
 
 <h2 id="Git-命令列表"><a href="#Git-命令列表" class="headerlink" title="Git 命令列表"></a>Git 命令列表</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 初始化仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 把变动文件添加到仓库</span></span><br><span class="line">git add ReadMe.md</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 把变动提交到仓库</span></span><br><span class="line">git commit -m "add ReadMe"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前变动状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前变动详情</span></span><br><span class="line">git diff</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看最近提交的记录</span></span><br><span class="line">git log</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 从远程仓库<span class="built_in">clone</span></span></span><br><span class="line">git clone git@github.com:xxx/xxx.git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 把本地仓库关联到远程github仓库</span></span><br><span class="line">git remote add origin git@github.com:xxx/xxx.git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建分支</span></span><br><span class="line">git branch &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换分支</span></span><br><span class="line">git switch &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建并切换分支</span></span><br><span class="line">git switch -c &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 合并某分支到当前分支上</span></span><br><span class="line">git merge &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除分支</span></span><br><span class="line">git branch -d &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 把本地提交的变动，推送到远程仓库</span></span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 拉取远程仓库中的某个分支的最新代码，并合并到本地的指定分支上</span></span><br><span class="line">git pull &lt;远程库名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>编程相关</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Git</tag>
@@ -5338,7 +5363,7 @@ td .filter-box2 {
   </entry>
   <entry>
     <title>迭代器、Switch、Array循环</title>
-    <url>//js/loop/</url>
+    <url>//frontend/js/loop/</url>
     <content><![CDATA[<p><a href="https://gaofanghuang.github.io/demo/api/loop/demo1" target="_blank" rel="noopener">查看 demo</a></p>
 <h2 id="for"><a href="#for" class="headerlink" title="for"></a>for</h2><p>for 语句用于创建一个循环，它包含了三个可选的表达式，这三个表达式被包围在圆括号之中，使用分号分隔，后跟一个用于在循环中执行的语句（通常是一个块语句）。</p>
 <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> ([initialization]; [condition]; [final - expression]) &#123;</span><br><span class="line">  statement</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -5578,7 +5603,7 @@ td .filter-box2 {
 <p><code>findIndex()</code></p>
 ]]></content>
       <categories>
-        <category>JS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
@@ -5592,18 +5617,17 @@ td .filter-box2 {
         <category>个人项目</category>
       </categories>
       <tags>
-        <tag>Electron</tag>
-        <tag>Windows</tag>
         <tag>Mac</tag>
-        <tag>待填坑</tag>
+        <tag>Windows</tag>
         <tag>Music</tag>
         <tag>Node.js</tag>
+        <tag>Electron</tag>
         <tag>MIDI</tag>
       </tags>
   </entry>
   <entry>
     <title>键盘 KeyCode 对照表</title>
-    <url>//code/keycode/</url>
+    <url>//frontend/flow/keycode/</url>
     <content><![CDATA[<style>
 table tr td:nth-of-type(2n-1){
   background:#fbfbfb
@@ -5916,7 +5940,7 @@ table tr td:nth-of-type(2n-1){
 </tbody></table>
 ]]></content>
       <categories>
-        <category>编程相关</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
@@ -5926,7 +5950,7 @@ table tr td:nth-of-type(2n-1){
   </entry>
   <entry>
     <title>设计模式、设计原则和反模式</title>
-    <url>//code/anti-patterns/</url>
+    <url>//frontend/base/anti-patterns/</url>
     <content><![CDATA[<h2 id="1-设计模式"><a href="#1-设计模式" class="headerlink" title="1. 设计模式"></a>1. 设计模式</h2><h3 id="1-1-什么是设计模式？"><a href="#1-1-什么是设计模式？" class="headerlink" title="1.1 什么是设计模式？"></a>1.1 什么是设计模式？</h3><p>模式是在某种情境下，针对某种问题的某种解决方案。<br>设计模式算是一种经验复用。</p>
 <h3 id="1-2-为什么要使用设计模式？"><a href="#1-2-为什么要使用设计模式？" class="headerlink" title="1.2 为什么要使用设计模式？"></a>1.2 为什么要使用设计模式？</h3><ol>
 <li><p>开发小组不需要重新设计解决方案来解决已经被前人解决过的问题。如此可以节省很多设计开发时间。</p>
@@ -5986,7 +6010,7 @@ table tr td:nth-of-type(2n-1){
 </ol>
 ]]></content>
       <categories>
-        <category>编程相关</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>反模式</tag>
@@ -5996,7 +6020,7 @@ table tr td:nth-of-type(2n-1){
   </entry>
   <entry>
     <title>Canvas 基础</title>
-    <url>//fe/canvas/</url>
+    <url>//frontend/base/canvas/</url>
     <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>canvas 元素可被用来通过 JavaScript（Canvas API 或 WebGL API）绘制图形及图形动画。</p>
 <h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><strong>width</strong>：该元素占用空间的宽度，以 CSS 像素（px）表示，默认为 300。</p>
 <p><strong>height</strong>：该元素占用空间的高度，以 CSS 像素（px）表示，默认为 150。</p>
@@ -6653,7 +6677,7 @@ table tr td:nth-of-type(2n-1){
 </ol>
 ]]></content>
       <categories>
-        <category>前端笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
@@ -6663,7 +6687,7 @@ table tr td:nth-of-type(2n-1){
   </entry>
   <entry>
     <title>Promise 基础</title>
-    <url>//js/promise/</url>
+    <url>//frontend/js/promise/</url>
     <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="1-Async"><a href="#1-Async" class="headerlink" title="1. Async"></a>1. Async</h3><p>async function 用来定义一个返回 AsyncFunction 对象的异步函数。异步函数是指通过事件循环异步执行的函数，它会通过一个隐式的 Promise 返回其结果。</p>
 <h3 id="2-Await"><a href="#2-Await" class="headerlink" title="2. Await"></a>2. Await</h3><p>异步函数可以包含 await 指令，该指令会暂停异步函数的执行，并等待 Promise 执行，然后继续执行异步函数，并返回结果。</p>
 <p>await 关键字只在异步函数内有效。如果在异步函数外使用它，会抛出语法错误。</p>
@@ -6748,7 +6772,7 @@ table tr td:nth-of-type(2n-1){
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 错误写法</span><br><span class="line">todoSth().catch(err &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;失败&#39;, err)</span><br><span class="line">  &#125;).then(</span><br><span class="line">    res &#x3D;&gt; &#123;</span><br><span class="line">      console.log(&#39;成功&#39;, res)</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 正确写法</span><br><span class="line">todoSth().then(</span><br><span class="line">    res &#x3D;&gt; &#123;</span><br><span class="line">      console.log(&#39;成功&#39;, res)</span><br><span class="line">    &#125;</span><br><span class="line">  ).catch(err &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;失败&#39;, err)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>JS笔记</category>
+        <category>前端开发笔记</category>
       </categories>
       <tags>
         <tag>Javascript</tag>

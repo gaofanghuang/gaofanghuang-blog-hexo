@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+      键盘 KeyCode 对照表 |  Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="post-wrap">
+  <div class="page-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <article
+  id="post-frontend/flow/keycode"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title flex flex-y" style="border-left: 0;" itemprop="name">
+  <span>键盘 KeyCode 对照表</span>
+  
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">前端开发笔记</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">271字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1分钟</span>
+        </span>
+    </span>
+</div>
+  <a href="/frontend/flow/keycode/" class="article-date">
+  <time datetime="2020-03-10T08:56:12.000Z" itemprop="datePublished">2020-03-10</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <style>
+table tr td:nth-of-type(2n-1){
+  background:#fbfbfb
+}
+</style>
+
+<h2 id="字母数字键键码值"><a href="#字母数字键键码值" class="headerlink" title="字母数字键键码值"></a>字母数字键键码值</h2><table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="center">键码</th>
+<th align="center">按键</th>
+<th align="center">键码</th>
+<th align="center">按键</th>
+<th align="center">键码</th>
+<th align="center">按键</th>
+<th align="center">键码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center">65</td>
+<td align="center">J</td>
+<td align="center">74</td>
+<td align="center">S</td>
+<td align="center">83</td>
+<td align="center">1</td>
+<td align="center">49</td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="center">66</td>
+<td align="center">K</td>
+<td align="center">75</td>
+<td align="center">T</td>
+<td align="center">84</td>
+<td align="center">2</td>
+<td align="center">50</td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="center">67</td>
+<td align="center">L</td>
+<td align="center">76</td>
+<td align="center">U</td>
+<td align="center">85</td>
+<td align="center">3</td>
+<td align="center">51</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center">68</td>
+<td align="center">M</td>
+<td align="center">77</td>
+<td align="center">V</td>
+<td align="center">86</td>
+<td align="center">4</td>
+<td align="center">52</td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="center">69</td>
+<td align="center">N</td>
+<td align="center">78</td>
+<td align="center">W</td>
+<td align="center">87</td>
+<td align="center">5</td>
+<td align="center">53</td>
+</tr>
+<tr>
+<td align="center">F</td>
+<td align="center">70</td>
+<td align="center">O</td>
+<td align="center">79</td>
+<td align="center">X</td>
+<td align="center">88</td>
+<td align="center">6</td>
+<td align="center">54</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="center">71</td>
+<td align="center">P</td>
+<td align="center">80</td>
+<td align="center">Y</td>
+<td align="center">89</td>
+<td align="center">7</td>
+<td align="center">55</td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="center">72</td>
+<td align="center">Q</td>
+<td align="center">81</td>
+<td align="center">Z</td>
+<td align="center">90</td>
+<td align="center">8</td>
+<td align="center">56</td>
+</tr>
+<tr>
+<td align="center">I</td>
+<td align="center">73</td>
+<td align="center">R</td>
+<td align="center">82</td>
+<td align="center">0</td>
+<td align="center">48</td>
+<td align="center">9</td>
+<td align="center">57</td>
+</tr>
+</tbody></table>
+<a id="more"></a>
+
+<h2 id="数字键盘键码值"><a href="#数字键盘键码值" class="headerlink" title="数字键盘键码值"></a>数字键盘键码值</h2><table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="center">键码</th>
+<th align="center">按键</th>
+<th align="center">键码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">96</td>
+<td align="center">8</td>
+<td align="center">104</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">97</td>
+<td align="center">9</td>
+<td align="center">105</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">98</td>
+<td align="center">*</td>
+<td align="center">106</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">99</td>
+<td align="center">+</td>
+<td align="center">107</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">100</td>
+<td align="center">Enter</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">101</td>
+<td align="center">-</td>
+<td align="center">109</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">102</td>
+<td align="center">.</td>
+<td align="center">110</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">103</td>
+<td align="center">/</td>
+<td align="center">111</td>
+</tr>
+</tbody></table>
+<h2 id="功能键键码值"><a href="#功能键键码值" class="headerlink" title="功能键键码值"></a>功能键键码值</h2><table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="center">键码</th>
+<th align="center">按键</th>
+<th align="center">键码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">F1</td>
+<td align="center">112</td>
+<td align="center">F7</td>
+<td align="center">118</td>
+</tr>
+<tr>
+<td align="center">F2</td>
+<td align="center">113</td>
+<td align="center">F8</td>
+<td align="center">119</td>
+</tr>
+<tr>
+<td align="center">F3</td>
+<td align="center">114</td>
+<td align="center">F9</td>
+<td align="center">120</td>
+</tr>
+<tr>
+<td align="center">F4</td>
+<td align="center">115</td>
+<td align="center">F10</td>
+<td align="center">121</td>
+</tr>
+<tr>
+<td align="center">F5</td>
+<td align="center">116</td>
+<td align="center">F11</td>
+<td align="center">122</td>
+</tr>
+<tr>
+<td align="center">F6</td>
+<td align="center">117</td>
+<td align="center">F12</td>
+<td align="center">123</td>
+</tr>
+</tbody></table>
+<h2 id="控制键键码值"><a href="#控制键键码值" class="headerlink" title="控制键键码值"></a>控制键键码值</h2><table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="center">键码</th>
+<th align="center">按键</th>
+<th align="center">键码</th>
+<th align="center">按键</th>
+<th align="center">键码</th>
+<th align="center">按键</th>
+<th align="center">键码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">BackSpace</td>
+<td align="center">8</td>
+<td align="center">Esc</td>
+<td align="center">27</td>
+<td align="center">Right Arrow</td>
+<td align="center">39</td>
+<td align="center">-_</td>
+<td align="center">189</td>
+</tr>
+<tr>
+<td align="center">Tab</td>
+<td align="center">9</td>
+<td align="center">Spacebar</td>
+<td align="center">32</td>
+<td align="center">Dw Arrow</td>
+<td align="center">40</td>
+<td align="center">.&gt;</td>
+<td align="center">190</td>
+</tr>
+<tr>
+<td align="center">Clear</td>
+<td align="center">12</td>
+<td align="center">Page Up</td>
+<td align="center">33</td>
+<td align="center">Insert</td>
+<td align="center">45</td>
+<td align="center">/?</td>
+<td align="center">191</td>
+</tr>
+<tr>
+<td align="center">Enter</td>
+<td align="center">13</td>
+<td align="center">Page Down</td>
+<td align="center">34</td>
+<td align="center">Delete</td>
+<td align="center">46</td>
+<td align="center">`~</td>
+<td align="center">192</td>
+</tr>
+<tr>
+<td align="center">Shift</td>
+<td align="center">16</td>
+<td align="center">End</td>
+<td align="center">35</td>
+<td align="center">Num Lock</td>
+<td align="center">144</td>
+<td align="center">[{</td>
+<td align="center">219</td>
+</tr>
+<tr>
+<td align="center">Control</td>
+<td align="center">17</td>
+<td align="center">Home</td>
+<td align="center">36</td>
+<td align="center">;:</td>
+<td align="center">186</td>
+<td align="center">╲┆</td>
+<td align="center">220</td>
+</tr>
+<tr>
+<td align="center">Alt</td>
+<td align="center">18</td>
+<td align="center">Left Arrow</td>
+<td align="center">37</td>
+<td align="center">=+</td>
+<td align="center">187</td>
+<td align="center">]}</td>
+<td align="center">221</td>
+</tr>
+<tr>
+<td align="center">Cape Lock</td>
+<td align="center">20</td>
+<td align="center">Up Arrow</td>
+<td align="center">38</td>
+<td align="center">,&lt;</td>
+<td align="center">188</td>
+<td align="center">‘“</td>
+<td align="center">222</td>
+</tr>
+</tbody></table>
+
+      </div>
+      
+      <!-- updated -->
+      
+      
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      <div id="rewardMask" class="mask-wrap"></div>
+
+<!-- #reward -->
+<div id="reward" class="modal-wrap">
+  <div class="reward-title flex flex-y flex-x">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-smile"></use>
+    </svg>
+    <span>请我喝杯咖啡吧~</span>
+  </div>
+  <div class="reward-box flex flex-y">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+  <div class="modal-close">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div> 
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <div class="post-copyright">
+        <i class="ri-copyright-line"></i>
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用
+        <a
+          href="https://www.apache.org/licenses/LICENSE-2.0.html"
+          rel="external nofollow"
+          target="_blank"
+          >Apache License 2.0</a
+        >
+        许可协议。转载请注明出处！
+      </div>
+    </div>
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KeyCode/" rel="tag">KeyCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Keyboard/" rel="tag">Keyboard</a></li></ul>
+</div>
+
+  
+<div class="share-wrap flex flex-y" id="shareBar">
+  <span class="share-btn flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-fenxiang"></use>
+    </svg>
+    分享到
+  </span>
+  <div class="share-list flex flex-y">
+    <a class="weibo share-sns-btn" href="javascript:;" data-type="weibo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weibo"></use>
+      </svg>
+    </a>
+    <a class="douban share-sns-btn" href="javascript:;" data-type="douban">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-douban"></use>
+      </svg>
+    </a>
+    <a class="qq share-sns-btn" href="javascript:;" data-type="qq">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qq"></use>
+      </svg>
+    </a>
+    <a
+      class="weixin share-sns-btn wxFab"
+      href="javascript:;"
+      data-type="weixin"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weixin"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="shareMask" class="mask-wrap"></div>
+<div class="modal-wrap wx-share-modal">
+  <div class="share-weixin-title">扫一扫，分享到微信</div>
+  <div class="wx-qrcode">
+    <img
+      src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://huanggaofang.com/frontend/flow/keycode/"
+      alt="微信分享二维码"
+    />
+  </div>
+  <div class="modal-close" id="wxClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div>
+ 
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <div class="article-nav-link article-nav-prev">
+        <strong class="article-nav-caption">上一篇</strong>
+        <a href="/project/midi-keyboard/" class="article-nav-title">
+          
+            MIDI-Keyboard
+          
+        </a>
+      </div>
+    
+    
+      <div class="article-nav-link article-nav-next">
+        <strong class="article-nav-caption">下一篇</strong>
+        <a href="/frontend/base/anti-patterns/" class="article-nav-title">设计模式、设计原则和反模式</a>
+      </div>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'XRQh2zhUCEHXwiKhGSKRsgG1-gzGzoHsz',
+        app_key: '7lenjWI8UhDxmR67gJm8s8EQ',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+ 
+</article>
+
+  <div class="toc-bot-btn" id="tocBotBtn">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</div>
+<div class="toc-bot-wrap" id="tocBotWrap">
+  <div class="toc-bot-close" id="tocBotClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div id="tocBot"></div>
+</div>
+  
+
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '#tocBot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h2, h3, h4',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      scrollContainer: 'document',
+      onClick: (e) => {
+        $('#tocBot .toc-link').removeClass('is-active-link');
+        $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+        return false;
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

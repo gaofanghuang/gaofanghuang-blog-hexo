@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+       Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="index-wrap">
+  <div class="index-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <div class="index-main">
+      <div class="index-last-article">
+        <section class="archive-wrap">
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-frontend/summary/admin"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name" class="flex flex-y">
+  <a class="article-title" href="/frontend/summary/admin/">
+    <span>关于后台管理系统小结</span>
+  </a>
+  
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">前端开发笔记</a>
+  </div>
+    <a href="/frontend/summary/admin/" class="article-date">
+  <time datetime="2020-05-13T03:30:00.000Z" itemprop="datePublished">2020-05-13</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><h3 id="前端渲染-Ajax"><a href="#前端渲染-Ajax" class="headerlink" title="前端渲染+Ajax"></a>前端渲染+Ajax</h3><p>前后端分离的方式构建的后台管理系统。</p>
+<h3 id="后端渲染"><a href="#后端渲染" class="headerlink" title="后端渲染"></a>后端渲染</h3><p>前后端不分离，后端直出html的后台管理系统。</p>
+<h2 id="常用库和插件"><a href="#常用库和插件" class="headerlink" title="常用库和插件"></a>常用库和插件</h2><h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><h3 id="时间日期选择器"><a href="#时间日期选择器" class="headerlink" title="时间日期选择器"></a>时间日期选择器</h3><h3 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h3><h3 id="弹框"><a href="#弹框" class="headerlink" title="弹框"></a>弹框</h3><h3 id="富文本编辑器"><a href="#富文本编辑器" class="headerlink" title="富文本编辑器"></a>富文本编辑器</h3><h2 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h2><h3 id="权限控制处理"><a href="#权限控制处理" class="headerlink" title="权限控制处理"></a>权限控制处理</h3><h3 id="xss过滤"><a href="#xss过滤" class="headerlink" title="xss过滤"></a>xss过滤</h3><h3 id="登录加密"><a href="#登录加密" class="headerlink" title="登录加密"></a>登录加密</h3><h4 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h4><h4 id="md5"><a href="#md5" class="headerlink" title="md5"></a>md5</h4><h4 id="加盐"><a href="#加盐" class="headerlink" title="加盐"></a>加盐</h4><h4 id="HMAC算法"><a href="#HMAC算法" class="headerlink" title="HMAC算法"></a>HMAC算法</h4><h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><ol>
+<li><p>错误提示</p>
+</li>
+<li><p><code>try...catch...</code></p>
+</li>
+</ol>
+<h3 id="交互提示"><a href="#交互提示" class="headerlink" title="交互提示"></a>交互提示</h3><p>loading、提交成功、提交失败的提示</p>
+
+      </div>
+      
+      <!-- updated -->
+      
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%85%E5%A1%AB%E5%9D%91/" rel="tag">待填坑</a></li></ul>
+</div>
+
+ 
+    </footer>
+  </div>
+
+     
+</article>
+
+
+
+    
+    <article
+  id="post-frontend/wechat/ecology"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name" class="flex flex-y">
+  <a class="article-title" href="/frontend/wechat/ecology/">
+    <span>关于微信生态开发的总结</span>
+  </a>
+  
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">前端开发笔记</a>
+  </div>
+    <a href="/frontend/wechat/ecology/" class="article-date">
+  <time datetime="2020-05-13T03:30:00.000Z" itemprop="datePublished">2020-05-13</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <h2 id="帐号注册"><a href="#帐号注册" class="headerlink" title="帐号注册"></a>帐号注册</h2><h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2>
+      </div>
+      
+      <!-- updated -->
+      
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%85%E5%A1%AB%E5%9D%91/" rel="tag">待填坑</a></li></ul>
+</div>
+
+ 
+    </footer>
+  </div>
+
+     
+</article>
+
+
+
+    
+    <article
+  id="post-frontend/base/css"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name" class="flex flex-y">
+  <a class="article-title" href="/frontend/base/css/">
+    <span>CSS 布局</span>
+  </a>
+  
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">前端开发笔记</a>
+  </div>
+    <a href="/frontend/base/css/" class="article-date">
+  <time datetime="2020-05-09T03:40:00.000Z" itemprop="datePublished">2020-05-09</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><h3 id="1-单列布局"><a href="#1-单列布局" class="headerlink" title="1. 单列布局"></a>1. 单列布局</h3><h3 id="2-两列自适应布局"><a href="#2-两列自适应布局" class="headerlink" title="2. 两列自适应布局"></a>2. 两列自适应布局</h3><h3 id="3-三栏布局"><a href="#3-三栏布局" class="headerlink" title="3. 三栏布局"></a>3. 三栏布局</h3><h3 id="4-粘连布局"><a href="#4-粘连布局" class="headerlink" title="4. 粘连布局"></a>4. 粘连布局</h3><h3 id="5-等高布局"><a href="#5-等高布局" class="headerlink" title="5. 等高布局"></a>5. 等高布局</h3>
+      </div>
+      
+      <a class="article-more-link" href="/frontend/base/css/">
+        阅读更多...
+      </a>
+       
+      <!-- updated -->
+      
+      
+<div class="post-update">
+  <span>更新于：</span>
+  <time>2021-05-06</time>
+</div>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%85%E5%A1%AB%E5%9D%91/" rel="tag">待填坑</a></li></ul>
+</div>
+
+ 
+    </footer>
+  </div>
+
+     
+</article>
+
+
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/11/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/13/">下一页</a>
+  </nav>
+  
+</section>
+      </div>
+    </div>
+    <div class="index-sidebar">
+      <div class="index-author-wrap index-box">
+  <div class="index-author-banner">
+    <div class="index-author-avatar">
+      
+      <img src="/images/carrot.jpg" alt="Gaofang Huang" />
+      
+    </div>
+    <div class="index-author-info">
+      <div class="index-author-name">Gaofang Huang</div>
+      <div class="index-author-describe">Developer & Designer</div>
+    </div>
+  </div>
+  <div class="index-author-sns">
+    <ul class="index-author-sns-list flex flex-y flex-gap">
+      
+      <div class="index-author-sns-link">
+        <a href="https://github.com/gaofanghuang" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-github-fill"></use>
+          </svg>
+        </a>
+      </div>
+       
+      <div class="index-author-sns-link">
+        <a href="https://github.com/gaofanghuang" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-bilibili-line"></use>
+          </svg>
+        </a>
+      </div>
+       
+      <div class="index-author-sns-link">
+        <a href="mailto:gaofanghuang@vip.qq.com">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-mail"></use>
+          </svg>
+        </a>
+      </div>
+      
+    </ul>
+  </div>
+  
+  <div class="index-author-rss flex-y flex-x flex">
+    <a target="_blank" href="/atom.xml">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-rss"></use>
+      </svg>
+      <span>订阅RSS</span>
+    </a>
+  </div>
+  
+</div>
+
+      <div class="skill-item-fe index-box">
+        <a href="/frontend">前端开发笔记</a>
+      </div>
+      
+<div class="category-menu-wrap index-box">
+  <div class="index-box-title flex flex-y"><a href="/categories/">分类</a></div>
+  <ul class="category-menu-list">
+    
+    
+    
+     
+
+    <li class="category-menu-list-item">
+      <a
+        class="category-menu-list-link"
+        href="/categories/前端开发笔记/"
+        title="前端开发笔记"
+      >
+      <span>前端开发笔记</span>
+      <i>48</i>
+      </a>
+    </li>
+
+      
+
+    <li class="category-menu-list-item">
+      <a
+        class="category-menu-list-link"
+        href="/categories/个人项目/"
+        title="个人项目"
+      >
+      <span>个人项目</span>
+      <i>5</i>
+      </a>
+    </li>
+
+      
+
+    <li class="category-menu-list-item">
+      <a
+        class="category-menu-list-link"
+        href="/categories/游戏开发笔记/"
+        title="游戏开发笔记"
+      >
+      <span>游戏开发笔记</span>
+      <i>3</i>
+      </a>
+    </li>
+
+      
+
+    <li class="category-menu-list-item">
+      <a
+        class="category-menu-list-link"
+        href="/categories/碎碎念/"
+        title="碎碎念"
+      >
+      <span>碎碎念</span>
+      <i>1</i>
+      </a>
+    </li>
+
+      
+
+    <li class="category-menu-list-item">
+      <a
+        class="category-menu-list-link"
+        href="/categories/视觉设计笔记/"
+        title="视觉设计笔记"
+      >
+      <span>视觉设计笔记</span>
+      <i>1</i>
+      </a>
+    </li>
+
+     
+  </ul>
+</div>
+
+
+      
+<div class="tag-cloud-wrap index-box">
+  <div class="index-box-title flex flex-y"><a href="/tags/">标签</a></div>
+  <ul class="tag-cloud-list">
+    
+    
+    
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/待填坑/" class="tag-cloud-item-link">
+            待填坑
+            <i>28</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/Javascript/" class="tag-cloud-item-link">
+            Javascript
+            <i>23</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/HTML5/" class="tag-cloud-item-link">
+            HTML5
+            <i>6</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/CSS/" class="tag-cloud-item-link">
+            CSS
+            <i>5</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/移动端/" class="tag-cloud-item-link">
+            移动端
+            <i>5</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/Javascript-Lib/" class="tag-cloud-item-link">
+            Javascript Lib
+            <i>4</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/微信公众号/" class="tag-cloud-item-link">
+            微信公众号
+            <i>2</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/Node/" class="tag-cloud-item-link">
+            Node
+            <i>2</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/时间处理/" class="tag-cloud-item-link">
+            时间处理
+            <i>2</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/Angular/" class="tag-cloud-item-link">
+            Angular
+            <i>2</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/Electron/" class="tag-cloud-item-link">
+            Electron
+            <i>2</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/Windows/" class="tag-cloud-item-link">
+            Windows
+            <i>2</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/Mac/" class="tag-cloud-item-link">
+            Mac
+            <i>2</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/Chrome扩展/" class="tag-cloud-item-link">
+            Chrome扩展
+            <i>2</i>
+          </a>
+        </li>
+      
+    
+      
+        <li class="tag-cloud-item">
+          <a href="/tags/Typescript/" class="tag-cloud-item-link">
+            Typescript
+            <i>2</i>
+          </a>
+        </li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </ul>
+  <a href="/tags/" class="tag-cloud-more">- More -</a>
+</div>
+
+
+      <div class="index-douban-wrap index-box">
+  <div class="index-box-title flex flex-y">清单</div>
+  <ul class="index-douban-list">
+    <li class="index-douban-item">
+      <a href="/books"># 读书清单</a>
+    </li>
+    <li class="index-douban-item">
+      <a href="/movies"># 电影清单</a>
+    </li>
+    <li class="index-douban-item">
+      <a href="/games"># 游戏清单</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="we-wrap index-box">
+  <div class="we-avatars">
+    <div class="we-avatar-i"><img src="/images/ia.jpg" alt="i"></div>
+    <div class="we-avatar-and">
+      ❤️
+    </div>
+    <div class="we-avatar-you"><img src="/images/youa.jpg" alt="you"></div>
+  </div>
+  <div id="weTogether"></div>
+</div>
+      
+    </div>
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+</body>
+
+</html>
