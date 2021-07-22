@@ -95,7 +95,7 @@ textarea {
   height: 100%;
   border: 0;
   resize: none;
-  color: #333333; }
+  color: #444; }
 
 button {
   border: none 0;
@@ -160,6 +160,16 @@ img {
     transform-origin: 0 0;
     transform: translateY(0%);
     opacity: 1; } }
+
+@keyframes moveUpOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+    opacity: 1; }
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(-100%);
+    opacity: 0; } }
 
 @keyframes circle {
   0% {
@@ -345,7 +355,6 @@ img {
   overflow: hidden; }
   .highlight table {
     margin: 0 !important;
-    width: auto !important;
     border: none !important; }
     .highlight table td {
       border: none !important;
@@ -354,8 +363,13 @@ img {
     color: #8e908c;
     line-height: 1em;
     margin-bottom: 1em; }
-  .highlight .gutter .line {
-    font-size: 0.6rem; }
+  .highlight .gutter {
+    width: 2rem;
+    background: #333; }
+    .highlight .gutter .line {
+      font-size: 0.6rem; }
+    .highlight .gutter pre {
+      padding-right: 0; }
   .highlight .code {
     color: #bababa; }
     .highlight .code .line .attribute,
@@ -415,7 +429,8 @@ img {
     position: relative;
     padding: 10px;
     background: #333;
-    line-height: 1.5; }
+    line-height: 1.5;
+    overflow-x: auto; }
     .markdown-view pre::-webkit-scrollbar {
       width: 8px;
       height: 8px; }
@@ -481,6 +496,8 @@ img {
     overflow: hidden; }
     .markdown-view table thead tr {
       font-weight: 600; }
+    .markdown-view table tr {
+      max-width: 100%; }
     .markdown-view table th,
     .markdown-view table td {
       border: 1px solid #dedede;
@@ -520,7 +537,7 @@ img {
         content: counter(sectioncounter) ".";
         counter-increment: sectioncounter;
         font-size: 0.8rem;
-        color: #333333;
+        color: #444;
         z-index: 1; }
   .markdown-view ul > li {
     padding-left: 1.2rem;
@@ -528,16 +545,24 @@ img {
     list-style: none; }
     .markdown-view ul > li:before {
       position: absolute;
-      top: 0.6rem;
+      top: 0.56rem;
       left: 0;
-      width: 0.4rem;
-      height: 0.4rem;
+      width: 0.5rem;
+      height: 0.5rem;
       border-radius: 50%;
-      border: 1px solid #dfdfdf;
+      border: 1px solid rgba(40, 197, 194, 0.38);
       font-size: inherit;
+      display: block;
       content: '';
-      color: #333333;
+      color: #444;
       z-index: 1; }
+    .markdown-view ul > li li::before {
+      top: 0.68rem;
+      width: 0.36rem;
+      height: 0.36rem;
+      border: 1px solid #dedede; }
+    .markdown-view ul > li li + li {
+      margin-top: 0.4rem; }
   .markdown-view h1 {
     font-size: 1.6rem;
     text-align: center; }
@@ -1097,17 +1122,6 @@ img {
   .we-wrap .we-avatar-and {
     color: #ff6482;
     animation: beat 1.33s ease-in-out infinite; }
-
-@keyframes beat {
-  0% {
-    opacity: 0.88;
-    transform: scale(1); }
-  50% {
-    opacity: 1;
-    transform: scale(0.88); }
-  100% {
-    opacity: 0.88;
-    transform: scale(1); } }
   .we-wrap #weTogether {
     text-align: center;
     color: #999999;
@@ -2009,11 +2023,10 @@ html {
   overflow: hidden;
   margin-bottom: 1rem;
   margin-right: 1rem;
-  padding: 1rem; }
+  padding: 1rem;
+  color: #cdcdcd; }
   .skill-category:nth-of-type(4n) {
     margin-right: 0; }
-  .skill-category a {
-    display: block; }
   .skill-category h1 {
     text-align: center;
     margin-bottom: 2.4rem;
@@ -2053,12 +2066,12 @@ html {
     overflow: hidden;
     text-overflow: ellipsis; }
     .skill-category h4::before {
-      content: '';
+      content: "";
       display: inline-block;
-      width: 0.35rem;
-      height: 0.35rem;
+      width: 0.5rem;
+      height: 0.5rem;
       border-radius: 50%;
-      background: rgba(40, 197, 194, 0.36);
+      border: 1px solid rgba(40, 197, 194, 0.38);
       margin-right: 0.4rem; }
     .skill-category h4 + h2 {
       margin-top: 2.4rem;
@@ -2066,6 +2079,37 @@ html {
       padding-top: 2.4rem; }
     .skill-category h4 + h3 {
       margin-top: 2.4rem; }
+  .skill-category h5 {
+    font-weight: 400;
+    margin-top: 1.2rem;
+    font-size: 0.68rem;
+    padding-left: 1.2rem;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .skill-category h5::before {
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 0.4rem;
+      width: 0.38rem;
+      height: 0.38rem;
+      border: 1px solid #dedede; }
+    .skill-category h5 + h2 {
+      margin-top: 2.4rem;
+      border-top: 1px solid #ececec;
+      padding-top: 2.4rem; }
+    .skill-category h5 + h4,
+    .skill-category h5 + h3 {
+      margin-top: 2.4rem; }
+  .skill-category a {
+    color: #444; }
+    .skill-category a:hover {
+      color: #28C5C2; }
+      .skill-category a:hover::after {
+        display: none; }
 
 /** 移动端 */
 @media only screen and (max-width: 1024px) {

@@ -46,8 +46,12 @@ $(function () {
   // 回到顶部
   let upperLimit = 600
   let scrollElem = $('#toTop')
+  let canRun = true
   scrollElem.hide()
   $(document).scroll(function () {
+    if (!canRun) {
+      return
+    }
     let scrollTop = $(document).scrollTop()
     if (scrollTop > upperLimit) {
       if (os.isPc && !os.isTablet) {
@@ -60,6 +64,9 @@ $(function () {
       }
       $(scrollElem).fadeOut()
     }
+    setTimeout(() => {
+      canRun = true
+    }, 600);
   })
   $(scrollElem).click(function () {
     $(document).scrollTop(0)

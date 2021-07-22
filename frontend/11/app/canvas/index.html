@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+      Canvas 基础 |  Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="post-wrap">
+  <div class="page-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <article
+  id="post-frontend/11/app/canvas"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title flex flex-y" style="border-left: 0;" itemprop="name">
+  <span>Canvas 基础</span>
+  
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">前端开发笔记</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">9.9k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">38分钟</span>
+        </span>
+    </span>
+</div>
+  <a href="/frontend/11/app/canvas/" class="article-date">
+  <time datetime="2020-03-09T07:08:14.000Z" itemprop="datePublished">2020-03-09</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>canvas 元素可被用来通过 JavaScript（Canvas API 或 WebGL API）绘制图形及图形动画。</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><strong>width</strong>：该元素占用空间的宽度，以 CSS 像素（px）表示，默认为 300。</p>
+<p><strong>height</strong>：该元素占用空间的高度，以 CSS 像素（px）表示，默认为 150。</p>
+<h3 id="Canvas-和-SVG-的区别是什么？"><a href="#Canvas-和-SVG-的区别是什么？" class="headerlink" title="Canvas 和 SVG 的区别是什么？"></a>Canvas 和 SVG 的区别是什么？</h3><p>一句话总结：都是 2D 做图，svg 是矢量图，canvas 是位图。</p>
+<p>svg 适合用于渲染图标 logo；Canvas 是逐像素进行渲染的，适合用于渲染游戏。</p>
+<p><strong>svg</strong>: 一种使用 XML 描述 2D 图形的语言。</p>
+<a id="more"></a>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">height</span>=<span class="string">"100%"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">height</span>=<span class="string">"100%"</span> <span class="attr">x</span>=<span class="string">"0"</span> <span class="attr">y</span>=<span class="string">"0"</span> <span class="attr">fill</span>=<span class="string">"red"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>canvas</strong>: 由于是位图，当 w 或 h 有小数时，会产生虚边。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"300px"</span> <span class="attr">height</span>=<span class="string">"100px"</span>&gt;</span> <span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</span></span><br><span class="line"><span class="actionscript">  ctx.fillStyle = <span class="string">'red'</span></span></span><br><span class="line">  ctx.fillRect(0, 0, 300, 100)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo1" target="_blank" rel="noopener">查看 demo</a></p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo2" target="_blank" rel="noopener">查看 demo</a></p>
+<h3 id="1-坐标轴"><a href="#1-坐标轴" class="headerlink" title="1. 坐标轴"></a>1. 坐标轴</h3><p>canvas 的<strong>默认</strong>原点在画布的左上角。x = 0, y = 0。</p>
+<p>X 轴向右延伸，Y 轴向下延伸。在 canvas 中顺时针为正，逆时针为负。</p>
+<p><img src="/images/canvas/coordinate.png" alt=""></p>
+<p>改变 Y 轴方向：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 改变Y轴方向</span></span><br><span class="line">context.translate(<span class="number">0</span>, offsetY)</span><br><span class="line">context.scale(<span class="number">1</span>, <span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/canvas/coordinate2.png" alt=""></p>
+<h3 id="2-HTMLCanvasElement"><a href="#2-HTMLCanvasElement" class="headerlink" title="2. HTMLCanvasElement"></a>2. HTMLCanvasElement</h3><p>DOM canvas 元素暴露了 <strong>HTMLCanvasElement</strong> 接口,该接口提供了用来操作一个 <strong>canvas</strong> 元素布局和呈现的属性和方法。HTMLCanvasElement 接口继承了 element 接口的属性和方法。</p>
+<ul>
+<li><p><code>HTMLCanvasElement.width</code> canvas 元素在 html 文档中的宽度</p>
+</li>
+<li><p><code>HTMLCanvasElement.height</code> canvas 元素在 html 文档中的高度</p>
+</li>
+</ul>
+<h3 id="3-canvas-toDataURL"><a href="#3-canvas-toDataURL" class="headerlink" title="3. canvas.toDataURL()"></a>3. canvas.toDataURL()</h3><ul>
+<li>如果画布的高度或宽度是 0，那么会返回字符串“data:,”。</li>
+<li>如果传入的类型非“image/png”，但是返回的值以“data:image/png”开头，那么该传入的类型是不支持的。</li>
+<li>Chrome 支持“image/webp”类型。</li>
+</ul>
+<h4 id="3-1-Data-URLs"><a href="#3-1-Data-URLs" class="headerlink" title="3.1. Data URLs"></a>3.1. Data URLs</h4><p>即前缀为 data: 协议的 URL，其允许内容创建者向文档中嵌入小文件。</p>
+<p>Data URLs 由四个部分组成：前缀(data:)、指示数据类型的 MIME 类型、如果非文本则为可选的 base64 标记、数据本身：</p>
+<p><code>data:[&lt;mediatype&gt;][;base64],&lt;data&gt;</code></p>
+<p>mediatype 是个 MIME 类型的字符串，例如 “image/jpeg” 表示 JPEG 图像文件。如果被省略，则默认值为 text/plain;charset=US-ASCII</p>
+<p>如果数据是文本类型，你可以直接将文本嵌入 (根据文档类型，使用合适的实体字符或转义字符)。如果是二进制数据，你可以将数据进行 base64 编码之后再进行嵌入。</p>
+<p>下面是一些示例：</p>
+<ol>
+<li><p>简单的 text/plain 类型数据</p>
+<p><code>data:,Hello%2C%20World!</code></p>
+</li>
+<li><p>上一条示例的 base64 编码版本</p>
+<p><code>data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D</code></p>
+</li>
+<li><p>一个 HTML 文档源代码 <code>&lt;h1&gt;Hello, World&lt;/h1&gt;</code></p>
+<p><code>data:text/html,%3Ch1%3EHello%2C%20World!%3C%2Fh1%3E</code></p>
+</li>
+<li><p>一个会执行 JavaScript alert 的 HTML 文档。注意 script 标签必须封闭。</p>
+<p><code>data:text/html,&lt;script&gt;alert(&#39;hi&#39;);&lt;/script&gt;</code></p>
+</li>
+</ol>
+<h4 id="3-2-语法"><a href="#3-2-语法" class="headerlink" title="3.2. 语法"></a>3.2. 语法</h4><ul>
+<li><p><code>canvas.toDataURL(type, encoderOptions)</code> 返回一个包含图片展示的 data URI 。可以使用 type 参数其类型，默认为 PNG 格式。图片的分辨率为 96dpi。</p>
+<p><strong>type</strong>: 可选, 图片格式，默认为 image/png。</p>
+<p><strong>encoderOptions</strong>： 可选，在指定图片格式为 image/jpeg 或 image/webp 的情况下，可以从 0 到 1 的区间内选择图片的质量。如果超出取值范围，将会使用默认值 0.92。其他参数会被忽略。</p>
+</li>
+</ul>
+<h3 id="4-canvas-toBlob"><a href="#4-canvas-toBlob" class="headerlink" title="4. canvas.toBlob()"></a>4. canvas.toBlob()</h3><p>创造 Blob 对象，用以展示 canvas 上的图片；这个图片文件可以被缓存或保存到本地，由用户代理端自行决定。如不特别指明，图片的类型默认为 image/png，分辨率为 96dpi。第三个参数用于针对 image/jpeg 格式的图片进行输出图片的质量设置。</p>
+<h4 id="4-1-语法"><a href="#4-1-语法" class="headerlink" title="4.1. 语法"></a>4.1. 语法</h4><ul>
+<li><code>canvas.toBlob(callback, type, encoderOptions)</code></li>
+</ul>
+<p><strong>callback</strong>：回调函数，可获得一个单独的 Blob 对象参数。</p>
+<p><strong>type</strong>： 可选，DOMString 类型，指定图片格式，默认格式为 image/png。</p>
+<p><strong>encoderOptions</strong>： 可选，Number 类型，值在 0 与 1 之间，当请求图片格式为 image/jpeg 或者 image/webp 时用来指定图片展示质量。如果这个参数的值不在指定类型与范围之内，则使用默认值，其余参数将被忽略。</p>
+<h3 id="5-canvas-getContext"><a href="#5-canvas-getContext" class="headerlink" title="5. canvas.getContext()"></a>5. canvas.getContext()</h3><p><code>canvas.getContext()</code> 方法返回 canvas 的上下文，如果上下文没有定义则返回 null。在同一个 canvas 上以相同的 contextType 多次调用此方法只会返回同一个上下文。</p>
+<p>当我们想要实现一些 ctx 目前没有的方法和属性时，我们可以通过 <strong>ctx.prototype</strong> 增加新的自定义属性和方法。即<code>ctx.prototype.新属性</code>、<code>ctx.prototype.新方法</code>。注意自定义的新属性和新方法不能和原生的重名。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 增加新属性, 角度 1° 的值</span></span><br><span class="line">ctx.prototype.angleValue = <span class="built_in">Math</span>.PI / <span class="number">180</span></span><br><span class="line"><span class="comment">// 增加新方法，清空画布</span></span><br><span class="line">ctx.prototype.clearCanvas(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// to do Something</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-1-语法"><a href="#5-1-语法" class="headerlink" title="5.1 语法"></a>5.1 语法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(contextType)</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(contextType, contextAttributes)</span><br></pre></td></tr></table></figure>
+
+<p><strong>contextType</strong></p>
+<ul>
+<li><p><code>2d</code>： 二维平面效果渲染</p>
+</li>
+<li><p><code>webgl</code>：三维立体效果渲染</p>
+</li>
+<li><p><code>bitmaprenderer</code>：<code>TODO:!暂时未知使用方法!</code></p>
+</li>
+</ul>
+<p><strong>contextAttributes</strong></p>
+<p>ctxType = ‘2d’:</p>
+<ul>
+<li><code>alpha</code>: boolean 值表明 canvas 包含一个 alpha 通道. 如果设置为 false, 浏览器将认为 canvas 背景总是不透明的, 这样可以加速绘制透明的内容和图片.</li>
+</ul>
+<p>ctxType = ‘webgl’:</p>
+<ul>
+<li><p><code>alpha</code>: boolean 值表明 canvas 包含一个 alpha 缓冲区。</p>
+</li>
+<li><p><code>antialias</code>: boolean 值表明是否开启抗锯齿。</p>
+</li>
+<li><p><code>depth</code>: boolean 值表明绘制缓冲区包含一个深度至少为 16 位的缓冲区。</p>
+</li>
+<li><p><code>failIfMajorPerformanceCaveat</code>: 表明在一个系统性能低的环境是否创建该上下文的 boolean 值。</p>
+</li>
+<li><p><code>powerPreference</code>: 指示浏览器在运行 WebGL 上下文时使用相应的 GPU 电源配置。”default”:自动选择，默认值。”high-performance”: 高性能模式。”low-power”: 节能模式。</p>
+</li>
+<li><p><code>premultipliedAlpha</code>: 表明排版引擎讲假设绘制缓冲区包含预混合 alpha 通道的 boolean 值。</p>
+</li>
+<li><p><code>preserveDrawingBuffer</code>: 如果这个值为 true 缓冲区将不会被清除，会保存下来，直到被清除或被使用者覆盖。</p>
+</li>
+<li><p><code>stencil</code>: 表明绘制缓冲区包含一个深度至少为 8 位的模版缓冲区 boolean 值。</p>
+</li>
+</ul>
+<h2 id="绘图方法"><a href="#绘图方法" class="headerlink" title="绘图方法"></a>绘图方法</h2><h3 id="1-设置绘图环境和样式"><a href="#1-设置绘图环境和样式" class="headerlink" title="1. 设置绘图环境和样式"></a>1. 设置绘图环境和样式</h3><ul>
+<li><code>ctx.canvas</code> 上下文关联的 HTMLCanvasElement 对象。如果没有 <code>&lt;canvas&gt;</code> 元素与之对应，对象值为 null 。可以使用<code>ctx.canvas.width</code>来获取 canvas 宽度，或者<code>ctx.canvas.width=&#39;500px&#39;</code>来重设新置 canvas 宽度。</li>
+</ul>
+<h4 id="1-1-设置填充和描边颜色"><a href="#1-1-设置填充和描边颜色" class="headerlink" title="1.1. 设置填充和描边颜色"></a>1.1. 设置填充和描边颜色</h4><ul>
+<li><p><code>ctx.fillStyle</code> 设置填充颜色, 接受三种类型参数：color（颜色字符串）、gradient（渐变对象）、pattern（图案对象）</p>
+</li>
+<li><p><code>ctx.strokeStyle</code> 设置描边颜色，接受三种类型参数，同上。</p>
+</li>
+</ul>
+<h4 id="1-2-设置线型样式"><a href="#1-2-设置线型样式" class="headerlink" title="1.2. 设置线型样式"></a>1.2. 设置线型样式</h4><ul>
+<li><p><code>ctx.lineCap</code> 线段端点的样式类型 <code>butt</code>方形(默认)、<code>round</code>圆形（半径是线段的宽度）、<code>square</code>矩形（高度是线段厚度一半的）</p>
+</li>
+<li><p><code>ctx.lineJoin</code> 线段拐角的样式类型 <code>miter</code>尖角(默认)、<code>round</code>圆角（半径是线段的宽度）、<code>bevel</code>平角</p>
+</li>
+<li><p><code>ctx.lineWidth</code> 设置线条宽度，默认对齐方式为居中对齐，默认为 1px</p>
+<p>线宽对齐方式参考 PS：</p>
+<p><img src="/images/canvas/line_style.jpg" alt=""></p>
+</li>
+<li><p><code>ctx.miterLimit</code> 斜接面限制比例的的数字。 0、负数、Infinity 和 NaN 都会被忽略。只当 <code>ctx.lineJoin=&#39;miter&#39;</code>时才有效。</p>
+</li>
+</ul>
+<h4 id="1-3-设置字体和文字对齐"><a href="#1-3-设置字体和文字对齐" class="headerlink" title="1.3. 设置字体和文字对齐"></a>1.3. 设置字体和文字对齐</h4><ul>
+<li><p><code>ctx.font</code> 设置文本样式，参数参考 css font 属性。如：<code>ctx.font = &#39;10px sans-serif&#39;</code></p>
+</li>
+<li><p><code>ctx.textAlign</code> 设置文本对齐方式，”left” || “right” || “center” || “start”（默认） || “end”。当设置为”center”时，fillText 的 xy 值为中点。</p>
+</li>
+<li><p><code>ctx.textBaseline</code> 设置文本的基线对齐方式（垂直方向），”top” || “hanging” || “middle” || “alphabetic”（默认） || “ideographic” || “bottom”。</p>
+</li>
+</ul>
+<h4 id="1-4-设置阴影样式"><a href="#1-4-设置阴影样式" class="headerlink" title="1.4. 设置阴影样式"></a>1.4. 设置阴影样式</h4><ul>
+<li><p><code>ctx.shadowColor</code> 设置阴影颜色，只能接受 color 类型的颜色字符串。注意，阴影颜色可以通过颜色类型 rgba 或 hsla 设置阴影的透明度，但当透明度完全为 0 时，阴影不会被绘制。</p>
+</li>
+<li><p><code>ctx.shadowBlur</code> 设置阴影模糊程度，默认为 0。float 类型，即负数、 Infinity 或者 NaN 都会被忽略。当 blur = 0，且 offsetX 或 offsetY 的值不为 0 时，阴影仍然会被绘制，只是没有模糊效果。</p>
+</li>
+<li><p><code>ctx.shadowOffsetX</code> 设置阴影水平偏移距离，默认为 0。float 类型。</p>
+</li>
+<li><p><code>ctx.shadowOffsetY</code> 设置阴影垂直偏移距离，默认为 0。float 类型。</p>
+</li>
+</ul>
+<h4 id="1-5-设置全局透明度"><a href="#1-5-设置全局透明度" class="headerlink" title="1.5. 设置全局透明度"></a>1.5. 设置全局透明度</h4><ul>
+<li><code>ctx.globalAlpha</code> 设置图形和图片透明度的属性。 数值的范围从 0.0 （完全透明）到 1.0 （完全不透明）。 默认值是 1.0。 如果数值不在范围内，包括 Infinity 和 NaN ，无法赋值，并且 globalAlpha 会保持原有的数值。</li>
+</ul>
+<h4 id="1-6-设置图层混合模式"><a href="#1-6-设置图层混合模式" class="headerlink" title="1.6. 设置图层混合模式"></a>1.6. 设置图层混合模式</h4><ul>
+<li><p><code>ctx.globalCompositeOperation</code> 设置合成操作的类型。类型可选：source-over、source-in、source-out、source-atop、destination-over、destination-in、destination-out、destination-atop、lighter、copy、xor（差集）、multiply、screen、overlay、darken、lighten、color-dodge、color-burn、hard-light、soft-light、difference、exclusion、hue、saturation、color、luminosity。可理解为 PS 中的图层混合模式 + AI 中的路径查找器。</p>
+<p><img src="/images/canvas/composite.png" alt=""></p>
+</li>
+</ul>
+<h4 id="1-7-设置图案样式"><a href="#1-7-设置图案样式" class="headerlink" title="1.7. 设置图案样式"></a>1.7. 设置图案样式</h4><ul>
+<li><p><code>ctx.createPattern(image, repetition)</code> 根据传入的图片，创建一个可重复的图案。返回 <strong>CanvasPattern</strong> 对象，不透明。创建完成后，可以使用 <code>CanvasPattern.setTransform()</code>方法对图案进行变形。</p>
+<p><strong>image</strong>：作为重复图像源的 <strong>CanvasImageSource</strong> 对象。可以是下列之一</p>
+<ul>
+<li>HTMLImageElement (<code>&lt;img&gt;</code>),</li>
+<li>HTMLVideoElement (<code>&lt;video&gt;</code>),</li>
+<li>HTMLCanvasElement (<code>&lt;canvas&gt;</code>),</li>
+<li>CanvasRenderingContext2D,</li>
+<li>ImageBitmap,</li>
+<li>ImageData,</li>
+<li>Blob.</li>
+</ul>
+<p><strong>repetition</strong>：DOMString，指定如何重复图像。如果为空字符串 (‘’) 或 null (但不是 undefined)，repetition 将被当作”repeat”。允许的值有：</p>
+<ul>
+<li>“repeat” (both directions),</li>
+<li>“repeat-x” (horizontal only),</li>
+<li>“repeat-y” (vertical only),</li>
+<li>“no-repeat” (neither).</li>
+</ul>
+</li>
+<li><p><code>pattern.setTransform(matrix)</code> 使用 SVGMatrix 对象作为图案的变换矩阵，并在此图案上调用它。</p>
+</li>
+</ul>
+<h4 id="1-8-设置渐变样式"><a href="#1-8-设置渐变样式" class="headerlink" title="1.8. 设置渐变样式"></a>1.8. 设置渐变样式</h4><ul>
+<li><p><code>ctx.createLinearGradient(x0, y0, x1, y1)</code> 创建一个沿参数坐标指定的直线的渐变。起点（x0, y0），终点（x1, y1）。返回 <strong>CanvasGradient</strong> 对象。<br>改变线性渐变的方向有两种方式：1️⃣ 调换 addColorStop 0 和 1 对应的值；2️⃣ 调换 createLinearGradient 创建的起点和终点，即（x1, y1, x0, y0）。<br>我们知道，通过两不同点的直线有且只有一条。所以一般来说，我们只要改变 x0, y0, x1, y1 这四个值就可以轻松的改变渐变方向。这点可以结合 PS 里的线性渐变理解。</p>
+<p><img src="/images/canvas/gradient_line.png" alt=""></p>
+</li>
+</ul>
+<p><strong>CanvasGradient</strong> 描述渐变的不透明对象。CanvasGradient 有一个方法：<code>CanvasGradient.addColorStop()</code></p>
+<ul>
+<li><p><code>CanvasGradient.addColorStop(offset, color)</code> 添加一个由偏移值和颜色值指定的断点到渐变。offset: 0 到 1 之间的值，超出范围将抛出 INDEX_SIZE_ERR 错误; color: CSS 颜色值 <code>&lt;color&gt;</code>。如果颜色值不能被解析为有效的 CSS 颜色值 <code>&lt;color&gt;</code>，将抛出 SYNTAX_ERR 错误。</p>
+</li>
+<li><p><code>ctx.createRadialGradient(x0, y0, r0, x1, y1, r1)</code> 根据参数确定两个圆的坐标，绘制放射性渐变。起点圆，圆心(x0, y0)，半径（r0）; 结束圆，圆心(x1, y1)，半径（r1）。返回<strong>CanvasGradient</strong>对象。</p>
+<p>注意: 1️⃣ 当两个圆的半径相同时，r0 = r1 时，渐变不可见。2️⃣ 当两个圆的圆心坐标不同时，渐变效果则无法填充满路径。</p>
+</li>
+</ul>
+<h3 id="2-绘制矩形"><a href="#2-绘制矩形" class="headerlink" title="2. 绘制矩形"></a>2. 绘制矩形</h3><ul>
+<li><p><code>ctx.clearRect(x, y, w, h)</code> 绘制一个起点在 (x, y) 、宽度为 w 、高度为 h 的透明矩形，此矩形将擦除所在区域的所有内容。</p>
+</li>
+<li><p><code>ctx.fillRect(x, y, w, h)</code> 绘制一个起点在 (x, y) 、宽度为 w 、高度为 h 的实心矩形。</p>
+</li>
+<li><p><code>ctx.strokeRect(x, y, w, h)</code> 绘制一个起点在 (x, y) 、宽度为 w 、高度为 h 的描边矩形。此方法直接绘制到画布而不会修改当前路径。</p>
+</li>
+</ul>
+<h3 id="3-绘制虚线"><a href="#3-绘制虚线" class="headerlink" title="3. 绘制虚线"></a>3. 绘制虚线</h3><ul>
+<li><p><code>ctx.setLineDash([length, spacing])</code> 传入一组数组设置线段和间距的值，以绘制虚线。如果数组元素的数量是奇数，数组元素会被复制并重复。如果数组为空，将会变为实线。</p>
+</li>
+<li><p><code>ctx.getLineDash()</code> 获取当前线段样式，得到一组数组为线段和间距的值，例：[5, 10], 长度为 5px 的线段, 间隔为 10px。</p>
+</li>
+<li><p><code>ctx.lineDashOffset</code> 设置虚线偏移量，默认 0</p>
+</li>
+</ul>
+<h3 id="4-绘制路径"><a href="#4-绘制路径" class="headerlink" title="4. 绘制路径"></a>4. 绘制路径</h3><ul>
+<li><p><code>ctx.beginPath()</code> 创建一个新的路径</p>
+</li>
+<li><p><code>ctx.moveTo()</code> 将笔触起点移动到 (x, y)</p>
+</li>
+<li><p><code>ctx.closePath()</code> 封闭当前路径，当存在起点和终点，并且图形为封闭时讲创建一个连接起点和终点的直线。</p>
+</li>
+<li><p><code>ctx.stroke()</code> 给当前路径描边</p>
+</li>
+<li><p><code>ctx.lineTo(x, y)</code> 绘制一个从起点到指定点 (x, y) 的直线</p>
+</li>
+<li><p><code>ctx.rect(x, y, w, h)</code> 绘制一个起点在 (x, y) 、宽度为 w 、高度为 h 的矩形路径</p>
+</li>
+<li><p><code>ctx.fill()</code> 填充当前或已存在的路径，可选传 fillRule, 或选传 (Path2d, fillRule)。</p>
+<p><strong>fillRule</strong> 是一种算法，决定点是在路径内还是在路径外。”nonzero”: 非零环绕规则（默认），”evenodd”: 奇偶环绕规则。利用这一特性，我们可以做出非常复杂的镂空图形。</p>
+<p><strong>非零环绕填充规则</strong>：如果想知道某一区域是否被填充，就从这一区域画一条直线向外，在与其他线的交点处，如果其他线是顺时针方向画的，就+1，逆时针则-1，如果最后总和为 0，则不会填充，非零则填充。</p>
+<p><img src="/images/canvas/fillrule.png" alt=""></p>
+<p><strong>奇偶环绕填充规则</strong>：在路径包围的区域中，随便找一点，向外发射一条射线，和所有围绕它的边相交，查看相交线的个数，如果为奇数，就填充，如果是偶数，就不填充。</p>
+<p><strong>path2D()</strong> 转换 svg 格式的路径, 用法见 demo <a href="https://gaofanghuang.github.io/demo/api/canvas/demo1" target="_blank" rel="noopener">查看 demo</a></p>
+</li>
+<li><p><code>ctx.stroke()</code> 给当前或已经存在的路径创建描边</p>
+</li>
+<li><p><code>ctx.drawFocusIfNeeded(element)</code> 如果传入的元素是聚焦的，就给当前路径绘制焦点。也可传入(path, element)。 注意该元素必须写在 canvas 标签内。(这个 api 不知道有什么应用场景，因为写在 canvas 里的标签是不可见也不可点击的，感觉这个 api 是多余的)</p>
+</li>
+<li><p><code>ctx.clip()</code> 将当前创建的路径设置为当前剪切路径，之后创建的所有信息都只会出现在此路径内部。可选传 fillRule, 或选传 (Path2d, fillRule)。</p>
+</li>
+<li><p><code>ctx.isPointInPath(x, y, fillRule)</code> 判断当前路径内部是否包含指定的点</p>
+</li>
+<li><p><code>ctx.isPointInStroke(x, y)</code> 判断当前路径描边是否包含指定的点</p>
+</li>
+</ul>
+<h3 id="5-绘制文本"><a href="#5-绘制文本" class="headerlink" title="5. 绘制文本"></a>5. 绘制文本</h3><ul>
+<li><p><code>ctx.fillText(text, x, y [, maxWidth])</code> 绘制一个位于 (x, y) 的文本，并填充颜色。text 为文本内容。maxWidth 为文本最大宽度，可选项。</p>
+</li>
+<li><p><code>ctx.strokeText(text, x, y [, maxWidth])</code> 绘制一个位于 (x, y) 的文本，并描边颜色。text 为文本内容。maxWidth 为文本最大宽度，可选项。</p>
+</li>
+<li><p><code>ctx.measureText(text)</code> 返回 text 的信息，如文字宽度等内容.</p>
+</li>
+</ul>
+<h3 id="6-绘制圆和弧"><a href="#6-绘制圆和弧" class="headerlink" title="6. 绘制圆和弧"></a>6. 绘制圆和弧</h3><p>圆周率 π：<code>π = Math.PI ≈ 3.14 = 180°</code>，注意在 canvas 中的角度的表示采用的是弧度制。</p>
+<p>例如 30°，在 canvas 中用 <code>30 * Math.PI/180</code> 表示。即：<code>30° = 30 * Math.PI / 180 = Math.PI / 6</code></p>
+<ul>
+<li><p><code>ctx.arc(x, y, radius, startAngle, endAngle[, anticlockwise])</code> 圆弧路径的圆心在 (x, y) 位置，半径为 r ，根据 anticlockwise （默认为顺时针， true）指定的方向从 startAngle (x 轴方向开始计算) 开始绘制，到 endAngle (圆弧终点) 结束。</p>
+</li>
+<li><p><code>ctx.arcTo(x1, y1, x2, y2, radius)</code> 根据当前描点(前一个 moveTo 或 lineTo 等函数的止点)与给定的控制点 1 连接的直线，和控制点 1 与控制点 2 连接的直线，作为使用指定半径的圆的切线，画出两条切线之间的弧线路径。</p>
+</li>
+</ul>
+<p><strong>开始角度</strong> 及 <strong>结束角度</strong>：</p>
+<p>开始角度和结束角度都是以 x 轴为起点，顺时针环绕。</p>
+<p><img src="/images/canvas/arc_angle.png" alt=""></p>
+<h3 id="7-贝塞尔曲线"><a href="#7-贝塞尔曲线" class="headerlink" title="7. 贝塞尔曲线"></a>7. 贝塞尔曲线</h3><p><a href="https://www.jianshu.com/p/0c9b4b681724" target="_blank" rel="noopener">必须要理解掌握的贝塞尔曲线</a></p>
+<ul>
+<li><p><code>ctx.quadraticCurveTo(cpx, cpy, x, y)</code> 二次贝塞尔曲线。 需要传入 2 个点，第一个点是控制点，第二个点是终点。起始点是当前路径最新的点，当创建二次贝赛尔曲线之前，可以使用 moveTo() 方法进行改变。即以 3 个点产生一段曲线。</p>
+</li>
+<li><p><code>ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)</code> 三次贝塞尔曲线。需要传入 3 个点。 第一、第二个点是控制点，第三个点是结束点。起始点是当前路径的最后一个点，绘制贝赛尔曲线前，可以通过调用 moveTo() 进行修改。即以 4 个点产生一段曲线。</p>
+</li>
+</ul>
+<h3 id="8-绘制图像"><a href="#8-绘制图像" class="headerlink" title="8. 绘制图像"></a>8. 绘制图像</h3><ul>
+<li><p><code>ctx.drawImage(image[, sx, sy, sWidth, sHeight], dx, dy[, dWidth, dHeight])</code> 在 Canvas 上绘制图像。</p>
+<p><strong>image</strong>: 允许 CanvasImageSource 对象，同上。</p>
+<p><img src="https://mdn.mozillademos.org/files/225/Canvas_drawimage.jpg" alt=""></p>
+<p><strong>dx</strong>：<br>image 的左上角在目标 canvas 上 X 轴坐标。</p>
+<p><strong>dy</strong>：<br>image 的左上角在目标 canvas 上 Y 轴坐标。</p>
+<p><strong>sx</strong>： 可选参<br>需要绘制到目标上下文中的，image 的矩形（裁剪）选择框的左上角 X 轴坐标。</p>
+<p><strong>sy</strong>： 可选参<br>需要绘制到目标上下文中的，image 的矩形（裁剪）选择框的左上角 Y 轴坐标。</p>
+<p><strong>sWidth</strong>： 可选参<br>需要绘制到目标上下文中的，image 的矩形（裁剪）选择框的宽度。如果不说明，整个矩形（裁剪）从坐标的 sx 和 sy 开始，到 image 的右下角结束。</p>
+<p><strong>sHeight</strong>：可选参<br>需要绘制到目标上下文中的，image 的矩形（裁剪）选择框的高度。</p>
+<p><strong>dWidth</strong>：可选<br>image 在目标 canvas 上绘制的宽度。 允许对绘制的 image 进行缩放。 如果不说明， 在绘制时 image 宽度不会缩放。</p>
+<p><strong>dHeight</strong>：可选参<br>image 在目标 canvas 上绘制的高度。 允许对绘制的 image 进行缩放。 如果不说明， 在绘制时 image 高度不会缩放。</p>
+</li>
+</ul>
+<h3 id="9-变换"><a href="#9-变换" class="headerlink" title="9. 变换"></a>9. 变换</h3><ul>
+<li><p><code>ctx.rotate(angle)</code> 传入一个角度，用来旋转画布。旋转方向是顺时针的。旋转中心点是 canvas 的起始点, 默认 x = 0, y = 0。</p>
+<p><img src="https://mdn.mozillademos.org/files/233/Canvas_grid_rotate.png" alt=""></p>
+</li>
+<li><p><code>ctx.scale(x, y)</code> 传入缩放比例来控制画布中的像素单位，x 为水平方向的缩放因子，y 垂直方向的缩放因子。默认情况下，x = 1, y = 1。可以使用 <code>ctx.scale(-1, 1)</code> 水平翻转上下文，使用 <code>ctx.scale(1, -1)</code> 垂直翻转上下文。</p>
+</li>
+<li><p><code>ctx.translate(x, y)</code> 偏移画布原点。x 水平方向的移动距离, y 垂直方向的移动距离。</p>
+<p><img src="https://mdn.mozillademos.org/files/234/Canvas_grid_translate.png" alt=""></p>
+</li>
+<li><p><code>ctx.transform(a, b, c, d, e, f)</code> 多次叠加当前变换, 即可以缩放、旋转、移动和倾斜上下文。a，水平缩放。b，垂直倾斜。c，水平倾斜。d，垂直缩放。e，水平移动。f，垂直移动。会叠加之前的变换。默认画布配置参数为(1, 0, 0, 1, 0, 0)。即 ad 参数等同 ctx.scale(x, y)，当 ab 参数同时为 0 时，之后的内容不可见；ef 测试等同 ctx.translate(x, y)。bc 参数为 <strong>ctx.transform</strong> 特有，当 bc 参数同时为 1 时，之后的内容不可见。</p>
+<p><strong>倾斜角度</strong>：bc 参数数值换算方式，即 tan45° = 1。例如当 b = 1, c = 0 时，将 x 轴方向上倾斜 45 度。</p>
+</li>
+<li><p><code>ctx.setTransform(a, b, c, d, e, f)</code> 重设当前变换，会覆盖之前的变换。</p>
+</li>
+</ul>
+<h3 id="10-像素控制"><a href="#10-像素控制" class="headerlink" title="10. 像素控制"></a>10. 像素控制</h3><ul>
+<li><p><code>ctx.createImageData(width, height)</code> 创建一个新的、空白的、指定大小的 ImageData 对象。 所有的像素在新对象中都是透明的。也可传参 <code>imageData</code>。返回一个指定了宽度和高度的，新的 ImageData 对象， 新对象使用透明的像素进行填充。</p>
+<p>width：ImageData 新对象的宽度。</p>
+<p>height：ImageData 新对象的高度。</p>
+<p>imageData：从现有的 ImageData 对象中，复制一个和其宽度和高度相同的对象。图像自身不允许被复制。</p>
+</li>
+<li><p><code>ctx.getImageData(sx, sy, sw, sh)</code> 返回一个 ImageData 对象，用来描述 canvas 区域隐含的像素数据，这个区域通过矩形表示，起始点为(sx, sy)、宽为 sw、高为 sh。返回一个 ImageData 对象，包含 canvas 给定的矩形图像数据。</p>
+</li>
+</ul>
+<p>ImageData 对象的值类似于[0, 0, 0, 0, 250, 250, 250, 128], 即每四个值描述了一个像素点的显示颜色，这四个值分别是RGBA。</p>
+<p>R - 红色 (0-255)<br>G - 绿色 (0-255)<br>B - 蓝色 (0-255)<br>A - alpha 通道 (0-255; 0 是透明的，255 是完全可见的), 当透明度大于128时，表示这个像素点是有颜色的像素点。</p>
+<ul>
+<li><p><code>ctx.putImageData(imageData, dx, dy[, dirtyX, dirtyY, dirtyWidth, dirtyHeight])</code> 将数据从已有的 ImageData 对象绘制到位图的方法。 如果提供了一个绘制过的矩形，则只绘制该矩形的像素。此方法不受画布转换矩阵的影响。</p>
+<p>imageData: ImageData ，包含像素值的数组对象。</p>
+<p>dx: 源图像数据在目标画布中的 x 轴的坐标位置。</p>
+<p>dy: 源图像数据在目标画布中的 y 轴的坐标位置。</p>
+<p>dirtyX: 可选, 在源图像数据中，矩形区域左上角的位置。默认是整个图像数据的左上角（x 坐标）。</p>
+<p>dirtyY: 可选, 在源图像数据中，矩形区域左上角的位置。默认是整个图像数据的左上角（y 坐标）。</p>
+<p>dirtyWidth: 可选, 在源图像数据中，矩形区域的宽度。默认是图像数据的宽度。</p>
+<p>dirtyHeight: 可选, 在源图像数据中，矩形区域的高度。默认是图像数据的高度。</p>
+</li>
+</ul>
+<h3 id="11-状态"><a href="#11-状态" class="headerlink" title="11. 状态"></a>11. 状态</h3><ul>
+<li><p><code>ctx.save()</code> 将当前状态放入栈中，保存 canvas 全部的状态。</p>
+<p><strong>被保存的值</strong>：当前的变换矩阵。当前的剪切区域。当前的虚线列表. 以下属性当前的值： strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin, miterLimit, lineDashOffset, shadowOffsetX, shadowOffsetY, shadowBlur, shadowColor, globalCompositeOperation, font, textAlign, textBaseline, direction, imageSmoothingEnabled.</p>
+</li>
+<li><p><code>ctx.restore()</code> 将 canvas 恢复到最近的保存状态的方法。 如果没有保存状态，此方法不做任何改变。</p>
+</li>
+</ul>
+<h2 id="离屏渲染"><a href="#离屏渲染" class="headerlink" title="离屏渲染"></a>离屏渲染</h2><p><strong>原理</strong>：创建缓冲区，需要额外创建一个canvas画布，将缓冲的画面现在该canvas上绘制好，在通过drawImage()的方式将该画布渲染到屏幕显示的画布上。</p>
+<p><strong>注意</strong>：离屏渲染并不能在任何情况下都可以降低性能消耗，创建缓冲区和复制缓存画面这两个操作都会消耗性能。</p>
+<p>使用场景，当我们需要进行大量的图形计算的时候，可以使用离屏渲染中的canvas对象计算。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo5" target="_blank" rel="noopener">查看 demo</a></p>
+<h2 id="简单动画"><a href="#简单动画" class="headerlink" title="简单动画"></a>简单动画</h2><p>canvas 动画实现原理：使用<code>window.setInterval()</code>或<code>window.setTimeout()</code>或<code>window.requestAnimationFrame()</code>，来清空画布并重绘新一帧的画面。由于肉眼在看超过 24 帧每秒的静态图片就会认为是连续动态视频，所以在这里 1 秒内连续生成 24 帧画面，就会产生连续的动画效果。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo3" target="_blank" rel="noopener">查看 demo</a></p>
+<p><strong>帧数</strong>：帧数(Frames)，为帧生成数量的简称。由于口语习惯上的原因，我们通常将帧数与帧率混淆。每一帧都是静止的图象，快速连续地显示帧便形成了运动的假象，因此高的帧率可以得到更流畅、更逼真的动画。</p>
+<p><strong>帧率</strong>：帧率(Frame rate)=帧数(Frames)/时间(Time)，单位为帧每秒(f/s, frames per second, fps)。如果一个动画的帧率恒定为 60 帧每秒(fps)，那么它在一秒钟内的帧数为 60 帧，两秒钟内的帧数为 120 帧。</p>
+<p><strong>性能</strong>：<code>window.requestAnimationFrame()</code>提供了更加平缓并更加有效率的方式来执行动画，当系统准备好了重绘条件的时候，才调用绘制动画帧。一般使用这个方法来执行动画，比 setInterval、setTimeout 效果更好。</p>
+<h3 id="chrome浏览器查看帧率"><a href="#chrome浏览器查看帧率" class="headerlink" title="chrome浏览器查看帧率"></a>chrome浏览器查看帧率</h3><p>F12 → More tools → Rendering → 勾选 FPS meter</p>
+<p><img src="/images/canvas/fps-view.jpg" alt=""></p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo4" target="_blank" rel="noopener">查看 demo</a></p>
+<p><code>window.requestAnimationFrame(callback)</code> 执行动画</p>
+<p><code>window.cancelAnimationFrame()</code> 取消动画</p>
+<h2 id="设备交互"><a href="#设备交互" class="headerlink" title="设备交互"></a>设备交互</h2><h3 id="1-鼠标事件"><a href="#1-鼠标事件" class="headerlink" title="1. 鼠标事件"></a>1. 鼠标事件</h3><p>Canvas 对象支持所有的 JavaScript 的鼠标事件，包括鼠标点击(MouseClick), 鼠标按下(Mouse Down), 鼠标抬起(Mouse Up), 鼠标移动( Mouse Move)。</p>
+<p>添加鼠标事件的两种方式：</p>
+<p>1.1. 给 canvas 增加事件监听（推荐）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 鼠标移动</span></span><br><span class="line">canvas.addEventListener(<span class="string">'mousemove'</span>, doMouseMove, <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标按下</span></span><br><span class="line">canvas.addEventListener(<span class="string">'mousedown'</span>, doMouseDown, <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标抬起</span></span><br><span class="line">canvas.addEventListener(<span class="string">'mouseup'</span>, doMouseUp, <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标点击</span></span><br><span class="line">canvas.addEventListener(<span class="string">'click'</span>, doMouseClick, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+
+<p>1.2. 调用 canvas 自身鼠标事件（反模式，不推荐）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 鼠标移动</span></span><br><span class="line">canvas.onmouseup = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标按下</span></span><br><span class="line">canvas.onmousedown = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标抬起</span></span><br><span class="line">canvas.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标点击</span></span><br><span class="line">canvas.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>1.3. 获取鼠标在 canvas 上的坐标</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getPointOnCanvas = <span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> canvasBox = canvas.getBoundingClientRect()</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'canvasBox'</span>, canvasBox)</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    x: x - canvasBox.left * (canvas.width / canvasBox.width),</span><br><span class="line">    y: y - canvasBox.top * (canvas.height / canvasBox.height)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">canvas.addEventListener(</span><br><span class="line">  <span class="string">'click'</span>,</span><br><span class="line">  e =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> mousePoint = getPointOnCanvas(e.x, e.y)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'获取鼠标在canvas对象上的坐标'</span>, e, mousePoint)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-键盘事件"><a href="#2-键盘事件" class="headerlink" title="2. 键盘事件"></a>2. 键盘事件</h3><p>HTML5 Canvas 本身不支持键盘事件监听与获取，常用的有两种方法来解决这个问题:</p>
+<p>2.1 监听 window 对象的键盘事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, doKeyDown, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<p>2.2 在 Canvas 标签上增加支持键盘事件的 DOM 元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"event_canvas"</span> <span class="attr">tabindex</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">canvas.addEventListener(<span class="string">'keydown'</span>, doKeyDown, <span class="literal">true</span>)</span><br><span class="line">canvas.focus()</span><br></pre></td></tr></table></figure>
+
+<p>其中 <strong>tabindex</strong> 为 HTML5 DOM 元素，支持键盘事件。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo6" target="_blank" rel="noopener">查看 demo</a></p>
+<h2 id="高级动画"><a href="#高级动画" class="headerlink" title="高级动画"></a>高级动画</h2><p>高级动画和简单动画的区别，就是我们需要增加一些现实特性，如物理碰撞、加速度、摩擦力、重力作用等等因素，使动画的元素，运动过程中更贴合现实。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo7" target="_blank" rel="noopener">查看 demo</a></p>
+<h3 id="1-边界"><a href="#1-边界" class="headerlink" title="1. 边界"></a>1. 边界</h3><h4 id="1-1-设置边界"><a href="#1-1-设置边界" class="headerlink" title="1.1. 设置边界"></a>1.1. 设置边界</h4><p>一般情况下我们把边界设置为 canvas 左上角到右下角，即</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> top = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> left = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> right = canvas.width</span><br><span class="line"><span class="keyword">let</span> bottom = canvas.height</span><br></pre></td></tr></table></figure>
+
+<p>或者其他参数例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> top = <span class="number">10</span></span><br><span class="line"><span class="keyword">let</span> left = <span class="number">10</span></span><br><span class="line"><span class="keyword">let</span> right = canvas.width - <span class="number">50</span></span><br><span class="line"><span class="keyword">let</span> bottom = canvas.height - <span class="number">50</span></span><br></pre></td></tr></table></figure>
+
+<p>当设置好边界之后，即可对小球超出边界后进行其他操作：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (ball.x &gt; right) &#123;</span><br><span class="line">  <span class="comment">// to do something</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ball.x &lt; left) &#123;</span><br><span class="line">  <span class="comment">// to do something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (ball.y &gt; bottom) &#123;</span><br><span class="line">  <span class="comment">// to do something</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ball.y &lt; top) &#123;</span><br><span class="line">  <span class="comment">// to do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-超出边界移除"><a href="#1-2-超出边界移除" class="headerlink" title="1.2. 超出边界移除"></a>1.2. 超出边界移除</h4><p>效果：若干小球朝不同的方向移动，当某小球超出边界即不再显示这个小球，直到画面上全部小球消失。</p>
+<p>原理：生成若干小球 push 到数组里，当某小球超出边界时，通过 id 删除数组中该小球的数据，即下次渲染帧时，不会再渲染该小球。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo8" target="_blank" rel="noopener">查看 demo 超出边界移除</a></p>
+<h4 id="1-3-超出边界重新形成"><a href="#1-3-超出边界重新形成" class="headerlink" title="1.3. 超出边界重新形成"></a>1.3. 超出边界重新形成</h4><p>效果：若干小球朝不同的方向移动，当小球超出边界时，重新再指定位置出现，并不断移动。</p>
+<p>原理：生成若干小球 push 到数组里，当某小球超出边界时，重置数组中该小球的位置即可。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo9" target="_blank" rel="noopener">查看 demo 超出边界重新形成</a></p>
+<h4 id="1-4-边界环绕"><a href="#1-4-边界环绕" class="headerlink" title="1.4. 边界环绕"></a>1.4. 边界环绕</h4><p>效果：若干小球朝不同的方向移动，当小球超出边界时，小球从反方向的边界出现，并不断移动。例：小球从右往左移动，当小球超出左边界时，小球重新出现在右边界，并继续往左移动。</p>
+<p>原理：生成若干小球 push 到数组里，当某小球超出任意边界时，数组中该小球的位置取边界的反值即可。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo10" target="_blank" rel="noopener">查看 demo 边界环绕</a></p>
+<h4 id="1-5-边界反弹"><a href="#1-5-边界反弹" class="headerlink" title="1.5. 边界反弹"></a>1.5. 边界反弹</h4><p>效果：若干小球朝不同的方向移动，当小球超出边界时，小球往该边界的反方向的移动。</p>
+<p>原理：生成若干小球 push 到数组里，当某小球超出任意边界时，数组中该小球的加速度取反即可。如果需要模拟现实中的重力加速度，则使 vy 衰减即可。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo11" target="_blank" rel="noopener">查看 demo 边界反弹</a></p>
+<h3 id="2-速度、加速度和重力加速度"><a href="#2-速度、加速度和重力加速度" class="headerlink" title="2. 速度、加速度和重力加速度"></a>2. 速度、加速度和重力加速度</h3><p><strong>速度</strong>，描述物体运动快慢和方向的物理量。在 canvas 中速度是矢量的，既有大小又有方向，而方向的体现就是其值的正负。任何一个速度都可以分解为 x 轴和 y 轴上的速度。</p>
+<p><strong>加速度</strong>，即速率，是描述物体速度变化快慢的物理量。加速度的方向与速度相同即加速，方向相反即减速，如果加速度为零，速度将恒定，物体做匀速直线运动。</p>
+<p><img src="/images/canvas/speed.png" alt=""></p>
+<p><code>vx = speed * Math.cos(angle)</code></p>
+<p><code>vy = speed * Math.sin(angle)</code></p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo16" target="_blank" rel="noopener">查看 demo 匀速运动和加速度运动</a></p>
+<p><strong>重力加速度</strong>，重力对自由下落的物体产生的加速度。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo17" target="_blank" rel="noopener">查看 demo 重力加速度</a></p>
+<h3 id="3-摩擦力"><a href="#3-摩擦力" class="headerlink" title="3. 摩擦力"></a>3. 摩擦力</h3><p>两个相互接触并挤压的物体，当它们发生相对运动或具有相对运动趋势时，就会在接触面上产生阻碍相对运动或相对运动趋势的力，这种力叫做<strong>摩擦力</strong>。通常我们用字母 <code>f</code> 来表示摩擦力。</p>
+<p>通俗的说，就是一个物体的速度，因为摩擦力的影响，会不断的发生衰减，直到速度为 0 时，物体也停止了运动。</p>
+<ul>
+<li><p>计算物体运动的角度 <code>angle = Math.atan2(vy, vx)</code></p>
+</li>
+<li><p>计算物体运动的速度 <code>speed = Math.sqrt(vx*vx + vy*vy)</code></p>
+</li>
+</ul>
+<p>当速度大于摩擦力时，将速度减去摩擦力，得到一个衰减后的速度值，然后再使用加速度计算公式，算出新速度的 vx 和 vy 的值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (speed &gt; f) &#123;</span><br><span class="line">  speed -= f</span><br><span class="line">  vx = <span class="built_in">Math</span>.cos(angle) * speed</span><br><span class="line">  vy = <span class="built_in">Math</span>.sin(angle) * speed</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  speed = <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo18" target="_blank" rel="noopener">查看 demo 摩擦力</a></p>
+<h3 id="4-拖尾效果"><a href="#4-拖尾效果" class="headerlink" title="4. 拖尾效果"></a>4. 拖尾效果</h3><p>拖尾效果常用于绘制流星和烟花等动画。顾名思义，就是物体运动时会有一个尾巴跟随。</p>
+<p>最简单的拖尾效果实现方案，使用以下代码代替 <code>clear</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctx.fillStyle=<span class="string">"rgba(0,0,0,0.2)"</span></span><br><span class="line">ctx.rect(<span class="number">0</span>,<span class="number">0</span>,w,h);</span><br><span class="line">ctx.fill();</span><br></pre></td></tr></table></figure>
+<p>原理是每帧画面加上一个透明度为0.2的蒙层，随着蒙层叠加的层数越多，较底层的图层也被覆盖到看不见了，以此而形成了拖尾效果。</p>
+<h3 id="5-物理碰撞"><a href="#5-物理碰撞" class="headerlink" title="5. 物理碰撞"></a>5. 物理碰撞</h3><p>为了模拟真实世界的物体运动，我们知道不止物体与边界碰撞后有反弹效果，物体与物体之间碰撞后也应该有反弹效果。</p>
+<p>物体碰撞检测方法:</p>
+<ul>
+<li><p>判断物体与物体之间是否有重叠，一般使用物体的外接矩形边界来确定。（矩形边界的精度不够准确，如果需要更精准的碰撞检测，则需要更复杂的边界算法。）</p>
+</li>
+<li><p>判断物体与物体之间的距离，当距离小于某个值时，满足碰撞条件，物体产生碰撞效果。</p>
+</li>
+</ul>
+<h4 id="5-1-分离轴定理"><a href="#5-1-分离轴定理" class="headerlink" title="5.1 分离轴定理"></a>5.1 分离轴定理</h4><p>分离轴定理（英文简称SAT）是一项用于检测圆或凸多边形碰撞的技术（无法检测凹多边形的碰撞）。</p>
+<h4 id="5-2-最小平移向量"><a href="#5-2-最小平移向量" class="headerlink" title="5.2 最小平移向量"></a>5.2 最小平移向量</h4><p>两个物品碰撞之后，使他们分开需要的最小平移向量。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo19" target="_blank" rel="noopener">查看 demo 拖拽抛扔</a></p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo25" target="_blank" rel="noopener">查看 demo 碰撞检测</a></p>
+<h3 id="6-缓动动画"><a href="#6-缓动动画" class="headerlink" title="6. 缓动动画"></a>6. 缓动动画</h3><p>物体由以低速开始，然后加快，在结束前变慢的滑行到目标位置，然后停止。类似于<strong>CSS</strong>中的<code>animation-timing-function: ease</code>效果。</p>
+<p>实现原理：目标位置减去当前位置再乘以缓动系数，即可得到缓动动画的加速度效果。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo20" target="_blank" rel="noopener">查看 demo 定点缓动</a></p>
+<p>缓动动画的应用使元素<strong>变换</strong>的过程<strong>过渡</strong>得十分自然，避免了生硬和突兀的感觉。缓动动画不止应用于位移中，在旋转、变色、透明度等方面也可以得到很好的效果。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo21" target="_blank" rel="noopener">查看 demo 旋转</a></p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo22" target="_blank" rel="noopener">查看 demo 变色</a></p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo23" target="_blank" rel="noopener">查看 demo 渐入渐隐</a></p>
+<h3 id="7-弹性动画"><a href="#7-弹性动画" class="headerlink" title="7. 弹性动画"></a>7. 弹性动画</h3><p>物体运动到目标位置之后，并不会立刻停止，而是以目标位置为中心点做一个类似弹簧的往复运动，其速度不断衰减，最终会停止在目标位置。</p>
+<p>为了得到平滑的弹性动画效果，我们一般会用到缩放、平移、旋转、透明度等变换属性。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo24" target="_blank" rel="noopener">查看 demo 弹性动画</a></p>
+<h3 id="8-粒子动画"><a href="#8-粒子动画" class="headerlink" title="8. 粒子动画"></a>8. 粒子动画</h3><p>制作粒子动画我们常用的一个api就是<code>ctx.getImageData(sx, sy, sw, sh)</code>, 即获得画面的像素点，再通过位移、缩放等变形制作动画效果。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo26" target="_blank" rel="noopener">查看 demo 文字粒子</a></p>
+<h2 id="数值计算"><a href="#数值计算" class="headerlink" title="数值计算"></a>数值计算</h2><p>在绘制 canvas 时，经常需要进行各种数值计算，除了简单的加减乘除，要实现更复杂的效果往往需要使用到三角函数、圆周率等数学概念，还需要理解摩擦力、加速度等物理概念。</p>
+<p>各种动效的具体计算公式，可以参考<a href="http://inloop.github.io/interpolator/" target="_blank" rel="noopener">interpolator</a></p>
+<h3 id="1-三角函数"><a href="#1-三角函数" class="headerlink" title="1. 三角函数"></a>1. 三角函数</h3><p><code>π = Math.PI ≈ 3.14 = 180°</code></p>
+<p>常见的三角函数包括正弦函数、余弦函数和正切函数。</p>
+<p><img src="/images/canvas/cossincot.png" alt=""></p>
+<p>通过夹角，计算边：</p>
+<ul>
+<li><p><strong>sin(θ) = X / R</strong> → <code>Math.sin( θ * Math.PI / 180 )</code></p>
+</li>
+<li><p><strong>cos(θ) = Y / R</strong> → <code>Math.cos( θ * Math.PI / 180 )</code></p>
+</li>
+<li><p><strong>tan(θ) = X / Y</strong> → <code>Math.tan( θ * Math.PI / 180 )</code></p>
+</li>
+</ul>
+<p>通过边，计算夹角：</p>
+<ul>
+<li><p><strong>θ = arcsin(X / R)</strong> → <code>Math.asin(X / R) * (180 / Math.PI)</code></p>
+</li>
+<li><p><strong>θ = arccos(Y / R)</strong> → <code>Math.acos(Y / R) * (180 / Math.PI)</code></p>
+</li>
+<li><p><strong>θ = arctan(X / Y)</strong> → <code>Math.atan(X / Y) * (180 / Math.PI)</code></p>
+</li>
+</ul>
+<p><strong>Math.atan</strong> 有一个缺陷，就是无法获取角度的方向。我们指定坐标轴有四个象限：<code>X / Y = -X / -Y</code>，<code>-X / Y = X / Y</code>。</p>
+<p><img src="/images/canvas/atant.png" alt=""></p>
+<p>即在 Math.atan 计算中, A、B、C、D 的值是相等的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> A = <span class="built_in">Math</span>.atan(<span class="number">2</span> / <span class="number">1</span>) * ((<span class="number">26.57</span> * <span class="built_in">Math</span>.PI) / <span class="number">180</span>)</span><br><span class="line"><span class="keyword">const</span> B = <span class="built_in">Math</span>.atan(<span class="number">-2</span> / <span class="number">1</span>) * ((<span class="number">-26.57</span> * <span class="built_in">Math</span>.PI) / <span class="number">180</span>)</span><br><span class="line"><span class="keyword">const</span> C = <span class="built_in">Math</span>.atan(<span class="number">-2</span> / <span class="number">-1</span>) * ((<span class="number">26.57</span> * <span class="built_in">Math</span>.PI) / <span class="number">180</span>)</span><br><span class="line"><span class="keyword">const</span> D = <span class="built_in">Math</span>.atan(<span class="number">2</span> / <span class="number">-1</span>) * ((<span class="number">-26.57</span> * <span class="built_in">Math</span>.PI) / <span class="number">180</span>)</span><br><span class="line"><span class="built_in">console</span>.log(A, B, C, D)</span><br><span class="line"><span class="comment">// 0.5134224838510526 0.5134224838510526 0.5134224838510526 0.5134224838510526</span></span><br></pre></td></tr></table></figure>
+
+<p>因此当我们需要获取角度的方向时，可以使用<code>Math.atan2(dy, dx)</code>来计算：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> A2 = <span class="built_in">Math</span>.atan2(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">const</span> B2 = <span class="built_in">Math</span>.atan2(<span class="number">-2</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">const</span> C2 = <span class="built_in">Math</span>.atan2(<span class="number">-2</span>, <span class="number">-1</span>)</span><br><span class="line"><span class="keyword">const</span> D2 = <span class="built_in">Math</span>.atan2(<span class="number">2</span>, <span class="number">-1</span>)</span><br><span class="line"><span class="built_in">console</span>.log(A2, B2, C2, D2)</span><br><span class="line"><span class="comment">// 1.1071487177940904 -1.1071487177940904 -2.0344439357957027 2.0344439357957027</span></span><br></pre></td></tr></table></figure>
+
+<p>由于 <strong>Math.atan</strong> 的弊端，使用<code>Math.atan2(dy, dx)</code>来代替 Math.atan 计算角度即可。</p>
+<p><strong>特殊角的值</strong>：</p>
+<p><code>Math.sqrt()</code> 计算平方根。注意：tan90° 不存在。</p>
+<table>
+<thead>
+<tr>
+<th align="center">角度</th>
+<th align="center">0°</th>
+<th align="center">15°</th>
+<th align="center">30°</th>
+<th align="center">45°</th>
+<th align="center">60°</th>
+<th align="center">90°</th>
+<th align="center">120°</th>
+<th align="center">135°</th>
+<th align="center">150°</th>
+<th align="center">180°</th>
+<th align="center">270°</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">弧度</td>
+<td align="center">0</td>
+<td align="center">π/12</td>
+<td align="center">π/6</td>
+<td align="center">π/4</td>
+<td align="center">π/3</td>
+<td align="center">π/2</td>
+<td align="center">2π/3</td>
+<td align="center">3π/4</td>
+<td align="center">5π/6</td>
+<td align="center">π</td>
+<td align="center">3π/2</td>
+</tr>
+<tr>
+<td align="center">sin 值</td>
+<td align="center">0</td>
+<td align="center">[（√6）-（√2）]/4</td>
+<td align="center">1/2</td>
+<td align="center">（√2）/2</td>
+<td align="center">（√3）/2</td>
+<td align="center">1</td>
+<td align="center">（√3）/2</td>
+<td align="center">（√2）/2</td>
+<td align="center">1/2</td>
+<td align="center">0</td>
+<td align="center">-1</td>
+</tr>
+<tr>
+<td align="center">cos 值</td>
+<td align="center">1</td>
+<td align="center">[（√6）+（√2）]/4</td>
+<td align="center">（√3）/2</td>
+<td align="center">（√2）/2</td>
+<td align="center">1/2</td>
+<td align="center">0</td>
+<td align="center">-1/2</td>
+<td align="center">-（√2）/2</td>
+<td align="center">-（√3）/2</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">tan 值</td>
+<td align="center">0</td>
+<td align="center">2-√3</td>
+<td align="center">（√3）/3</td>
+<td align="center">1</td>
+<td align="center">√3</td>
+<td align="center">∅</td>
+<td align="center">-√3</td>
+<td align="center">-1</td>
+<td align="center">-（√3）/3</td>
+<td align="center">0</td>
+<td align="center">∅</td>
+</tr>
+<tr>
+<td align="center">cot 值</td>
+<td align="center">∅</td>
+<td align="center">2+√3</td>
+<td align="center">√3</td>
+<td align="center">1</td>
+<td align="center">√3/3</td>
+<td align="center">0</td>
+<td align="center">-（√3）/3</td>
+<td align="center">-1</td>
+<td align="center">-√3</td>
+<td align="center">∅</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo12" target="_blank" rel="noopener">查看 demo 鼠标跟随</a></p>
+<h3 id="2-波形运动"><a href="#2-波形运动" class="headerlink" title="2. 波形运动"></a>2. 波形运动</h3><p>凡质地柔软的物体由于力的作用，从受力点一端向另一端推移，就产生波形的曲线运动，曲线运动都是反复循环的。波形图像，又叫做正弦曲线。</p>
+<p>即使用 <code>Math.sin(angle)</code> 计算，我们可以绘制出十分自然的波形运动动画。计算出的值，在[-1, 1]的区间中逐步递增或逐步衰减，一直循环下去。</p>
+<p>例：[0.1, 0.2, …… 0.8, 0.9, 0.8 …… 0.2, 0.1, -0.1, -0.2 …… -0.9, -0.8 …… -0.1, 0.1, 0.2]</p>
+<p>因此，当我们需要绘制一个循环反复的动画运动效果时，可以使用 <code>Math.sin(angle)</code> 来计算动画变换的值。</p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo14" target="_blank" rel="noopener">查看 demo 曲线球</a></p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo15" target="_blank" rel="noopener">查看 demo 脉冲球</a></p>
+<p><a href="https://gaofanghuang.github.io/demo/api/canvas/demo13" target="_blank" rel="noopener">查看 demo 水草摆动</a></p>
+<h2 id="运动规律"><a href="#运动规律" class="headerlink" title="运动规律"></a>运动规律</h2><p>要了解运动规律，可以参考<a href="https://book.douban.com/subject/1485731/" target="_blank" rel="noopener">《原动画基础教程动画人的生存手册》</a></p>
+<ol>
+<li><p><strong>动态线</strong>：呈现出运动的物体动态走向的趋势辅助线，是表现动作特征的主线，是运动主题中心线的变化样式。</p>
+</li>
+<li><p><strong>夸张</strong>：夸张就是根据变性原理，对动作的变形程度进行夸大，并且延长变形时间，使这一瞬间给观众留下深刻印象的表现手法。包括弹性变形、惯性变形等。（动作效果、力与质感、情绪、性格）</p>
+</li>
+<li><p><strong>动画时间分配</strong>：对动作过程中的每张动画的时间长短做合理安排。</p>
+</li>
+<li><p><strong>停顿</strong>：运动过程中的突然停止。</p>
+</li>
+<li><p><strong>循环动画</strong>： 周期性重复性的动作。</p>
+</li>
+<li><p><strong>压缩与拉伸</strong>：通过外力作用下的物体的变形表现力量的方向和大小，并对变形程度进行夸大，以强调力的效果。</p>
+</li>
+<li><p><strong>运动轨迹</strong>：运动轨迹就是指的是主体的运动路线和各活动部件自身的运动轨迹，是一种运动效果草图。</p>
+</li>
+<li><p><strong>加速度</strong>：物体受力后运动速度的变化快慢程度。</p>
+</li>
+<li><p><strong>预备动作</strong>：预备动作指的是与主要动作相反的提示性动作。</p>
+</li>
+<li><p><strong>跟随动作</strong>：指的是物体运动过程中，主体身上的附属物做出与主体不同步（往往是延迟一段时间），但方向一致的跟随动作。</p>
+</li>
+<li><p><strong>缓冲动作</strong>：指的是运动主体突然停止运动时，因克服惯性而缓慢停止的过程。</p>
+</li>
+</ol>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ol>
+<li><p>在离屏 canvas 上预渲染相似的图形或重复的对象。</p>
+</li>
+<li><p>避免浮点数的坐标点，用整数取而代之。用 Math.floor() 函数对所有的坐标点取整。</p>
+</li>
+<li><p>不要在用 drawImage 时缩放图像。在离屏 canvas 中缓存图片的不同尺寸，而不要用 drawImage() 去缩放它们。</p>
+</li>
+<li><p>使用多层画布去画一个复杂的场景。</p>
+</li>
+<li><p>用 CSS 设置大的背景图。</p>
+</li>
+<li><p>用 CSS transforms 特性缩放画布。</p>
+</li>
+<li><p>关闭透明度。<code>var ctx = canvas.getContext(&#39;2d&#39;, { alpha: false });</code></p>
+</li>
+<li><p>将画布的函数调用集合到一起（例如，画一条折线，而不要画多条分开的直线）。</p>
+</li>
+<li><p>避免不必要的画布状态改变。</p>
+</li>
+<li><p>渲染画布中的不同点，而非整个新状态。</p>
+</li>
+<li><p>尽可能避免 shadowBlur 特性。</p>
+</li>
+<li><p>尽可能避免 text rendering。</p>
+</li>
+<li><p>使用不同的办法去清除画布(clearRect() vs. fillRect() vs. 调整 canvas 大小)。</p>
+</li>
+<li><p>有动画，请使用 window.requestAnimationFrame() 而非 window.setInterval()。</p>
+</li>
+<li><p>请谨慎使用大型物理库。</p>
+</li>
+<li><p>制作粒子效果时，尽量使用矩形方法绘制点，而不是圆方法绘制点。</p>
+</li>
+</ol>
+<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><ol>
+<li><p>标签需要闭合，<code>&lt;canvas&gt;</code> 元素需要有闭合标签 (<code>&lt;/canvas&gt;</code>)。</p>
+</li>
+<li><p>设置画布( canvas )的大小</p>
+<p>可以直接在 html 标签中使用 width 和 height 属性 或 css 来设置画布尺寸，canvas 会通过放大缩小图像来适应画布。需要注意的是，这样容易造成图像内容模糊变形，我们目前无法使用 css 的样式来控制变形，如<code>object-fit:cover</code>，目前只能用改变宽高属性实现。</p>
+<p>推荐的方法是宽高直接写在 canvas 标签上，或者使用 js 来修改 canvas 的宽高。</p>
+</li>
+<li><p>canvas 标签内的内容，当 canvas 工作时并不会显示，而当浏览器不支持 canvas 时，才会显示。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">height</span>=<span class="string">"300"</span>&gt;</span></span><br><span class="line">  抱歉，您的浏览器不支持canvas元素 （这些内容将会在不支持 canvas</span><br><span class="line">  元素的浏览器或是禁用了 JavaScript 的浏览器内渲染并展现）</span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>canvas 画布清空问题</p>
+<p>清除 Canvas 任意区域像素可以用 canvas_context.clearRect(x, y, width, height)，但如果只有一个 Canvas，不同的方法都调用同一个 Canvas 时，只调用 canvas_context.clearRect(x, y, width, height)之后，再次绘制会出现偏移现象。</p>
+<p>此时只要重置画布的宽度或者高度<code>canvas.width = canvas.width</code>，canvas 标签就会重新被渲染，以此达到完全清空画布内容的效果。</p>
+</li>
+<li><p>ctx.font 不生效</p>
+<p>ctx.font 必须同时设置 字体大小 和 字体名称， 如设置 <code>ctx.font = &#39;16px&#39;</code> 时是无效的，必须加上 font-family 才行, 即：<code>ctx.font = &#39;16px serif&#39;</code></p>
+</li>
+<li><p>引用外部图片资源绘制，toDataUrl()报错：Uncaught DOMException: Failed to execute ‘toDataURL’ on ‘HTMLCanvasElement’: Tainted canvases may not be exported.</p>
+<p>解决方案：</p>
+<p>① 把图片移动到当前域下。</p>
+<p>② 服务器允许跨域，并且 img 设置允许跨域。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> Image()</span><br><span class="line">img.setAttribute(<span class="string">'crossOrigin'</span>, <span class="string">'anonymous'</span>)</span><br><span class="line">img.src = url</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="扩展知识"><a href="#扩展知识" class="headerlink" title="扩展知识"></a>扩展知识</h2><ol>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/tabindex" target="_blank" rel="noopener">tabindex</a></p>
+<p><strong>tabindex 全局属性</strong> 指示其元素是否可以聚焦，以及它是否/在何处参与顺序键盘导航（通常使用 Tab 键，因此得名）。</p>
+</li>
+<li><p><a href="https://huanggaofang.com/2020/keycode/">keycode 键位表</a></p>
+</li>
+<li><p><a href="http://inloop.github.io/interpolator/" target="_blank" rel="noopener">interpolator</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/yorhomwang/article/details/54869018" target="_blank" rel="noopener">碰撞检测之分离轴定理算法讲解</a></p>
+</li>
+<li><p><a href="https://www.cnblogs.com/sevenyuan/p/7125642.html" target="_blank" rel="noopener">常见的2D碰撞检测</a></p>
+</li>
+</ol>
+
+      </div>
+      
+      <!-- updated -->
+      
+      
+<div class="post-update">
+  <span>更新于：</span>
+  <time>2020-05-15</time>
+</div>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      <div id="rewardMask" class="mask-wrap"></div>
+
+<!-- #reward -->
+<div id="reward" class="modal-wrap">
+  <div class="reward-title flex flex-y flex-x">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-smile"></use>
+    </svg>
+    <span>请我喝杯咖啡吧~</span>
+  </div>
+  <div class="reward-box flex flex-y">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+  <div class="modal-close">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div> 
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <div class="post-copyright">
+        <i class="ri-copyright-line"></i>
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用
+        <a
+          href="https://www.apache.org/licenses/LICENSE-2.0.html"
+          rel="external nofollow"
+          target="_blank"
+          >Apache License 2.0</a
+        >
+        许可协议。转载请注明出处！
+      </div>
+    </div>
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Canvas/" rel="tag">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dom%E6%93%8D%E4%BD%9C/" rel="tag">Dom操作</a></li></ul>
+</div>
+
+  
+<div class="share-wrap flex flex-y" id="shareBar">
+  <span class="share-btn flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-fenxiang"></use>
+    </svg>
+    分享到
+  </span>
+  <div class="share-list flex flex-y">
+    <a class="weibo share-sns-btn" href="javascript:;" data-type="weibo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weibo"></use>
+      </svg>
+    </a>
+    <a class="douban share-sns-btn" href="javascript:;" data-type="douban">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-douban"></use>
+      </svg>
+    </a>
+    <a class="qq share-sns-btn" href="javascript:;" data-type="qq">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qq"></use>
+      </svg>
+    </a>
+    <a
+      class="weixin share-sns-btn wxFab"
+      href="javascript:;"
+      data-type="weixin"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weixin"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="shareMask" class="mask-wrap"></div>
+<div class="modal-wrap wx-share-modal">
+  <div class="share-weixin-title">扫一扫，分享到微信</div>
+  <div class="wx-qrcode">
+    <img
+      src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://huanggaofang.com/frontend/11/app/canvas/"
+      alt="微信分享二维码"
+    />
+  </div>
+  <div class="modal-close" id="wxClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div>
+ 
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <div class="article-nav-link article-nav-prev">
+        <strong class="article-nav-caption">上一篇</strong>
+        <a href="/frontend/essentials/wiki/anti-patterns/" class="article-nav-title">
+          
+            设计模式、设计原则和反模式
+          
+        </a>
+      </div>
+    
+    
+      <div class="article-nav-link article-nav-next">
+        <strong class="article-nav-caption">下一篇</strong>
+        <a href="/frontend/11/js/promise/" class="article-nav-title">Promise 基础</a>
+      </div>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'XRQh2zhUCEHXwiKhGSKRsgG1-gzGzoHsz',
+        app_key: '7lenjWI8UhDxmR67gJm8s8EQ',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+ 
+</article>
+
+  <div class="toc-bot-btn" id="tocBotBtn">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</div>
+<div class="toc-bot-wrap" id="tocBotWrap">
+  <div class="toc-bot-close" id="tocBotClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div id="tocBot"></div>
+</div>
+  
+
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '#tocBot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h2, h3, h4',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      scrollContainer: 'document',
+      onClick: (e) => {
+        $('#tocBot .toc-link').removeClass('is-active-link');
+        $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+        return false;
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

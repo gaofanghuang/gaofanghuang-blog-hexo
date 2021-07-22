@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+      Meta标签属性 |  Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="post-wrap">
+  <div class="page-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <article
+  id="post-frontend/essentials/html/meta"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title flex flex-y" style="border-left: 0;" itemprop="name">
+  <span>Meta标签属性</span>
+  
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">前端开发笔记</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.7k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">7分钟</span>
+        </span>
+    </span>
+</div>
+  <a href="/frontend/essentials/html/meta/" class="article-date">
+  <time datetime="2021-07-22T03:40:00.000Z" itemprop="datePublished">2021-07-22</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <blockquote>
+<p><code>&lt;meta&gt;</code> 标签是 HTML 里的一个辅助性标签，通常用于定义页面编码语言、搜索引擎优化、自动刷新并指向新的页面、控制页面缓冲、响应式视窗等方面。</p>
+</blockquote>
+<p><em>Tips</em>： <code>name</code> 属性 和 <code>http-equiv</code> 属性不能同时设置。</p>
+<a id="more"></a>
+
+<h2 id="name"><a href="#name" class="headerlink" title="name"></a>name</h2><p>name 属性主要用于描述网页，对应属性是 content。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"参数"</span> <span class="attr">content</span>=<span class="string">"参数值"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>keywords</p>
+<p>为搜索引擎提供的关键字列表，content中的内容需要用英文半角逗号隔开。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"前端开发,Javascript,编程"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>description</p>
+<p>告诉搜索引擎你的网站主要内容。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"这个网站用于记录学习笔记"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>robots</p>
+<p>robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。</p>
+<ul>
+<li><p>all (默认)</p>
+</li>
+<li><p>none</p>
+</li>
+<li><p>index</p>
+</li>
+<li><p>noindex</p>
+</li>
+<li><p>follow</p>
+</li>
+<li><p>nofollow</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"all"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>googlebot</p>
+<p>定义谷歌浏览器的抓取行为。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"googlebot"</span> <span class="attr">content</span>=<span class="string">"index,follow"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>google</p>
+<ul>
+<li>notranslate</li>
+</ul>
+</li>
+</ul>
+<pre><code>不提供此页面的翻译。</code></pre><ul>
+<li><p>nositelinkssearchbox</p>
+<p>不显示网站链接的搜索框。</p>
+</li>
+</ul>
+<ul>
+<li><p>author</p>
+<p>标注网页的作者。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">content</span>=<span class="string">"HuangGaoFang,gaofanghuang@vip.qq.com"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>generator</p>
+<p>用于标明网页是什么软件做的。(如使用 WordPress、Dreamweaver 等软件生成的网页。)</p>
+</li>
+<li><p>copyright</p>
+<p>标注所属版权。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"copyright"</span> <span class="attr">content</span>=<span class="string">"本网站版权归 HuangGaoFang 所有"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>subject</p>
+<p>关于网站主题的简短描述</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"subject"</span> <span class="attr">content</span>=<span class="string">"你的网站主题"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>rating</p>
+<p>基于网站内容给出年龄分级</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"rating"</span> <span class="attr">content</span>=<span class="string">"General"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>revisit-after</p>
+<p>设定搜索引擎每隔多少天访问一次页面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"revisit-after"</span> <span class="attr">content</span>=<span class="string">"7days"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>viewport</p>
+<ul>
+<li><p>width</p>
+<p>取值为：整数或device-width，定义viewport的像素宽度，或允许viewport适应设备的屏幕宽度。</p>
+</li>
+<li><p>height</p>
+<p>取值为：整数或device-height，定义viewport的高度。</p>
+</li>
+<li><p>initial-scale</p>
+<p>取值为：0.0 - 10.0，定义设备宽度（纵向模式下的设备宽度或横向模式下的设备高度）与viewport大小之间的比例。</p>
+</li>
+<li><p>maximum-scale</p>
+<p>取值为：0.0 - 10.0，定义最大的缩放级别。它必须大于或等于minimum-scale，否则视为未定义。浏览器设置可以忽略此规则，iOS10+ 默认情况下忽略它。</p>
+</li>
+<li><p>minimum-scale</p>
+<p>取值为：0.0 - 10.0，定义最小的缩放级别。它必须小于或等于maximum-scale，否则视为未定义。浏览器设置可以忽略此规则，iOS10+ 默认情况下忽略它。</p>
+</li>
+<li><p>user-scalable</p>
+<p>取值为：yes 或 no，如果设置为no，用户将无法放大网页。默认值为yes。浏览器设置可以忽略此规则，iOS10+ 默认情况下忽略它。</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 禁止缩放 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 自适应宽度 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 移动端常用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>format-detection</p>
+<p>移动端常用于，关闭 → 点击数字作为电话号码跳转到拨号界面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>renderer</p>
+<p>用于指定双核浏览器默认以何种方式渲染页面。如 360浏览器、QQ浏览器等双核浏览器。</p>
+<ul>
+<li><p>webkit</p>
+<p>默认webkit内核。</p>
+</li>
+<li><p>ie-comp</p>
+<p>默认IE兼容模式。</p>
+</li>
+<li><p>ie-stand</p>
+<p>默认IE标准模式。</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>application-name</p>
+<p>定义在网页中运行的应用程序的名称，通常在 webapp 下才使用。</p>
+</li>
+<li><p>apple-mobile-web-app-capable</p>
+<p>是否显示默认的苹果工具栏和菜单栏</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>apple-mobile-web-app-status-bar-style</p>
+<p>状态栏的背景颜色（最顶部的系统时间/电量/数据流量/WiFi 那一栏）</p>
+<ul>
+<li><p>default 白色</p>
+</li>
+<li><p>black 黑色</p>
+</li>
+<li><p>black-translucent 灰色半透明</p>
+</li>
+</ul>
+</li>
+<li><p>apple-touch-fullscreen</p>
+<p>添加到主屏幕后，是否全屏显示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-touch-fullscreen"</span> <span class="attr">content</span>=<span class="string">"yes"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>msapplication-tap-highlight</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-tap-highlight"</span> <span class="attr">content</span>=<span class="string">"no"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="http-equiv"><a href="#http-equiv" class="headerlink" title="http-equiv"></a>http-equiv</h2><blockquote>
+<p>http-equiv类似于HTTP的头部协议，它回应给浏览器一些有用的信息，以帮助正确和精确地显示网页内容。对应属性是 content。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"参数"</span> <span class="attr">content</span>=<span class="string">"参数值"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>expires</p>
+<p>指定网页在缓存中的过期时间，一旦网页过期，就会发出请求从服务器获取数据。</p>
+<ul>
+<li><p>GMT 时间格式 例：<code>Thu, 22 Jul 2021 06:35:31 GMT</code>， 可使用 <code>new Date().toGMTString()</code> 生成。</p>
+</li>
+<li><p>0 或 -1， 不缓存</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"expires"</span> <span class="attr">content</span>=<span class="string">"0"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pragma</p>
+<p>用于设定禁止浏览器从本地机的缓存中调阅页面内容，设定后一旦离开网页就无法从Cache中再调出。</p>
+<p><em>Tips</em>: 设置后，无法查看离线缓存。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Pragma"</span> <span class="attr">content</span>=<span class="string">"no-cache"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>refresh</p>
+<p>自动刷新并指向新页面。</p>
+<ul>
+<li><p>second 几秒后执行，如下示例 5，意为 5 秒后刷新。</p>
+</li>
+<li><p>url 刷新后的新页面地址</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span><span class="attr">content</span>=<span class="string">"5; url=https://huanggaofang.com/"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>X-UA-Compatible</p>
+<p>指定浏览器以某种版本来渲染页面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 指定 IE 和 Chrome 使用最新版本渲染当前页面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>x-dns-prefetch-control</p>
+<p>关闭 DNS 预加载。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-dns-prefetch-control"</span> <span class="attr">content</span>=<span class="string">"off"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cache-control</p>
+<p>指定请求和响应遵循的缓存机制。</p>
+<ul>
+<li><p>no-cache</p>
+<p>先发送请求，与服务器确认该资源是否被更改，如果未被更改，则使用缓存。</p>
+</li>
+<li><p>no-store</p>
+<p>不允许缓存，每次都要去服务器上，下载完整的响应。（安全措施）</p>
+</li>
+<li><p>public</p>
+<p>缓存所有响应，但并非必须。因为max-age也可以做到相同效果</p>
+</li>
+<li><p>private</p>
+<p>只为单个用户缓存，因此不允许任何中继进行缓存。（比如说CDN就不允许缓存private的响应）</p>
+</li>
+<li><p>max-age</p>
+<p>表示当前请求开始，该响应在多久内能被缓存和重用，而不去服务器重新请求。例如：<code>max-age=60</code> 表示响应可以再缓存和重用 60 秒。</p>
+</li>
+<li><p>no-siteapp</p>
+<p>禁止百度转码</p>
+</li>
+</ul>
+</li>
+<li><p>content-security-policy</p>
+<p>定义当前页面的内容策略。内容策略主要指定允许的服务器地址和脚本端点，这有助于防止 <strong>跨站脚本攻击</strong> （Cross-site scripting, XSS）攻击。</p>
+<p><em>Tips</em>: 这行代码需要放在比较靠前的位置，比如 style 和 script 等外部文件前。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span> <span class="attr">content</span>=<span class="string">"script-src 'self'; object-src 'none'; style-src cdn.example.org third-party.org; child-src https:"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="charset"><a href="#charset" class="headerlink" title="charset"></a>charset</h2><p>用于设定页面字符集的语言编码。</p>
+<ul>
+<li><p>GB2312 简体中文</p>
+</li>
+<li><p>BIG5 繁体中文</p>
+</li>
+<li><p>iso-2022-jp 日文</p>
+</li>
+<li><p>ks_c_5601 韩文</p>
+</li>
+<li><p>ISO-8859-1 英文</p>
+</li>
+<li><p>UTF-8 世界通用</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><h3 id="禁止浏览器缓存"><a href="#禁止浏览器缓存" class="headerlink" title="禁止浏览器缓存"></a>禁止浏览器缓存</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"expires"</span> <span class="attr">content</span>=<span class="string">"0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"pragma"</span> <span class="attr">content</span>=<span class="string">"no-cache"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"cache-control"</span> <span class="attr">content</span>=<span class="string">"no-cache"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      </div>
+      
+      <!-- updated -->
+      
+      
+<div class="post-update">
+  <span>更新于：</span>
+  <time>2021-07-22</time>
+</div>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      <div id="rewardMask" class="mask-wrap"></div>
+
+<!-- #reward -->
+<div id="reward" class="modal-wrap">
+  <div class="reward-title flex flex-y flex-x">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-smile"></use>
+    </svg>
+    <span>请我喝杯咖啡吧~</span>
+  </div>
+  <div class="reward-box flex flex-y">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+  <div class="modal-close">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div> 
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <div class="post-copyright">
+        <i class="ri-copyright-line"></i>
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用
+        <a
+          href="https://www.apache.org/licenses/LICENSE-2.0.html"
+          rel="external nofollow"
+          target="_blank"
+          >Apache License 2.0</a
+        >
+        许可协议。转载请注明出处！
+      </div>
+    </div>
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
+</div>
+
+  
+<div class="share-wrap flex flex-y" id="shareBar">
+  <span class="share-btn flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-fenxiang"></use>
+    </svg>
+    分享到
+  </span>
+  <div class="share-list flex flex-y">
+    <a class="weibo share-sns-btn" href="javascript:;" data-type="weibo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weibo"></use>
+      </svg>
+    </a>
+    <a class="douban share-sns-btn" href="javascript:;" data-type="douban">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-douban"></use>
+      </svg>
+    </a>
+    <a class="qq share-sns-btn" href="javascript:;" data-type="qq">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qq"></use>
+      </svg>
+    </a>
+    <a
+      class="weixin share-sns-btn wxFab"
+      href="javascript:;"
+      data-type="weixin"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weixin"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="shareMask" class="mask-wrap"></div>
+<div class="modal-wrap wx-share-modal">
+  <div class="share-weixin-title">扫一扫，分享到微信</div>
+  <div class="wx-qrcode">
+    <img
+      src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://huanggaofang.com/frontend/essentials/html/meta/"
+      alt="微信分享二维码"
+    />
+  </div>
+  <div class="modal-close" id="wxClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div>
+ 
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <div class="article-nav-link article-nav-prev">
+        <strong class="article-nav-caption">上一篇</strong>
+        <a href="/frontend/essentials/wiki/priority/" class="article-nav-title">
+          
+            时序与优先级
+          
+        </a>
+      </div>
+    
+    
+      <div class="article-nav-link article-nav-next">
+        <strong class="article-nav-caption">下一篇</strong>
+        <a href="/frontend/essentials/html/standard/" class="article-nav-title">HTML开发规范</a>
+      </div>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'XRQh2zhUCEHXwiKhGSKRsgG1-gzGzoHsz',
+        app_key: '7lenjWI8UhDxmR67gJm8s8EQ',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+ 
+</article>
+
+  <div class="toc-bot-btn" id="tocBotBtn">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</div>
+<div class="toc-bot-wrap" id="tocBotWrap">
+  <div class="toc-bot-close" id="tocBotClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div id="tocBot"></div>
+</div>
+  
+
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '#tocBot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h2, h3, h4',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      scrollContainer: 'document',
+      onClick: (e) => {
+        $('#tocBot .toc-link').removeClass('is-active-link');
+        $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+        return false;
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

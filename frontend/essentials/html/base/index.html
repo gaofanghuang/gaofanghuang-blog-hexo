@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+      HTML基础 |  Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="post-wrap">
+  <div class="page-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <article
+  id="post-frontend/essentials/html/base"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title flex flex-y" style="border-left: 0;" itemprop="name">
+  <span>HTML基础</span>
+  
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">前端开发笔记</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.6k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">7分钟</span>
+        </span>
+    </span>
+</div>
+  <a href="/frontend/essentials/html/base/" class="article-date">
+  <time datetime="2021-07-22T01:50:00.000Z" itemprop="datePublished">2021-07-22</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <h2 id="什么是HTML"><a href="#什么是HTML" class="headerlink" title="什么是HTML"></a>什么是HTML</h2><blockquote>
+<p>Html是超文本标记语言，是用来描述web文档的一种标记语言。<br>使用标签作为页面的开始和结束部分：</p>
+<ol>
+<li>html通常被称为静态网页；</li>
+<li>HTML是带html或Htm扩展名的文件；</li>
+<li>HTML的一些标签代码规则将内容呈现在浏览器中；</li>
+<li>HTML可以使用记事本创建，并以.html或.htm为扩展名保存。</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h2><p>HTML 标签是由尖括号包围的关键词，比如 <code>&lt;div&gt;</code></p>
+<p>HTML 标签通常是成对出现的，标签对中的第一个标签是开始标签，第二个标签是结束标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>标签与标签之间是可以嵌套的，但先后顺序必须保持一致，如：<code>&lt;div&gt;</code> 里嵌套 <code>&lt;p&gt;</code>，那么 <code>&lt;/p&gt;</code> 必须放在 <code>&lt;/div&gt;</code> 的前面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>123<span class="tag">&lt;<span class="name">p</span>&gt;</span>2333<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="HTML文件基本结构"><a href="#HTML文件基本结构" class="headerlink" title="HTML文件基本结构"></a>HTML文件基本结构</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>这里是网页标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span>这里是网页内容<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h2><h3 id="Head中的标签"><a href="#Head中的标签" class="headerlink" title="Head中的标签"></a>Head中的标签</h3><h4 id="meta-元信息"><a href="#meta-元信息" class="headerlink" title="meta 元信息"></a><a href="/frontend/essentials/html/meta/">meta 元信息</a></h4><h4 id="link-引入样式文件"><a href="#link-引入样式文件" class="headerlink" title="link 引入样式文件"></a>link 引入样式文件</h4><p>css 文件建议放到页面顶部 <code>&lt;/head&gt;</code> 前，提升页面渲染速度。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/css/main.css"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 或 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://huanggaofang.com/css/main.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>link 标签还可以用于指定网页图标。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">sizes</span>=<span class="string">"16x16"</span> <span class="attr">href</span>=<span class="string">"/favicon.ico"</span> &gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="script-引入脚本文件"><a href="#script-引入脚本文件" class="headerlink" title="script 引入脚本文件"></a>script 引入脚本文件</h4><p>js 文件建议放到页面底部 <code>&lt;/body&gt;</code> 前，这样可以提示页面打开速度，不阻塞 css 渲染。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 脚本 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/js/common.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 或 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://huanggaofang.com/js/common.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="title-文档标题"><a href="#title-文档标题" class="headerlink" title="title 文档标题"></a>title 文档标题</h4><p><code>title</code> 标签必需要放在 <code>head</code> 标签里。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>这里是网页标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="style-内联样式"><a href="#style-内联样式" class="headerlink" title="style 内联样式"></a>style 内联样式</h4><p><em>Tips</em>: <code>style</code> 标签建议放在 link css 下面。</p>
+<p>这里需要说明的一个概念，一般情况下，下面的样式会覆盖上面的样式，越靠近文档底部的样式权重越高。</p>
+<p>详情请见 → <a href="/frontend/essentials/wiki/priority/">时序与优先级</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.btn-primary</span> &#123;</span></span><br><span class="line">    color: red;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="script-内联脚本"><a href="#script-内联脚本" class="headerlink" title="script 内联脚本"></a>script 内联脚本</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">'hello, world'</span>)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="引入媒体资源"><a href="#引入媒体资源" class="headerlink" title="引入媒体资源"></a>引入媒体资源</h3><h4 id="img-图片"><a href="#img-图片" class="headerlink" title="img 图片"></a>img 图片</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 或 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">alt</span>=<span class="string">"下载失败时的替换文本"</span> <span class="attr">title</span>=<span class="string">"提示文本"</span> <span class="attr">onerror</span>=<span class="string">"javascript:this.src='加载失败时替换的图片';"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="video-视频"><a href="#video-视频" class="headerlink" title="video 视频"></a>video 视频</h4><ul>
+<li><p>autoplay 是否自动播放</p>
+</li>
+<li><p>loop 是否循环</p>
+</li>
+<li><p>controls 控制按钮：播放/暂停/音量/进度/全屏</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">autoplay</span> <span class="attr">loop</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"/movie.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"/movie.ogg"</span> <span class="attr">type</span>=<span class="string">"video/ogg"</span>&gt;</span></span><br><span class="line">  你的浏览器不支持播放视频哦</span><br><span class="line"><span class="tag">&lt;<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="iframe-网页"><a href="#iframe-网页" class="headerlink" title="iframe 网页"></a>iframe 网页</h4><p>意思是可以在网页再加载另外一个网页。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://huanggaofang.com"</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">height</span>=<span class="string">"300px"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="内容块"><a href="#内容块" class="headerlink" title="内容块"></a>内容块</h3><h4 id="div-块"><a href="#div-块" class="headerlink" title="div 块"></a>div 块</h4><p>无意义标签，常用的布局标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="span-行内块"><a href="#span-行内块" class="headerlink" title="span 行内块"></a>span 行内块</h4><p>无意义标签，常用的布局标签。与 div 的区别是， span 为行内标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>456<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>789<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>123<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>456<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>789<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="p-段落"><a href="#p-段落" class="headerlink" title="p 段落"></a>p 段落</h4><p>用于大篇幅文本内容的分段。不建议用于布局。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article-content"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="br-换行"><a href="#br-换行" class="headerlink" title="br 换行"></a>br 换行</h4><p>用于大篇幅文本内容的换行。不建议用于布局。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article-content"</span>&gt;</span></span><br><span class="line">  用于大篇幅文本内容的换行。</span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">  不建议用于布局。</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="h1-h6-标题"><a href="#h1-h6-标题" class="headerlink" title="h1~h6 标题"></a>h1~h6 标题</h4><p>页面标题。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>一级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>二级标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>三级标题<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>四级标题<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>五级标题<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>六级标题<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="hr-水平线"><a href="#hr-水平线" class="headerlink" title="hr 水平线"></a>hr 水平线</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">用于大篇幅文本内容的分割。</span><br><span class="line">  <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br><span class="line">不建议用于布局。</span><br></pre></td></tr></table></figure>
+
+<h4 id="ul-ol-列表"><a href="#ul-ol-列表" class="headerlink" title="ul ol 列表"></a>ul ol 列表</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 无序列表 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    2323</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    sadasd</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    fd23</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 有序列表 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    1</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    2</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    3</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="table-表格"><a href="#table-表格" class="headerlink" title="table 表格"></a>table 表格</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span></span><br><span class="line">        这里是表头1</span><br><span class="line">      <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span></span><br><span class="line">        这里是表头2</span><br><span class="line">      <span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>这里是第一列第一行<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>这里是第二列第一行<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>这里是第一列第二行<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>这里是第二列第二行<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 头部 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>header<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 内容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>content<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 底部 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>footer<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="原生控件"><a href="#原生控件" class="headerlink" title="原生控件"></a>原生控件</h3><h4 id="a-超链接"><a href="#a-超链接" class="headerlink" title="a 超链接"></a>a 超链接</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://huanggaofang.com"</span>&gt;</span>HuangGaoFang<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 在新窗口打开 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://huanggaofang.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>HuangGaoFang<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 下载文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://huanggaofang.com/abc.text"</span> <span class="attr">download</span>=<span class="string">"abc"</span>&gt;</span>HuangGaoFang<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="form-表单"><a href="#form-表单" class="headerlink" title="form 表单"></a>form 表单</h4><p>提交数据到服务端，用于登录，上传图片等。目前比较少用到这种方式了，一般使用 ajax 代替。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"login.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>account: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"account"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>password: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="input-单行输入框"><a href="#input-单行输入框" class="headerlink" title="input 单行输入框"></a>input 单行输入框</h4><p>input 是非常常用的一个交互控件。</p>
+<ul>
+<li><p>text</p>
+<p>文本</p>
+</li>
+<li><p>password</p>
+<p>密码，默认隐藏</p>
+</li>
+<li><p>file</p>
+<p>文件</p>
+</li>
+<li><p>number</p>
+<p>数字</p>
+</li>
+<li><p>radio</p>
+<p>单选框</p>
+</li>
+<li><p>checkbox</p>
+<p>复选框</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"account"</span> <span class="attr">value</span>=<span class="string">"admin"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"count"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"level"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>更多属性 → <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input#%3Cinput%3E_types" target="_blank" rel="noopener">MDN Input Type属性</a></p>
+<h4 id="textarea-多行文本输入框"><a href="#textarea-多行文本输入框" class="headerlink" title="textarea 多行文本输入框"></a>textarea 多行文本输入框</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"comment"</span> <span class="attr">name</span>=<span class="string">"comment"</span> <span class="attr">rows</span>=<span class="string">"5"</span> <span class="attr">cols</span>=<span class="string">"33"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="select-下拉选择框"><a href="#select-下拉选择框" class="headerlink" title="select 下拉选择框"></a>select 下拉选择框</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>Cat<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>Dog<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>Fish<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="button-按钮"><a href="#button-按钮" class="headerlink" title="button 按钮"></a>button 按钮</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"reset"</span>&gt;</span>重置<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>与 input 按钮的不同在于，button 里可以放置图片等内容。</p>
+<h2 id="标签属性"><a href="#标签属性" class="headerlink" title="标签属性"></a>标签属性</h2>
+      </div>
+      
+      <!-- updated -->
+      
+      
+<div class="post-update">
+  <span>更新于：</span>
+  <time>2021-07-22</time>
+</div>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      <div id="rewardMask" class="mask-wrap"></div>
+
+<!-- #reward -->
+<div id="reward" class="modal-wrap">
+  <div class="reward-title flex flex-y flex-x">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-smile"></use>
+    </svg>
+    <span>请我喝杯咖啡吧~</span>
+  </div>
+  <div class="reward-box flex flex-y">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+  <div class="modal-close">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div> 
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <div class="post-copyright">
+        <i class="ri-copyright-line"></i>
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用
+        <a
+          href="https://www.apache.org/licenses/LICENSE-2.0.html"
+          rel="external nofollow"
+          target="_blank"
+          >Apache License 2.0</a
+        >
+        许可协议。转载请注明出处！
+      </div>
+    </div>
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
+</div>
+
+  
+<div class="share-wrap flex flex-y" id="shareBar">
+  <span class="share-btn flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-fenxiang"></use>
+    </svg>
+    分享到
+  </span>
+  <div class="share-list flex flex-y">
+    <a class="weibo share-sns-btn" href="javascript:;" data-type="weibo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weibo"></use>
+      </svg>
+    </a>
+    <a class="douban share-sns-btn" href="javascript:;" data-type="douban">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-douban"></use>
+      </svg>
+    </a>
+    <a class="qq share-sns-btn" href="javascript:;" data-type="qq">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qq"></use>
+      </svg>
+    </a>
+    <a
+      class="weixin share-sns-btn wxFab"
+      href="javascript:;"
+      data-type="weixin"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weixin"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="shareMask" class="mask-wrap"></div>
+<div class="modal-wrap wx-share-modal">
+  <div class="share-weixin-title">扫一扫，分享到微信</div>
+  <div class="wx-qrcode">
+    <img
+      src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://huanggaofang.com/frontend/essentials/html/base/"
+      alt="微信分享二维码"
+    />
+  </div>
+  <div class="modal-close" id="wxClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div>
+ 
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <div class="article-nav-link article-nav-prev">
+        <strong class="article-nav-caption">上一篇</strong>
+        <a href="/frontend/essentials/html/standard/" class="article-nav-title">
+          
+            HTML开发规范
+          
+        </a>
+      </div>
+    
+    
+      <div class="article-nav-link article-nav-next">
+        <strong class="article-nav-caption">下一篇</strong>
+        <a href="/frontend/11/app/css-style/" class="article-nav-title">CSS 样式</a>
+      </div>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'XRQh2zhUCEHXwiKhGSKRsgG1-gzGzoHsz',
+        app_key: '7lenjWI8UhDxmR67gJm8s8EQ',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+ 
+</article>
+
+  <div class="toc-bot-btn" id="tocBotBtn">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</div>
+<div class="toc-bot-wrap" id="tocBotWrap">
+  <div class="toc-bot-close" id="tocBotClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div id="tocBot"></div>
+</div>
+  
+
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '#tocBot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h2, h3, h4',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      scrollContainer: 'document',
+      onClick: (e) => {
+        $('#tocBot .toc-link').removeClass('is-active-link');
+        $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+        return false;
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

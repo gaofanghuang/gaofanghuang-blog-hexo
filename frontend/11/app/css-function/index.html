@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+     
+    <meta name="keywords" content="编程, 游戏, 设计" />
+     
+    <meta name="description" content="Developer &amp; Designer" />
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>
+      CSS 基础 - 函数 |  Gaofang Huang
+    </title>
+    
+    <link rel="shortcut icon" href="/favicon.png" />
+     
+<link rel="stylesheet" href="/css/main.css">
+ 
+    <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+     
+ 
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Gaofang Huang" type="application/atom+xml">
+</head>
+</html>
+
+
+<body>
+  <div id="app">
+    <header id="header" class="header-wrap">
+  
+  <a class="header-logo" href="/">
+    <img src="/images/logo.png" alt="Gaofang Huang" />
+  </a>
+  
+  <nav id="siteMenu" class="header-nav-wrap container">
+    <ul class="header-nav-list">
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/">
+          主页
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/project">
+          项目
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="https://huanggaofang.lofter.com" target="_blank" rel="noopener">
+          图集
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/archives">
+          归档
+        </a>
+      </li>
+      
+      <li class="header-nav-item">
+        <a class="header-nav-link" href="/about">
+          关于
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <div class="header-search">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</header>
+<div class="header-menu" onclick="toggleMenu()">
+  <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#icon-caidan"></use>
+  </svg>
+  <svg class="icon icon-close" aria-hidden="true">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <div class="container">
+    <input
+      type="search"
+      id="local-search-input"
+      class="local-search-input"
+      placeholder="Search..."
+    />
+    <div id="local-search-result" class="local-search-result"></div>
+  </div>
+</div>
+
+</div>
+
+    <div class="layout">
+      <main class="main-wrap">
+        <div class="post-wrap">
+  <div class="page-banner flex flex-x flex-y">
+    <canvas id="bannerAni"></canvas>
+  </div>
+  <div class="container">
+    <article
+  id="post-frontend/11/app/css-function"
+  class="article-wrap article-type-post index-box"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title flex flex-y" style="border-left: 0;" itemprop="name">
+  <span>CSS 基础 - 函数</span>
+  
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta flex flex-y">
+      
+  <div class="article-category flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-wenjianjia"></use>
+    </svg>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">前端开发笔记</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">4.4k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">20分钟</span>
+        </span>
+    </span>
+</div>
+  <a href="/frontend/11/app/css-function/" class="article-date">
+  <time datetime="2020-04-26T03:00:00.000Z" itemprop="datePublished">2020-04-26</time>
+</a>
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+      
+ 
+      <div class="markdown-view">
+        <p>简单来说，在 CSS 中只要是带有 () 的属性值，我们就可以把它称为 CSS 函数。</p>
+<a id="more"></a>
+
+<h2 id="1-属性函数"><a href="#1-属性函数" class="headerlink" title="1. 属性函数"></a>1. 属性函数</h2><ul>
+<li><p><strong>attr()</strong></p>
+<p>attr 可以读取 html 标签中的属性值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"tips"</span> <span class="attr">data-tips</span>=<span class="string">"something is error"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.tips</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(data-tips);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-背景图片函数"><a href="#2-背景图片函数" class="headerlink" title="2. 背景图片函数"></a>2. 背景图片函数</h2><ul>
+<li><p><strong>linear-gradient()</strong></p>
+<p><code>linear-gradient([ [ [ &lt;angle&gt; | to [top | bottom] || [left | right] ],]? &lt;color-stop&gt;[, &lt;color-stop&gt;]+)</code></p>
+<p>创建线性渐变。</p>
+<style>
+.linear-gradient {
+  width: 200px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.linear-gradient-1 {
+  background: linear-gradient(90deg, #28C5C2, #79E2B7);
+}
+.linear-gradient-2 {
+  background: linear-gradient(180deg, #28C5C2, #79E2B7);
+}
+.linear-gradient-3 {
+  background: linear-gradient(45deg, #28C5C2 25%, hsl(45, 100%, 55%) 0, hsl(45, 100%, 55%) 50%, #28C5C2 0, #28C5C2 75%, hsl(45, 100%, 55%) 0);
+  background-size: 10px 10px;
+}
+</style>
+
+<div class="linear-gradient linear-gradient-1"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 从左到右的渐变 */</span></span><br><span class="line"><span class="selector-class">.linear-gradient-1</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(<span class="number">90deg</span>, #<span class="number">28</span>c5c2, #<span class="number">79</span>e2b7);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="linear-gradient linear-gradient-2"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 从上到下的渐变 */</span></span><br><span class="line"><span class="selector-class">.linear-gradient-2</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(<span class="number">180deg</span>, #<span class="number">28</span>c5c2, #<span class="number">79</span>e2b7);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="linear-gradient linear-gradient-3"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 斜条纹 */</span></span><br><span class="line"><span class="selector-class">.linear-gradient-3</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(</span><br><span class="line">    <span class="number">45deg</span>,</span><br><span class="line">    #<span class="number">28</span>c5c2 <span class="number">25%</span>,</span><br><span class="line">    hsl(<span class="number">45</span>, <span class="number">100%</span>, <span class="number">55%</span>) <span class="number">0</span>,</span><br><span class="line">    <span class="built_in">hsl</span>(<span class="number">45</span>, <span class="number">100%</span>, <span class="number">55%</span>) <span class="number">50%</span>,</span><br><span class="line">    <span class="number">#28c5c2</span> <span class="number">0</span>,</span><br><span class="line">    <span class="number">#28c5c2</span> <span class="number">75%</span>,</span><br><span class="line">    <span class="built_in">hsl</span>(<span class="number">45</span>, <span class="number">100%</span>, <span class="number">55%</span>) <span class="number">0</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>radial-gradient()</strong></p>
+<p>创建径向渐变</p>
+<style>
+.radial-gradient {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.radial-gradient-1 {
+  background: radial-gradient(#e4309e, #8347ff);
+}
+.radial-gradient-2 {
+  background: radial-gradient(#e4309e 0%, #70b6f3 40%, #8347ff 60%);
+}
+.radial-gradient-3 {
+  background: radial-gradient(at 110% 100%, #e4309e, #8347ff);
+}
+.radial-gradient-4 {
+  background: radial-gradient(20% 20%, #e4309e, #8347ff);
+}
+</style>
+
+<div class="radial-gradient radial-gradient-1"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 径向渐变 */</span></span><br><span class="line"><span class="selector-class">.radial-gradient-1</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(#e4309e, #<span class="number">8347</span>ff);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="radial-gradient radial-gradient-2"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 多色渐变 */</span></span><br><span class="line"><span class="selector-class">.radial-gradient-2</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(#e4309e <span class="number">0%</span>, #<span class="number">70</span>b6f3 <span class="number">40%</span>, #<span class="number">8347</span>ff <span class="number">60%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="radial-gradient radial-gradient-3"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 指定圆心位置 */</span></span><br><span class="line"><span class="selector-class">.radial-gradient-3</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(at <span class="number">110%</span> <span class="number">100%</span>, #e4309e, #<span class="number">8347</span>ff);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="radial-gradient radial-gradient-4"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 指定圆的大小 */</span></span><br><span class="line"><span class="selector-class">.radial-gradient-4</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(<span class="number">20%</span> <span class="number">20%</span>, #e4309e, #<span class="number">8347</span>ff);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>conic-gradient()</strong></p>
+<p>创建锥形渐变</p>
+<style>
+  .conic-gradient {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .conic-gradient-1 {
+    border-radius: 50%;
+    background: conic-gradient(red, orange, yellow, green, teal, blue, purple, red);
+  }
+  .conic-gradient-2 {
+    border-radius: 50%;
+    background: conic-gradient(lightblue 0, lightblue 30%, skyblue 30%, skyblue 70%, deepskyblue 70%, deepskyblue 100%);
+  }
+</style>
+
+<div class="conic-gradient conic-gradient-1"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 色环 */</span></span><br><span class="line"><span class="selector-class">.conic-gradient-1</span> &#123;</span><br><span class="line">  <span class="comment">/* 这里开始和结束用同一个颜色，否则头尾的颜色衔接会不自然 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">conic-gradient</span>(</span><br><span class="line">    red,</span><br><span class="line">    orange,</span><br><span class="line">    yellow,</span><br><span class="line">    green,</span><br><span class="line">    teal,</span><br><span class="line">    blue,</span><br><span class="line">    purple,</span><br><span class="line">    red</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="conic-gradient conic-gradient-2"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 饼图 */</span></span><br><span class="line"><span class="selector-class">.conic-gradient-2</span> &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="comment">/* 这里可以指定每个颜色所占比例 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">conic-gradient</span>(</span><br><span class="line">    lightblue <span class="number">0</span>,</span><br><span class="line">    lightblue <span class="number">30%</span>,</span><br><span class="line">    skyblue <span class="number">30%</span>,</span><br><span class="line">    skyblue <span class="number">70%</span>,</span><br><span class="line">    deepskyblue <span class="number">70%</span>,</span><br><span class="line">    deepskyblue <span class="number">100%</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<style>
+.repeating-linear-gradient {
+  width: 200px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.repeating-linear-gradient-1 {
+  background: repeating-linear-gradient(45deg, lightblue 5%, deepskyblue 10%);
+}
+.repeating-radial-gradient-1 {
+  background: repeating-radial-gradient(circle at center, lightblue 0, skyblue, deepskyblue 30px);
+}
+.repeating-conic-gradient-1 {
+  background: repeating-conic-gradient(red, orange, yellow, green, blue 50%);
+}
+</style>
+</li>
+</ul>
+<ul>
+<li><p><strong>repeating-linear-gradient()</strong></p>
+<p>自动重复的线性渐变。</p>
+<div class="repeating-linear-gradient repeating-linear-gradient-1"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.repeating-linear-gradient-1</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">repeating-linear-gradient</span>(<span class="number">45deg</span>, lightblue <span class="number">5%</span>, deepskyblue <span class="number">10%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>repeating-radial-gradient()</strong></p>
+<p>自动重复的径向渐变。</p>
+<div class="repeating-linear-gradient repeating-radial-gradient-1"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.repeating-radial-gradient-1</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">repeating-radial-gradient</span>(</span><br><span class="line">    circle at center,</span><br><span class="line">    lightblue <span class="number">0</span>,</span><br><span class="line">    skyblue,</span><br><span class="line">    deepskyblue <span class="number">30px</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>repeating-conic-gradient()</strong></p>
+<p>自动重复的锥形渐变。</p>
+<div class="repeating-linear-gradient repeating-conic-gradient-1"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.repeating-conic-gradient-1</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">repeating-conic-gradient</span>(red, orange, yellow, green, blue <span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>image-set()</strong></p>
+<p>根据不同屏幕的像素密度选择不同的图片。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.banner</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">image-set</span>(</span><br><span class="line">    <span class="string">'cat.png'</span> <span class="number">1</span>x,</span><br><span class="line">    <span class="string">'cat-2x.png'</span> <span class="number">2</span>x,</span><br><span class="line">    <span class="string">'cat-print.png'</span> <span class="number">600dpi</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>url()</strong></p>
+<p>加载一个资源（如 jpg, svg 等）作为背景图片。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.banner</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'http://xxx.com/banner.jpg'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>image()</strong></p>
+<p>类似于 <code>url()</code> 函数，增加了指定图像方向性、指定显示区域的图片，指定固定颜色作为图片失效的时的背景色等功能。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.logo</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">image</span>(<span class="string">'logo.png#xywh=0,20,40,60'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-颜色函数"><a href="#3-颜色函数" class="headerlink" title="3. 颜色函数"></a>3. 颜色函数</h2><ul>
+<li><p><strong>rgb()</strong></p>
+<p><code>rgba(r, g, b)</code></p>
+<p>使用红(R)、绿(G)、蓝(B)三个颜色的叠加来生成各式各样的颜色。</p>
+<p>红色（R）0 到 255 间的整数，代表颜色中的红色成分。。<br>绿色（G）0 到 255 间的整数，代表颜色中的绿色成分。<br>蓝色（B）0 到 255 间的整数，代表颜色中的蓝色成分。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.black</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">rgb</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>rgba()</strong></p>
+<p><code>rgba(r, g, b, a)</code></p>
+<p>RGB 同上。<br>透明度（A）取值 <code>0~1</code> 之间， 代表透明度。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-bg</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.8</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>hsl()</strong></p>
+<p><code>hsl(h, s, l)</code></p>
+<p>使用色相(h)、饱和度(s)、亮度(l)来定义颜色。</p>
+<div class="conic-gradient conic-gradient-1"></div>
+
+<p>色相取值 <code>0 ~ 359</code> 之间， 即 360° = 0°，意为色环中某个角度的值。<br>饱和度取值 <code>0 ~ 1</code> 之间。<br>亮度取值 <code>0 ~ 1</code> 之间。</p>
+</li>
+<li><p><strong>hsla()</strong></p>
+<p><code>hsl(h, s, l, a)</code></p>
+<p>使用色相(h)、饱和度(s)、亮度(l)、透明度(a)来定义颜色。</p>
+</li>
+<li><p><strong>hwb()</strong></p>
+<p><code>hwb(h, w, b)</code></p>
+<p>使用色相(h)、明度-白(w)、明度-黑(b)来定义颜色。</p>
+<p>色相取值 <code>0 ~ 359</code> 之间， 即 360° = 0°，意为色环中某个角度的值。<br>明度取值 <code>0 ~ 1</code> 之间。</p>
+</li>
+</ul>
+<h2 id="4-图形函数"><a href="#4-图形函数" class="headerlink" title="4. 图形函数"></a>4. 图形函数</h2><ul>
+<li><p><strong>circle()</strong></p>
+<p>用于定义一个圆形。</p>
+<style>
+.box-shape {
+  width: 100px;
+  height: 100px;
+  background: deepskyblue;
+  margin-bottom: 20px;
+}
+.box-circle {
+  clip-path: circle(50px at 50% 50%);
+}
+.box-ellipse {
+  clip-path: ellipse(50px 30px at 50% 50%)
+}
+.box-inset {
+  clip-path: inset(10% 20% round 5px)
+}
+.box-polygon {
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+.box-path {
+  clip-path: path('M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z');
+}
+</style>
+
+<div class="box-shape box-circle"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-circle</span> &#123;</span><br><span class="line">  <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">50px</span> at <span class="number">50%</span> <span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>ellipse()</strong></p>
+<p>用于定义一个椭圆形。</p>
+<div class="box-shape box-ellipse"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-ellipse</span> &#123;</span><br><span class="line">  <span class="attribute">clip-path</span>: <span class="built_in">ellipse</span>(<span class="number">50px</span> <span class="number">30px</span> at <span class="number">50%</span> <span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>inset()</strong></p>
+<p>定义一个 inset 类型的矩形。</p>
+<div class="box-shape box-inset"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-inset</span> &#123;</span><br><span class="line">  <span class="attribute">clip-path</span>: <span class="built_in">inset</span>(<span class="number">10%</span> <span class="number">20%</span> round <span class="number">5px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>polygon()</strong></p>
+<p>定义一个多边形。</p>
+<div class="box-shape box-polygon"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-polygon</span> &#123;</span><br><span class="line">  <span class="attribute">clip-path</span>: <span class="built_in">polygon</span>(<span class="number">0</span> <span class="number">0</span>, <span class="number">100%</span> <span class="number">100%</span>, <span class="number">0</span> <span class="number">100%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>path()</strong></p>
+<p>把转入的 svg 路径显示为矢量图形</p>
+<div class="box-shape box-path"></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-path</span> &#123;</span><br><span class="line">  <span class="attribute">clip-path</span>: <span class="built_in">path</span>(</span><br><span class="line">    <span class="string">'M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z'</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="5-滤镜函数"><a href="#5-滤镜函数" class="headerlink" title="5. 滤镜函数"></a>5. 滤镜函数</h2><ul>
+<li><p><strong>blur()</strong></p>
+<p>应用高斯模糊效果。</p>
+<style>
+.filter-box {
+  width: 100px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.filter-box2 {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.filter-box2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+.filter-blur {
+  filter: blur(1px);
+}
+td .filter-box2 {
+  margin-bottom: 0;
+  padding: 10px;
+}
+</style>
+
+<div class="filter-box filter-blur">高斯模糊</div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 允许的长度单位：px、vw、rem */</span></span><br><span class="line"><span class="comment">/* 无效的单位：% */</span></span><br><span class="line"><span class="selector-class">.filter-blur</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">blur</span>(<span class="number">1px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>brightness()</strong></p>
+<p>调整图像的亮度，取值 0 ~ ∞，默认为 1，当为 0 时图像全黑，大于 1 时图象比默认更亮。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+<th align="center">1.5</th>
+<th align="center">2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: brightness(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: brightness(0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: brightness(1)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: brightness(1.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: brightness(2)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: <code>brightness</code> 没有取值上限，当亮度高到一定程度后，图形全白。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.filter-blur</span> &#123;</span><br><span class="line">  <span class="comment">/* 这里的1.5，也可以用百分比表示如：150% */</span></span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">brightness</span>(<span class="number">1.5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>contrast()</strong></p>
+<p>调整图像的对比度，取值 0 ~ ∞，默认为 1，当为 0 时图像全灰，大于 1 时图象对比度更高。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+<th align="center">1.5</th>
+<th align="center">2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: contrast(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: contrast(0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: contrast(1)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: contrast(1.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: contrast(2)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 对比度高意味着，深色的部分更深，浅色的部分更浅。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.filter-contrast</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">contrast</span>(<span class="number">1.5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>drop-shadow()</strong></p>
+<p>给图像设置一个阴影效果</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">box-shadow</th>
+<th align="center">drop-shadow</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="box-shadow: 3px 3px 9px rgba(0,0,0,0.6)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: drop-shadow(3px 3px 9px rgba(0,0,0,0.6))"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 通过上图我们看出，当 div 有边距时，使用<code>box-shadow</code>会出现空白的部分，而<code>drop-shadow</code>是直接作用于内容的，不受内外边距影响。当不考虑浏览器兼容时（不兼容IE），可以使用<code>drop-shadow</code>代替<code>box-shadow</code>，通过滤镜可以使用浏览器提供的硬件加速，获得更好的性能。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.filter-drop-shadow</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">drop-shadow</span>(<span class="number">3px</span> <span class="number">3px</span> <span class="number">9px</span> rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.6</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>grayscale()</strong></p>
+<p>将图像转换为灰度图像，取值 0 ~ 1, 默认0。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: grayscale(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: grayscale(0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: grayscale(1)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当值为 1 时，图像变为黑白，可理解为 PhotoShop 中的去色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.filter-grayscale</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>hue-rotate()</strong></p>
+<p>调整图像的色相，取值色相角度 0 ~ 359，默认为0，即 360 = 0。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">30deg</th>
+<th align="center">45deg</th>
+<th align="center">90deg</th>
+<th align="center">180deg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: hue-rotate(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: hue-rotate(45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: hue-rotate(45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: hue-rotate(90deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: hue-rotate(180deg)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当值大于359°时，如 420 °，实际取值为 angle = 420 - 360 = 60</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.filter-hue-rotate</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">hue-rotate</span>(<span class="number">45deg</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>invert()</strong></p>
+<p>反转输入图像的色相，取值 0 ~ 1, 默认0。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">0.5</th>
+<th align="center">0.8</th>
+<th align="center">1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: invert(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: invert(0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: invert(0.8)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: invert(1)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当值为 0.5 / 1 时，可理解为 PhotoShop 中的反相。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.filter-invert</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">invert</span>(<span class="number">0.5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>opacity()</strong></p>
+<p>调整图像的透明度，取值 0 ~ 1, 默认1。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">opacity</th>
+<th align="center">0</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="opacity: 0"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: opacity(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: opacity(0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: opacity(1)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当值为 0 时，图像不可见，和 opacity 属性的区别是，使用 filter 可以获得浏览器的硬件加速支持。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.filter-opacity</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">opacity</span>(<span class="number">0.5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>saturate()</strong></p>
+<p>调整图像饱和度，取值 0 ~ ∞，默认为 1，当为 0 时图像全灰，大于 1 时图象饱和度更高。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+<th align="center">1.5</th>
+<th align="center">2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: saturate(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: saturate(0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: saturate(1)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: saturate(1.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: saturate(2)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 饱和度高意味着，有颜色的部分（黑白灰除外）颜色更深。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.filter-saturate</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">saturate</span>(<span class="number">1.5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>sepia()</strong></p>
+<p>调整图像的颜色为深褐色，取值 0 ~ 1, 默认0。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/logo.png" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: sepia(0)"><img src="/images/logo.png" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: sepia(0.5)"><img src="/images/logo.png" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: sepia(1)"><img src="/images/logo.png" /></div></td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.filter-sepia</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">sepia</span>(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>复合函数</strong></p>
+<p>filter 函数可以复合使用，如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 加强对比度和亮度 */</span></span><br><span class="line"><span class="selector-class">.filter-img</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">contrast</span>(<span class="number">175%</span>) <span class="built_in">brightness</span>(<span class="number">3%</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="6-转换函数"><a href="#6-转换函数" class="headerlink" title="6. 转换函数"></a>6. 转换函数</h2><ul>
+<li><p><strong>rotate()</strong></p>
+<p>旋转图像，移动量由指定角度定义；如果为正值，则运动将为顺时针，如果为负值，则为逆时针。 180°的旋转称为点反射 (point reflection)。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">45deg</th>
+<th align="center">90deg</th>
+<th align="center">180deg</th>
+<th align="center">-90deg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: transform: rotate(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotate(45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotate(90deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotate(180deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotate(-90deg)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rotate</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>rotate3d()</strong></p>
+<p>在三维空间旋转图像，该旋转使元素能够绕固定轴移动而不变形。其中移动量由指定角度定义；如果为正值，则运动将为顺时针，如果为负值，则为逆时针。</p>
+<p><code>rotate3d(x, y, z, a)</code></p>
+<p><em>x</em>: 该参数为 <code>number</code> 类型值， 描述旋转轴向量的 x 坐标，取值 0 或 1，当为0时该轴不应用旋转。</p>
+<p><em>y</em>: 该参数为 <code>number</code> 类型值，描述旋转轴向量的 y 坐标，取值 0 或 1，当为0时该轴不应用旋转。</p>
+<p><em>z</em>: 该参数为 <code>number</code> 类型值，描述旋转轴向量的 z 坐标，取值 0 或 1，当为0时该轴不应用旋转。</p>
+<p><em>a</em>: 该参数为 <code>angle</code> 代表旋转的角度。正角度表示顺时针旋转，负角度表示逆时针旋转。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">x-1-45deg</th>
+<th align="center">y-1-45deg</th>
+<th align="center">z-1-45deg</th>
+<th align="center">1-1-1-90deg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: transform: rotate3d(1, 0, 0, 45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotate3d(0, 1, 0, 45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotate3d(0, 0, 1, 45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotate3d(1, 1, 1, 45deg)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 这里 x, y, z 传入的顺序不可打乱且不可省略。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rotate3d</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate3d</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">45deg</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>rotateX()</strong></p>
+<p>在 x 轴旋转图像，即 <code>rotateX(45deg)</code> = <code>rotate3d(1, 0, 0, 45deg)</code></p>
+<p><em>注意</em>：<code>rotate3d(1, 0, 0, 45deg)</code> 在 chrome 和 firefox 中实测没有变化（2020/05/09）。尽量使用 <code>rotateX(45deg)</code> 代替。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">45deg</th>
+<th align="center">90deg</th>
+<th align="center">180deg</th>
+<th align="center">-90deg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: transform: rotateX(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateX(45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateX(90deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateX(180deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateX(-90deg)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当角度为 90deg 时，图像不可见。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rotateX</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(<span class="number">45deg</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>rotateY()</strong></p>
+<p>在 y 轴旋转图像，即 <code>rotateY(45deg)</code> = <code>rotate3d(0, 1, 0, 45deg)</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">45deg</th>
+<th align="center">90deg</th>
+<th align="center">180deg</th>
+<th align="center">-90deg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: transform: rotateY(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateY(45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateY(90deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateY(180deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateY(-90deg)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当角度为 90deg 时，图像不可见。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rotateY</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(<span class="number">45deg</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>rotateZ()</strong></p>
+<p>在 z 轴旋转图像，即 <code>rotateZ(45deg)</code> = <code>rotate3d(0, 0, 1, 45deg)</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0</th>
+<th align="center">45deg</th>
+<th align="center">90deg</th>
+<th align="center">180deg</th>
+<th align="center">-90deg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="filter: transform: rotateZ(0)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateZ(45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateZ(90deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateZ(180deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: rotateZ(-90deg)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: <code>rotateZ</code> 的旋转效果 = <code>rotate</code>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rotateZ</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(<span class="number">45deg</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>scale()</strong></p>
+<p>改变图像的大小</p>
+<p><code>scale(sx[, sy])</code></p>
+<p><em>sx</em>: 缩放 x 轴。</p>
+<p><em>sy</em>: 缩放 y 轴，可选。如不存在，则取值为 sx，图像将保持等比缩放。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">x-0.5</th>
+<th align="center">y-0.5</th>
+<th align="center">x-1.5-y-0.5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scale(0.5, 1)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scale(1, 0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scale(1.5, 0.5)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当 sx 或 sy 值为 0 时，图像不可见。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.scale</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.5</span>, <span class="number">0.5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>scale3d()</strong></p>
+<p>在三维空间缩放图像</p>
+<p>当超出 [-1，1] 的范围之外时，缩放比例将在坐标方向上放大元素；当在 [-1，1] 范围内时，它在当前方向收缩元素。当等于 1 时，它什么也不做，当它为负时，它执行点反射和大小修改。</p>
+<p><code>scale3d(sx, sy, sz)</code></p>
+<p><em>sx</em>: 缩放 x 轴。</p>
+<p><em>sy</em>: 缩放 y 轴。</p>
+<p><em>sz</em>: 缩放 z 轴。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">sx-0.5</th>
+<th align="center">sy-(-1.5)</th>
+<th align="center">sz-0.5</th>
+<th align="center">sx-1.5-sy-0.5-sz-2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scale3d(0.5, 1, 1)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scale3d(1, -0.5, 1)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scale3d(1, 1, 0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scale3d(1.5, 0.5, 2)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当值为负时，图像反转，且当值 小于 -1 时图像变大。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.scale3d</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0.5</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>scaleX()</strong></p>
+<p>在 x 轴上缩放图像， 即 <code>scaleX(0.5)</code> = <code>scale3d(0.5, 1, 1)</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+<th align="center">1.5</th>
+<th align="center">-0.5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleX(0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleX(1)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleX(1.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleX(-0.5)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.scaleX</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(<span class="number">0.5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>scaleY()</strong></p>
+<p>在 y 轴上缩放图像， 即 <code>scaleY(0.5)</code> = <code>scale3d(1, 0.5, 1)</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+<th align="center">1.5</th>
+<th align="center">-0.5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleY(0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleY(1)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleY(1.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleY(-0.5)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.scaleY</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(<span class="number">0.5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>scaleZ()</strong></p>
+<p>在 z 轴上缩放图像， 即 <code>scaleZ(0.5)</code> = <code>scale3d(1, 1, 0.5)</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+<th align="center">1.5</th>
+<th align="center">-0.5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleZ(0.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleZ(1)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleZ(1.5)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: scaleZ(-0.5)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.scaleZ</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: scaleZ (<span class="number">0.5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>skew()</strong></p>
+<p>拉伸图像，默认角度为0。当值为正时，图像顺时针拉伸，值为负数时，图像逆时针拉伸。</p>
+<p><code>skew(ax[, ay])</code></p>
+<p><em>ax</em>: x 轴的拉伸角度</p>
+<p><em>ay</em>: y 轴的拉伸角度，可选。</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">x-15deg</th>
+<th align="center">y-15deg</th>
+<th align="center">x-45deg-y-15deg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: skew(15deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: skew(0, 15deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: skew(45deg, 15deg)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>skewX()</strong></p>
+<p>在 x 轴拉伸图像</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">45deg</th>
+<th align="center">90deg</th>
+<th align="center">180deg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: skewX(45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: skewX(90deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: skewX(180deg)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当拉伸角度为 90deg 时， 图像不可见。</p>
+<p><em>注意</em>：实测在 QQ浏览器 等国产双核浏览器中，使用 skewX 非常容易造成浏览器崩溃（2020/05/09）。实测 搜狗浏览器 整个l’l</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.skewX</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">skewX</span>(<span class="number">45deg</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>skewY()</strong></p>
+<p>在 y 轴拉伸图像</p>
+<table>
+<thead>
+<tr>
+<th align="center">原图</th>
+<th align="center">45deg</th>
+<th align="center">90deg</th>
+<th align="center">180deg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="filter-box2"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: skewY(45deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: skewY(90deg)"><img src="/images/carrot.jpg" /></div></td>
+<td align="center"><div class="filter-box2" style="transform: skewY(180deg)"><img src="/images/carrot.jpg" /></div></td>
+</tr>
+</tbody></table>
+<p><em>Tips</em>: 当拉伸角度为 90deg 时， 图像不可见。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.skewY</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">skewY</span>(<span class="number">45deg</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>translate()</strong></p>
+<p>平移图像</p>
+<p><code>translate(tx[, ty])</code></p>
+<p><em>tx</em>: 在 x 轴上移动图像</p>
+<p><em>ty</em>: 在 y 轴上移动图像，可选，默认为 0</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.translate</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">100%</span>, <span class="number">100%</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>translate3d()</strong></p>
+<p>在三维空间平移图像</p>
+<p><code>translate3d(tx, ty, tz)</code></p>
+<p><em>tx</em>: 在 x 轴上移动图像</p>
+<p><em>ty</em>: 在 y 轴上移动图像</p>
+<p><em>tz</em>: 在 z 轴上移动图像，注意该值不能用百分比</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.translate3d</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(<span class="number">100%</span>, <span class="number">100%</span>, <span class="number">5px</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>translateX()</strong></p>
+<p>在 x 轴上移动图像</p>
+<p><code>translateX(5px)</code> = <code>translate(5px, 0)</code> = <code>translate3d(5px, 0, 0)</code></p>
+</li>
+<li><p><strong>translateY()</strong></p>
+<p>在 y 轴上移动图像</p>
+<p><code>translateY(5px)</code> = <code>translate(0, 5px)</code> = <code>translate3d(0, 5px, 0)</code></p>
+</li>
+<li><p><strong>translateZ()</strong></p>
+<p>在 z 轴上移动图像</p>
+<p><code>translateZ(5px)</code> = <code>translate3d(0, 0, 5px)</code></p>
+</li>
+<li><p><strong>perspective()</strong></p>
+<p>定义了 z = 0 平面与用户之间的距离，以便给三维定位元素一定透视度。当每个 3D 元素的 z &gt; 0 时会显得比较大，而在 z &lt; 0 时会显得比较小。其影响的程度由这个属性的值来决定。</p>
+<p><code>perspective: 20px;</code></p>
+</li>
+<li><p><strong>matrix()</strong></p>
+<p>指定了一个由指定的 6 个值组成的 2D 变换矩阵。</p>
+<p><code>matrix(a, b, c, d, tx, ty)</code></p>
+<p><em>a b c d</em>: 以 <code>number</code> 的格式来描述线性变换</p>
+<p><em>tx ty</em>: 以 <code>number</code> 的格式来描述变换的量</p>
+</li>
+<li><p><strong>matrix3d()</strong></p>
+<p>用一个 4 × 4 （16个值）的齐次矩阵来描述一个三维（3D）变换。</p>
+<p><code>matrix3d(a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4)</code></p>
+<p><em>a1 b1 c1 d1 a2 b2 c2 d2 a3 b3 c3 d3 d4</em>: 以 <code>number</code> 的格式来描述线性变换</p>
+<p><em>a4 b4 c4</em>: 以 <code>number</code> 的格式来描述变换的量</p>
+</li>
+</ul>
+<h2 id="7-数学函数"><a href="#7-数学函数" class="headerlink" title="7. 数学函数"></a>7. 数学函数</h2><ul>
+<li><p><strong>calc()</strong></p>
+<p>传入运算表达式进行一些简单计算</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">80px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>注意</em>：</p>
+<ol>
+<li><p><code>+</code> 和 <code>-</code> 运算符的两边必须要有空白字符。<code>*</code> 和 <code>/</code> 运算符的两边可不加空白字符，但考虑到统一性加上比较好。</p>
+</li>
+<li><p>用 0 作除数会使 HTML 解析器抛出异常。</p>
+</li>
+<li><p>涉及自动布局和固定布局的表格中的表列、表列组、表行、表行组和表单元格的宽度和高度百分比的数学表达式，auto 可视为已指定。</p>
+</li>
+<li><p><code>clac()</code> 里可以再嵌套 <code>clac()</code>, 如：<code>width: calc(100% - calc(50% - 30px));</code>。</p>
+</li>
+<li><p>运算表达式可以用小括号来建立运算顺序。</p>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p><strong>min()</strong></p>
+<p>在传入的值中取最小的那一个</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="built_in">min</span>(<span class="number">40%</span>, <span class="number">400px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>max()</strong></p>
+<p>在传入的值中取最大的那一个</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="built_in">max</span>(<span class="number">40%</span>, <span class="number">400px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>repeat()</strong></p>
+<p>表示轨道列表的重复片段，允许以更紧凑的形式写入大量显示重复模式的列或行。</p>
+<style>
+.repeat-box {
+  display: grid;
+  grid-template-columns: repeat(2, 50px 1fr) 100px;
+  grid-gap: 5px;
+  box-sizing: border-box;
+  height: 100px;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.repeat-box-item {
+  background-color: lightblue;
+  padding: 5px;
+}
+</style>
+
+<div class="repeat-box">
+  <div class="repeat-box-item">1111</div>
+  <div class="repeat-box-item">2222</div>
+  <div class="repeat-box-item">3333</div>
+  <div class="repeat-box-item">4444</div>
+  <div class="repeat-box-item">5555</div>
+</div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.repeat-box</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="comment">/* 创建 1 个 宽度为 100px 的格子， 2 个 宽度为 50px 的格子， 剩下的 2 个格子宽度为剩余空间的平分值 */</span></span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">50px</span> <span class="number">1</span>fr) <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">grid-gap</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f2f2f2</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.repeat-box-item</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="8-缓动函数"><a href="#8-缓动函数" class="headerlink" title="8. 缓动函数"></a>8. 缓动函数</h2><ul>
+<li><p><strong>cubic-bezier()</strong></p>
+<p>三次贝塞尔，主要是为 animation 生成速度曲线的函数。</p>
+<p><code>cubic-bezier(x1,y1,x2,y2)</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ease */</span></span><br><span class="line"><span class="selector-class">.ease</span> &#123;</span><br><span class="line">  <span class="attribute">transition-timing-function</span>: <span class="built_in">cubic-bezier</span>(.<span class="number">25</span>, .<span class="number">1</span>, .<span class="number">25</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* liner */</span></span><br><span class="line"><span class="selector-class">.liner</span> &#123;</span><br><span class="line">  <span class="comment">/* cubic-bezier(1, 1, 0, 0) */</span></span><br><span class="line">  <span class="attribute">transition-timing-function</span>: <span class="built_in">cubic-bezier</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* ease-in */</span></span><br><span class="line"><span class="selector-class">.ease-in</span> &#123;</span><br><span class="line">  <span class="attribute">transition-timing-function</span>: <span class="built_in">cubic-bezier</span>(.<span class="number">42</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* ease-out */</span></span><br><span class="line"><span class="selector-class">.ease-out</span> &#123;</span><br><span class="line">  <span class="attribute">transition-timing-function</span>: <span class="built_in">cubic-bezier</span>(<span class="number">0</span>, <span class="number">0</span>, .<span class="number">58</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* ease-in-out */</span></span><br><span class="line"><span class="selector-class">.ease-in-out</span> &#123;</span><br><span class="line">  <span class="attribute">transition-timing-function</span>: <span class="built_in">cubic-bezier</span>(.<span class="number">42</span>, <span class="number">0</span>, .<span class="number">58</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* bounce */</span></span><br><span class="line"><span class="selector-class">.bounce</span> &#123;</span><br><span class="line">  <span class="attribute">transition-timing-function</span>: <span class="built_in">cubic-bezier</span>(<span class="number">0.68</span>, -<span class="number">0.55</span>, <span class="number">0.27</span>, <span class="number">1.55</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>steps()</strong></p>
+<p>如果说 <code>cubic-bezier</code> 是连续动画, 那么 <code>steps</code> 就是断续动画。通常应用在 loading 动画，逐帧动画之中。</p>
+<p><code>steps(number, position)</code></p>
+<p><em>number</em>: 表示把动画分成了多少段。</p>
+<p><em>position</em>: 接受两个值 start、end。start：表示直接开始。end：表示戛然而止。默认值。</p>
+<style>
+.steps,
+.cubic-bezier {
+  width: 300px;
+  height: 40px;
+  background: #f2f2f2;
+  position: relative;
+}
+.steps::before,
+.cubic-bezier::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+}
+.cubic-bezier.show::before {
+  animation: process 10s forwards cubic-bezier(0, 0, 1, 1);
+}
+.steps.show::before {
+  animation: process 10s forwards steps(3, start);
+}
+@keyframes process {
+  0% {
+    background: lightblue;
+    width: 0;
+  }
+  30% {
+    background: darkslateblue;
+    width: 30%;
+  }
+  70% {
+    background: pink;
+    width: 70%;
+  }
+  100% {
+    background: lightblue;
+    width: 100%;
+  }
+}
+</style>
+
+<p><button onclick="showCBAni()" class="btn btn-primary">点击播放动画↓</button></p>
+<table>
+<thead>
+<tr>
+<th align="center">cubic-bezier</th>
+<th align="center">steps</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><div class="cubic-bezier"></div></td>
+<td align="center"><div class="steps"></div></td>
+</tr>
+</tbody></table>
+<script>
+  function showCBAni() {
+    $('.cubic-bezier, .steps').removeClass('show')
+    setTimeout(function(){ 
+      $('.cubic-bezier, .steps').addClass('show')
+    }, 300)
+  }
+</script>
+
+<p>从以上 Demo 可以看出，<code>steps</code> 的动画是跳动着执行的，每个关键帧之间没有过渡。而 <code>cubic-bezier</code> 会自动给每个关键帧之间创建补间动画。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.cubic-bezier</span><span class="selector-class">.show</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: process <span class="number">10s</span> forwards <span class="built_in">cubic-bezier</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.steps</span><span class="selector-class">.show</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: process <span class="number">10s</span> forwards <span class="built_in">steps</span>(<span class="number">3</span>, start);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="9-其他函数"><a href="#9-其他函数" class="headerlink" title="9. 其他函数"></a>9. 其他函数</h2><ul>
+<li><p><strong>counter()</strong></p>
+<p>将计数器的值添加到元素</p>
+<p>counter 和 counters 要配合以下几个属性使用：</p>
+<ol>
+<li><p><code>counter-reset</code>：计数器声明及初始值设置</p>
+</li>
+<li><p><code>counter-increment</code>：递增规则</p>
+<style>
+.counter {
+ margin-bottom: 20px;
+ counter-reset: item;
+}
+.counter-item::before {
+ counter-increment: item;
+ content: counter(item)".";
+ color: lightblue;
+}
+</style>
+
+</li>
+</ol>
+<div class="counter">
+  <div class="counter-item"> apple</div>
+  <div class="counter-item"> bear</div>
+  <div class="counter-item">
+    cat
+    <div class="counter">
+    <div class="counter-item"> animal</div>
+    <div class="counter-item"> cute</div>
+    </div>
+  </div>
+</div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.counter</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">counter-reset</span>: item;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.counter-item</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">counter-increment</span>: item;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">counter</span>(item)<span class="string">"."</span>;</span><br><span class="line">  <span class="attribute">color</span>: lightblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>counters()</strong></p>
+<p>将计数器的值添加到元素</p>
+<p><code>counters</code> 和 <code>counter</code> 的区别在于，counters 可以嵌套计数，counter 只能计算到第一层。</p>
+<p><em>Tips</em>: counters 和 counter 的值只能添加到 <code>content</code>。</p>
+  <style>
+  .counter2 {
+    margin-bottom: 20px;
+    counter-reset: section;
+  }
+  .counter-item2::before {
+    counter-increment: section;
+    content: counters(section, ".") " ";
+    color: lightblue;
+  }
+</style>
+
+<div class="counter2">
+  <div class="counter-item2"> apple</div>
+  <div class="counter-item2"> bear</div>
+  <div class="counter-item2">
+    cat
+    <div class="counter2">
+    <div class="counter-item2"> animal</div>
+    <div class="counter-item2"> cute</div>
+    </div>
+  </div>
+</div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.counter2</span> &#123;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">counter-reset</span>: section;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.counter-item2</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">counter-increment</span>: section;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">counters</span>(section, <span class="string">"."</span>) <span class="string">" "</span>;</span><br><span class="line">  <span class="attribute">color</span>: lightblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>var()</strong></p>
+<p>引用<code>:root</code>中定义的变量，css中原生的引用变量方法，类似于 scss 中的 <code>$primary</code>。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$primary</span>: <span class="number">#28C5C2</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attribute">--primary</span>: <span class="number">#28C5C2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--primary);</span><br><span class="line">  <span class="comment">/* 这里 bgColor 这个变量没有被定义，因此会使用备用的 #f2f2f2 作为背景色 */</span></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">var</span>(--bgColor, #f2f2f2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      </div>
+      
+      <!-- updated -->
+      
+      
+<div class="post-update">
+  <span>更新于：</span>
+  <time>2020-05-15</time>
+</div>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      <div id="rewardMask" class="mask-wrap"></div>
+
+<!-- #reward -->
+<div id="reward" class="modal-wrap">
+  <div class="reward-title flex flex-y flex-x">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-smile"></use>
+    </svg>
+    <span>请我喝杯咖啡吧~</span>
+  </div>
+  <div class="reward-box flex flex-y">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+  <div class="modal-close">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div> 
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <div class="post-copyright">
+        <i class="ri-copyright-line"></i>
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用
+        <a
+          href="https://www.apache.org/licenses/LICENSE-2.0.html"
+          rel="external nofollow"
+          target="_blank"
+          >Apache License 2.0</a
+        >
+        许可协议。转载请注明出处！
+      </div>
+    </div>
+    
+    <footer class="article-footer">
+      
+<div class="article-tag-wrap flex flex-y">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-tags"></use>
+  </svg>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS%E5%87%BD%E6%95%B0/" rel="tag">CSS函数</a></li></ul>
+</div>
+
+  
+<div class="share-wrap flex flex-y" id="shareBar">
+  <span class="share-btn flex flex-y">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-fenxiang"></use>
+    </svg>
+    分享到
+  </span>
+  <div class="share-list flex flex-y">
+    <a class="weibo share-sns-btn" href="javascript:;" data-type="weibo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weibo"></use>
+      </svg>
+    </a>
+    <a class="douban share-sns-btn" href="javascript:;" data-type="douban">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-douban"></use>
+      </svg>
+    </a>
+    <a class="qq share-sns-btn" href="javascript:;" data-type="qq">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qq"></use>
+      </svg>
+    </a>
+    <a
+      class="weixin share-sns-btn wxFab"
+      href="javascript:;"
+      data-type="weixin"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-weixin"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="shareMask" class="mask-wrap"></div>
+<div class="modal-wrap wx-share-modal">
+  <div class="share-weixin-title">扫一扫，分享到微信</div>
+  <div class="wx-qrcode">
+    <img
+      src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://huanggaofang.com/frontend/11/app/css-function/"
+      alt="微信分享二维码"
+    />
+  </div>
+  <div class="modal-close" id="wxClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+</div>
+ 
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <div class="article-nav-link article-nav-prev">
+        <strong class="article-nav-caption">上一篇</strong>
+        <a href="/frontend/11/app/css-draw/" class="article-nav-title">
+          
+            CSS 进阶 - 纯 CSS 绘图
+          
+        </a>
+      </div>
+    
+    
+      <div class="article-nav-link article-nav-next">
+        <strong class="article-nav-caption">下一篇</strong>
+        <a href="/frontend/flow/h5-callapp/" class="article-nav-title">H5与原生APP的交互事件</a>
+      </div>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'XRQh2zhUCEHXwiKhGSKRsgG1-gzGzoHsz',
+        app_key: '7lenjWI8UhDxmR67gJm8s8EQ',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+ 
+</article>
+
+  <div class="toc-bot-btn" id="tocBotBtn">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</div>
+<div class="toc-bot-wrap" id="tocBotWrap">
+  <div class="toc-bot-close" id="tocBotClose">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div id="tocBot"></div>
+</div>
+  
+
+  </div>
+</div>
+
+      </main>
+      <footer class="footer-wrap">
+  <div class="container">
+      <div class="left">
+        <div class="footer-copyright flex flex-y">
+          &copy;
+          2017-2021
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-heart1"></use>
+          </svg>
+          Gaofang Huang
+        </div>
+        <div class="footer-count">
+          
+            
+            <div class="busuanzi-count">
+  <span>PV:<i id="busuanzi_value_page_pv"></i></span>
+  <span>UV:<i id="busuanzi_value_site_uv"></i></span>
+</div>
+          
+        </div>
+      </div>
+      <div class="right">
+        
+          
+          
+          <div class="footer-powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></div>
+          <div class="footer-theme">Theme by <a href="https://github.com/gaofanghuang/gaofanghuang" target="_blank">Carrot</a></div>
+        
+      </div>
+  </div>
+</footer>
+      <div class="to-top" id="toTop">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-arrowleft"></use>
+  </svg>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/rem.js"></script>
+
+
+<script src="/js/common.js"></script>
+
+
+<script src="/js/iconfont.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/banner.js"></script>
+
+
+
+  
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '#tocBot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h2, h3, h4',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      scrollContainer: 'document',
+      onClick: (e) => {
+        $('#tocBot .toc-link').removeClass('is-active-link');
+        $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+        return false;
+      }
+    });
+  </script>
+  
+</body>
+
+</html>
